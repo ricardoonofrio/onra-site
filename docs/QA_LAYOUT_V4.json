@@ -1,0 +1,377 @@
+[
+  {
+    "size": [
+      320,
+      720
+    ],
+    "vw": 320,
+    "docSW": 320,
+    "bodySW": 320,
+    "offenders": [],
+    "portalColumns": "320px",
+    "portalRects": [
+      {
+        "x": 0,
+        "w": 320,
+        "h": 426.046875
+      },
+      {
+        "x": 0,
+        "w": 320,
+        "h": 416.453125
+      }
+    ],
+    "portalFont": "33.6px",
+    "bodyOverflow": "hidden"
+  },
+  {
+    "size": [
+      360,
+      800
+    ],
+    "vw": 360,
+    "docSW": 360,
+    "bodySW": 360,
+    "offenders": [],
+    "portalColumns": "360px",
+    "portalRects": [
+      {
+        "x": 0,
+        "w": 360,
+        "h": 443.859375
+      },
+      {
+        "x": 0,
+        "w": 360,
+        "h": 404.796875
+      }
+    ],
+    "portalFont": "37.8px",
+    "bodyOverflow": "hidden"
+  },
+  {
+    "size": [
+      390,
+      844
+    ],
+    "vw": 390,
+    "docSW": 390,
+    "bodySW": 390,
+    "offenders": [],
+    "portalColumns": "390px",
+    "portalRects": [
+      {
+        "x": 0,
+        "w": 390,
+        "h": 457.234375
+      },
+      {
+        "x": 0,
+        "w": 390,
+        "h": 414.828125
+      }
+    ],
+    "portalFont": "40.95px",
+    "bodyOverflow": "hidden"
+  },
+  {
+    "size": [
+      430,
+      900
+    ],
+    "vw": 430,
+    "docSW": 430,
+    "bodySW": 430,
+    "offenders": [],
+    "portalColumns": "430px",
+    "portalRects": [
+      {
+        "x": 0,
+        "w": 430,
+        "h": 465.921875
+      },
+      {
+        "x": 0,
+        "w": 430,
+        "h": 421.34375
+      }
+    ],
+    "portalFont": "43px",
+    "bodyOverflow": "hidden"
+  },
+  {
+    "size": [
+      620,
+      900
+    ],
+    "vw": 620,
+    "docSW": 620,
+    "bodySW": 620,
+    "offenders": [],
+    "portalColumns": "620px",
+    "portalRects": [
+      {
+        "x": 0,
+        "w": 620,
+        "h": 472.28125
+      },
+      {
+        "x": 0,
+        "w": 620,
+        "h": 419.859375
+      }
+    ],
+    "portalFont": "50.4px",
+    "bodyOverflow": "hidden"
+  },
+  {
+    "size": [
+      768,
+      1024
+    ],
+    "vw": 768,
+    "docSW": 768,
+    "bodySW": 768,
+    "offenders": [],
+    "portalColumns": "768px",
+    "portalRects": [
+      {
+        "x": 0,
+        "w": 768,
+        "h": 432
+      },
+      {
+        "x": 0,
+        "w": 768,
+        "h": 432
+      }
+    ],
+    "portalFont": "40px",
+    "bodyOverflow": "hidden"
+  },
+  {
+    "size": [
+      860,
+      900
+    ],
+    "vw": 860,
+    "docSW": 860,
+    "bodySW": 860,
+    "offenders": [],
+    "portalColumns": "860px",
+    "portalRects": [
+      {
+        "x": 0,
+        "w": 860,
+        "h": 454.203125
+      },
+      {
+        "x": 0,
+        "w": 860,
+        "h": 455.203125
+      }
+    ],
+    "portalFont": "44.72px",
+    "bodyOverflow": "hidden"
+  },
+  {
+    "size": [
+      900,
+      900
+    ],
+    "vw": 900,
+    "docSW": 900,
+    "bodySW": 900,
+    "offenders": [],
+    "portalColumns": "900px",
+    "portalRects": [
+      {
+        "x": 0,
+        "w": 900,
+        "h": 468.296875
+      },
+      {
+        "x": 0,
+        "w": 900,
+        "h": 469.296875
+      }
+    ],
+    "portalFont": "46.8px",
+    "bodyOverflow": "hidden"
+  },
+  {
+    "size": [
+      982,
+      800
+    ],
+    "vw": 982,
+    "docSW": 982,
+    "bodySW": 982,
+    "offenders": [],
+    "portalColumns": "982px",
+    "portalRects": [
+      {
+        "x": 0,
+        "w": 982,
+        "h": 497.15625
+      },
+      {
+        "x": 0,
+        "w": 982,
+        "h": 498.15625
+      }
+    ],
+    "portalFont": "51.064px",
+    "bodyOverflow": "hidden"
+  },
+  {
+    "size": [
+      1024,
+      768
+    ],
+    "vw": 1024,
+    "docSW": 1024,
+    "bodySW": 1024,
+    "offenders": [],
+    "portalColumns": "1024px",
+    "portalRects": [
+      {
+        "x": 0,
+        "w": 1024,
+        "h": 512
+      },
+      {
+        "x": 0,
+        "w": 1024,
+        "h": 513
+      }
+    ],
+    "portalFont": "53.248px",
+    "bodyOverflow": "hidden"
+  },
+  {
+    "size": [
+      1025,
+      768
+    ],
+    "vw": 1025,
+    "docSW": 1025,
+    "bodySW": 1025,
+    "offenders": [],
+    "portalColumns": "512.5px 512.5px",
+    "portalRects": [
+      {
+        "x": 0,
+        "w": 512.5,
+        "h": 544
+      },
+      {
+        "x": 512.5,
+        "w": 512.5,
+        "h": 544
+      }
+    ],
+    "portalFont": "34.4px",
+    "bodyOverflow": "hidden"
+  },
+  {
+    "size": [
+      1180,
+      820
+    ],
+    "vw": 1180,
+    "docSW": 1180,
+    "bodySW": 1180,
+    "offenders": [],
+    "portalColumns": "590px 590px",
+    "portalRects": [
+      {
+        "x": 0,
+        "w": 590,
+        "h": 544
+      },
+      {
+        "x": 590,
+        "w": 590,
+        "h": 544
+      }
+    ],
+    "portalFont": "35.99px",
+    "bodyOverflow": "hidden"
+  },
+  {
+    "size": [
+      1366,
+      768
+    ],
+    "vw": 1366,
+    "docSW": 1366,
+    "bodySW": 1366,
+    "offenders": [],
+    "portalColumns": "683px 683px",
+    "portalRects": [
+      {
+        "x": 0,
+        "w": 683,
+        "h": 551.125
+      },
+      {
+        "x": 683,
+        "w": 683,
+        "h": 551.125
+      }
+    ],
+    "portalFont": "41.663px",
+    "bodyOverflow": "hidden"
+  },
+  {
+    "size": [
+      1440,
+      900
+    ],
+    "vw": 1440,
+    "docSW": 1440,
+    "bodySW": 1440,
+    "offenders": [],
+    "portalColumns": "720px 720px",
+    "portalRects": [
+      {
+        "x": 0,
+        "w": 720,
+        "h": 572.40625
+      },
+      {
+        "x": 720,
+        "w": 720,
+        "h": 572.40625
+      }
+    ],
+    "portalFont": "43.92px",
+    "bodyOverflow": "hidden"
+  },
+  {
+    "size": [
+      1920,
+      1080
+    ],
+    "vw": 1920,
+    "docSW": 1920,
+    "bodySW": 1920,
+    "offenders": [],
+    "portalColumns": "960px 960px",
+    "portalRects": [
+      {
+        "x": 0,
+        "w": 960,
+        "h": 705.140625
+      },
+      {
+        "x": 960,
+        "w": 960,
+        "h": 705.140625
+      }
+    ],
+    "portalFont": "58.56px",
+    "bodyOverflow": "hidden"
+  }
+]

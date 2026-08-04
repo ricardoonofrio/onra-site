@@ -1,0 +1,27 @@
+ONRA CSS V4 — VALIDAÇÃO
+
+Sintaxe CSS: OK
+Regras parseadas: 248
+Erros de sintaxe: 0
+Viewports testados:
+320x720
+360x800
+390x844
+430x900
+620x900
+768x1024
+860x900
+900x900
+982x800
+1024x768
+1025x768
+1180x820
+1366x768
+1440x900
+1920x1080
+
+Overflow horizontal: 0 ocorrências
+Elementos fora do viewport: 0 ocorrências
+Portais em 982 px: empilhados
+Portais em 1024 px: empilhados
+Portais em 1025 px: duas colunas iguais

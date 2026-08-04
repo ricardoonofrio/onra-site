@@ -1,0 +1,11 @@
+{
+  "name": "Onra",
+  "short_name": "Onra",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#172638",
+  "theme_color": "#172638",
+  "icons": [
+    {"src": "assets/icons/favicon.svg", "sizes": "any", "type": "image/svg+xml"}
+  ]
+}

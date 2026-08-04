@@ -1,338 +1,534 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-BR" class="no-js">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172638">
+
   <title>Onra | Educação Financeira e Consultoria</title>
-  <meta name="description" content="Marca de educação e orientação financeira para pessoas e instituições." />
-  <link rel="canonical" href="https://onra.com.br/" />
+  <meta name="description" content="Educação financeira e orientação profissional para decisões que exigem clareza, estrutura e visão de futuro.">
+  <link rel="canonical" href="https://onra.com.br/">
 
-  <meta property="og:title" content="Onra | Vida Financeira" />
-  <meta property="og:description" content="Dinheiro bem cuidado sustenta escolhas, projetos e futuros." />
-  <meta property="og:image" content="https://ricardoonofrio.github.io/onra-site/assets/images/nova_foto_leo.jpg" />
-  <meta property="og:image:alt" content="Leo Campos - Consultor Onra" />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Onra | Educação Financeira e Consultoria">
+  <meta property="og:description" content="Clareza para decidir. Estrutura para avançar.">
+  <meta property="og:url" content="https://onra.com.br/">
+  <meta property="og:image" content="https://onra.com.br/assets/images/onra-og.jpg">
+  <meta property="og:image:alt" content="Onra — educação financeira e consultoria">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Arquitetura CSS Modular -->
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/states.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.remove('no-js');</script>
 </head>
-<body class="state-inicio">
+<body data-state="home">
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-  <header class="site-header bg-transparent" id="siteHeader">
-    <nav class="container nav" aria-label="Navegação Principal">
-      <a href="#" class="brand" data-area="" aria-label="Página Inicial da Onra">ONRA</a>
-      
-      <div class="nav-links">
-        <a href="#" data-area="educacao">Educação</a>
-        <a href="#" data-area="consultoria">Consultoria</a>
-      </div>
-      
-      <button class="btn-voltar" data-area="" aria-label="Voltar para a página inicial">✕ Início</button>
-    </nav>
+  <div class="page-transition" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <button class="brand" type="button" data-route="home" aria-label="Voltar para o início da Onra">
+        <span class="brand-word">ONRA</span>
+        <span class="brand-dot" aria-hidden="true"></span>
+      </button>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <button type="button" data-route="education">Educação</button>
+        <button type="button" data-route="consulting">Consultoria</button>
+        <button type="button" data-scroll-target="leo">Leo Campos</button>
+        <button type="button" data-open-contact="general">Contato</button>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav aria-label="Navegação móvel">
+        <button type="button" data-route="home">Início</button>
+        <button type="button" data-route="education">Educação</button>
+        <button type="button" data-route="consulting">Consultoria</button>
+        <button type="button" data-scroll-target="leo">Leo Campos</button>
+        <button type="button" data-open-contact="general">Contato</button>
+      </nav>
+      <p>Clareza para decidir.<br>Estrutura para avançar.</p>
+    </div>
   </header>
 
-  <main>
-    <!-- ==========================================
-         1. ESTADO INICIAL
-         ========================================== -->
-    <section id="view-inicio" class="view-container active" aria-label="Escolha sua jornada">
-      
-      <div class="container hero-minimalista">
-        <div class="grid-12 hero-grid">
-          <div class="hero-copy-col">
-            <h1 class="hero-title">O dinheiro deve sustentar a vida que você deseja construir.</h1>
-            <p class="hero-text">Educação financeira e orientação profissional para decisões que exigem clareza, estrutura e visão de futuro.</p>
-            <span class="hero-auth">Leo Campos &middot; Consultor de Valores Mobiliários &middot; Mais de 14 anos de experiência.</span>
+  <main id="conteudo">
+    <!-- HOME: minimalista, sem conteúdo excessivo -->
+    <section class="view view-home is-active" data-view="home" aria-labelledby="home-title">
+      <div class="home-hero">
+        <div class="shell home-hero-grid">
+          <div class="home-copy reveal">
+            <p class="eyebrow">ONRA · VIDA FINANCEIRA</p>
+            <h1 id="home-title">O dinheiro deve sustentar a vida que você deseja construir.</h1>
+            <p class="lead">Educação financeira e orientação profissional para decisões que exigem clareza, estrutura e visão de futuro.</p>
+            <div class="founder-line">
+              <span>Leo Campos</span>
+              <span>Consultor de Valores Mobiliários</span>
+              <span>+14 anos de experiência</span>
+            </div>
           </div>
-          <div class="hero-photo-col">
-            <img src="assets/images/nova_foto_leo.jpg" alt="Fotografia de Leo Campos" class="hero-photo-arch">
-          </div>
+
+          <figure class="portrait-stage reveal" data-delay="120">
+            <picture>
+              <source media="(max-width: 720px)" srcset="assets/images/leo-onra-mobile.webp">
+              <img src="assets/images/leo-onra.webp" width="1200" height="1600" alt="Leo Campos em seu escritório" fetchpriority="high">
+            </picture>
+            <figcaption>
+              <span>Fundador da Onra</span>
+              <span>Vitória · ES</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="shell home-scroll-cue" aria-hidden="true">
+          <span>Escolha sua jornada</span>
+          <span class="scroll-line"></span>
         </div>
       </div>
 
-      <div class="portais-section">
-        <div class="container grid-12">
-          <!-- PORTAL EDUCAÇÃO -->
-          <button class="portal-editorial" style="grid-column: 1 / 7;" data-area="educacao" aria-label="Explorar jornada de Educação Financeira">
-            <div>
-              <h2>Educação</h2>
-              <h3>Conhecimento para transformar a relação com o dinheiro.</h3>
-              <p>Palestras, workshops, programas e conteúdos para pessoas e instituições.</p>
-            </div>
-            <span class="portal-cta">Explorar Educação &rarr;</span>
-          </button>
+      <section class="portals" aria-labelledby="portals-title">
+        <h2 id="portals-title" class="sr-only">Escolha entre Educação e Consultoria</h2>
+        <button class="portal portal-education" type="button" data-route="education">
+          <span class="portal-index">01</span>
+          <span class="portal-kicker">Educação</span>
+          <strong>Conhecimento para transformar a relação com o dinheiro.</strong>
+          <span class="portal-description">Palestras, workshops, programas e conteúdos para pessoas e instituições.</span>
+          <span class="portal-action">Explorar Educação <i aria-hidden="true">↗</i></span>
+        </button>
 
-          <!-- PORTAL CONSULTORIA -->
-          <button class="portal-editorial" style="grid-column: 7 / 13; border-left: 1px solid rgba(255,255,255,0.15);" data-area="consultoria" aria-label="Conhecer a Consultoria de Investimentos">
-            <div>
-              <h2>Consultoria</h2>
-              <h3>Estrutura para decisões financeiras mais importantes.</h3>
-              <p>Diagnóstico, planejamento, acompanhamento e consultoria de investimentos.</p>
-            </div>
-            <span class="portal-cta">Conhecer a Consultoria &rarr;</span>
-          </button>
+        <button class="portal portal-consulting" type="button" data-route="consulting">
+          <span class="portal-index">02</span>
+          <span class="portal-kicker">Consultoria</span>
+          <strong>Estrutura para decisões financeiras mais importantes.</strong>
+          <span class="portal-description">Diagnóstico, planejamento, acompanhamento e consultoria de investimentos.</span>
+          <span class="portal-action">Conhecer a Consultoria <i aria-hidden="true">↗</i></span>
+        </button>
+      </section>
+
+      <section class="home-principle">
+        <div class="shell principle-grid reveal">
+          <p class="eyebrow">NOSSA VISÃO</p>
+          <blockquote>Dinheiro bem cuidado não é um fim. É a base para escolhas, relações, projetos e futuros.</blockquote>
         </div>
-      </div>
+      </section>
 
-      <footer class="site-footer">
-        <div class="container">
-          <p>Onra - Vida Financeira &copy; 2026. <a href="#">Aviso Regulatório</a> &middot; <a href="#">Privacidade</a></p>
-          <p style="margin-top: 8px; opacity: 0.5;">Consultoria de valores mobiliários autorizada pela CVM | Profissional certificado pela ANBIMA</p>
+      <footer class="site-footer home-footer">
+        <div class="shell footer-minimal">
+          <span>Onra © 2026</span>
+          <span>Clareza para decidir. Estrutura para avançar.</span>
+          <button type="button" data-open-legal="privacy">Privacidade</button>
         </div>
       </footer>
     </section>
 
-    <!-- ==========================================
-         2. ESTADO EDUCAÇÃO
-         ========================================== -->
-    <section id="view-educacao" class="view-container" aria-label="Jornada de Educação Financeira">
-      <div class="section" style="padding-top: 160px; padding-bottom: 60px;">
-        <div class="container grid-12">
-          <div style="grid-column: 1 / 10;">
-            <p class="section-label">Educação Financeira</p>
-            <h1 class="manifesto-text" style="color: var(--azul-profundo);">Educação financeira que continua fazendo sentido depois do encontro.</h1>
-            <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin-top: 24px; font-family: var(--font-base);">Experiências desenvolvidas para aproximar o conhecimento financeiro da realidade de cada público.</p>
-            <a href="#form-educacao" class="btn-primary" style="margin-top: 48px;">Solicitar uma proposta &rarr;</a>
+    <!-- EDUCAÇÃO -->
+    <section class="view view-education" data-view="education" aria-labelledby="education-title" hidden>
+      <div class="journey-hero education-hero">
+        <div class="shell journey-hero-grid">
+          <div class="journey-title reveal">
+            <button class="back-link" type="button" data-route="home">← Voltar para a Onra</button>
+            <p class="eyebrow">EDUCAÇÃO FINANCEIRA</p>
+            <h1 id="education-title">Conhecimento que continua fazendo sentido depois do encontro.</h1>
+          </div>
+          <div class="journey-intro reveal" data-delay="100">
+            <p>Experiências desenhadas para aproximar o conhecimento financeiro da realidade de cada público — com linguagem humana, aplicação prática e profundidade.</p>
+            <button class="text-link" type="button" data-open-contact="education">Solicitar uma proposta <span>↗</span></button>
           </div>
         </div>
       </div>
 
-      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
-        <div class="container grid-12">
-          <div style="grid-column: 1 / 11;" class="bloco-editorial">
-            <p style="font-size: 2rem; font-weight: 300; color: var(--azul-profundo); font-family: var(--font-editorial);">"Educação financeira não começa nos números. Começa na forma como as pessoas compreendem suas escolhas."</p>
+      <section class="statement statement-light">
+        <div class="shell statement-grid reveal">
+          <p class="section-number">01</p>
+          <blockquote>Educação financeira não começa nos números. Começa na forma como as pessoas compreendem suas escolhas.</blockquote>
+          <p>O conteúdo da Onra nasce do contexto de quem participa. A proposta não é apenas informar, mas transformar conceitos em decisões possíveis para a vida real.</p>
+        </div>
+      </section>
+
+      <section class="audiences section-light" aria-labelledby="audiences-title">
+        <div class="shell split-heading reveal">
+          <div>
+            <p class="section-number">02</p>
+            <h2 id="audiences-title">Duas formas de levar a educação financeira adiante.</h2>
+          </div>
+          <p>O mesmo rigor de conteúdo, com objetivos, formatos e linguagem adequados a quem contrata e a quem aprende.</p>
+        </div>
+
+        <div class="shell audience-switcher reveal" data-delay="80">
+          <div class="tab-list" role="tablist" aria-label="Públicos da Educação">
+            <button id="tab-institutions" role="tab" aria-selected="true" aria-controls="panel-institutions" tabindex="0">Para instituições</button>
+            <button id="tab-people" role="tab" aria-selected="false" aria-controls="panel-people" tabindex="-1">Para pessoas</button>
+          </div>
+
+          <div class="tab-panel is-active" id="panel-institutions" role="tabpanel" aria-labelledby="tab-institutions">
+            <div class="panel-lead">
+              <p class="eyebrow">EMPRESAS · INSTITUTOS · ORGANIZAÇÕES</p>
+              <h3>Educação financeira como instrumento de bem-estar, consciência e desenvolvimento.</h3>
+            </div>
+            <div class="panel-detail">
+              <p>Projetos para empresas, institutos de previdência, servidores, associações, igrejas, organizações sociais, escolas e comunidades.</p>
+              <ul class="quiet-list">
+                <li>Conteúdo adaptado ao contexto institucional</li>
+                <li>Experiências presenciais, online ou híbridas</li>
+                <li>Materiais de apoio e continuidade</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="panel-people" role="tabpanel" aria-labelledby="tab-people" hidden>
+            <div class="panel-lead">
+              <p class="eyebrow">PESSOAS · CASAIS · FAMÍLIAS</p>
+              <h3>Conhecimento para compreender a realidade, organizar prioridades e construir autonomia.</h3>
+            </div>
+            <div class="panel-detail">
+              <p>Conteúdos, cursos e jornadas para quem deseja transformar a relação com o dinheiro sem atalhos ou promessas fáceis.</p>
+              <ul class="quiet-list">
+                <li>Organização e clareza financeira</li>
+                <li>Projetos de vida e planejamento</li>
+                <li>Método Pleno e conteúdos abertos</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- SELETOR INTERNO DE PÚBLICOS (TABS) -->
-      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
-        <div class="container">
-          <div class="tabs-container">
-            <button class="tab-btn active" data-tab="tab-instituicoes">Para Instituições</button>
-            <button class="tab-btn" data-tab="tab-pessoas">Para Pessoas</button>
+      <section class="formats section-ink" aria-labelledby="formats-title">
+        <div class="shell split-heading split-heading-light reveal">
+          <div>
+            <p class="section-number">03</p>
+            <h2 id="formats-title">Formatos que respeitam o objetivo de cada encontro.</h2>
           </div>
-          
-          <div id="tab-instituicoes" class="tab-content active">
-            <p>Palestras, workshops e programas para empresas, institutos, servidores, associações, igrejas e organizações. A comunicação deve falar com quem contrata: gestores, diretores, RH e lideranças.</p>
-          </div>
-          <div id="tab-pessoas" class="tab-content">
-            <p>Conteúdos, cursos, Método Pleno e materiais educacionais. Direcionado a famílias, casais, profissionais e pessoas que desejam organizar a vida financeira e aprender com profundidade.</p>
-          </div>
+          <p>Da sensibilização inicial a uma jornada continuada de aprendizagem.</p>
         </div>
-      </div>
 
-      <!-- FORMATOS (FAIXAS AMPLAS) -->
-      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
-        <div class="container">
-          <p class="section-label">Formatos Educacionais</p>
-          
-          <div class="faixa-formato">
+        <div class="shell format-list reveal" data-delay="80">
+          <article class="format-row">
+            <span>01</span>
             <h3>Palestras</h3>
-            <p>Encontros objetivos e envolventes, adaptados ao perfil do público e ao objetivo da instituição.</p>
-          </div>
-          <div class="faixa-formato">
+            <p>Encontros objetivos e envolventes para despertar reflexão, ampliar consciência e gerar movimento.</p>
+            <button type="button" data-open-contact="education" data-topic="Palestra">Solicitar proposta ↗</button>
+          </article>
+          <article class="format-row">
+            <span>02</span>
             <h3>Workshops</h3>
-            <p>Experiências práticas, com atividades, ferramentas e aplicação direta dos conceitos.</p>
-          </div>
-          <div class="faixa-formato">
-            <h3>Programas Continuados</h3>
-            <p>Jornadas compostas por encontros, materiais e ações de acompanhamento de longo prazo.</p>
-          </div>
-          <div class="faixa-formato" style="border-bottom: 1px solid rgba(0,0,0,0.1);">
+            <p>Experiências práticas com exercícios, ferramentas e aplicação direta dos conceitos apresentados.</p>
+            <button type="button" data-open-contact="education" data-topic="Workshop">Solicitar proposta ↗</button>
+          </article>
+          <article class="format-row">
+            <span>03</span>
+            <h3>Programas continuados</h3>
+            <p>Jornadas com encontros, materiais e ações complementares para aprofundar e sustentar o aprendizado.</p>
+            <button type="button" data-open-contact="education" data-topic="Programa continuado">Solicitar proposta ↗</button>
+          </article>
+          <article class="format-row">
+            <span>04</span>
             <h3>Método Pleno</h3>
-            <p>Programa imersivo para pessoas que desejam compreender sua realidade, organizar prioridades e desenvolver autonomia financeira definitiva.</p>
+            <p>Uma jornada para pessoas que desejam compreender sua realidade, organizar prioridades e desenvolver autonomia financeira.</p>
+            <button type="button" data-open-contact="education" data-topic="Método Pleno">Conhecer o método ↗</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="themes section-light" aria-labelledby="themes-title">
+        <div class="shell split-heading reveal">
+          <div>
+            <p class="section-number">04</p>
+            <h2 id="themes-title">Temas conectados à vida real.</h2>
+          </div>
+          <p>Os conteúdos podem ser ajustados ao público, ao momento e ao objetivo de cada instituição.</p>
+        </div>
+        <div class="shell theme-cloud reveal" data-delay="80" aria-label="Exemplos de temas">
+          <span>Organização financeira</span>
+          <span>Crédito e endividamento</span>
+          <span>Projetos de vida</span>
+          <span>Investimentos</span>
+          <span>Aposentadoria</span>
+          <span>Finanças para casais</span>
+          <span>Bem-estar financeiro</span>
+          <span>Comportamento e escolhas</span>
+        </div>
+      </section>
+
+      <section class="authority section-paper" aria-labelledby="authority-education-title">
+        <div class="shell authority-grid reveal">
+          <div class="authority-copy">
+            <p class="section-number">05</p>
+            <h2 id="authority-education-title">Autoridade construída em conteúdo, presença e experiência.</h2>
+            <p>Leo Campos reúne atuação no mercado financeiro, formação técnica e experiência em traduzir temas complexos para diferentes públicos.</p>
+          </div>
+          <div class="media-ledger" aria-label="Canais e experiências">
+            <a href="https://www.youtube.com/@leocamposfin" target="_blank" rel="noopener">
+              <span>YouTube</span><strong>Conteúdo aprofundado</strong><i>↗</i>
+            </a>
+            <a href="https://www.instagram.com/leocamposfin/" target="_blank" rel="noopener">
+              <span>Instagram</span><strong>Educação no cotidiano</strong><i>↗</i>
+            </a>
+            <div>
+              <span>RedeTV/ES</span><strong>Quadro Papo que Rende</strong><i>TV</i>
+            </div>
+            <a href="https://br.linkedin.com/in/leocamposfin" target="_blank" rel="noopener">
+              <span>LinkedIn</span><strong>Atuação profissional</strong><i>↗</i>
+            </a>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- PROVAS EDITORIAIS E PORTFÓLIO -->
-      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
-        <div class="container">
-          <p class="section-label">Experiência em Movimento</p>
-          <div class="portfolio-grid">
-            <img src="assets/images/nova_foto_leo.jpg" class="portfolio-img" alt="Registro de evento">
-            <img src="assets/images/nova_foto_leo.jpg" class="portfolio-img" alt="Registro de palestra">
+      <section class="process section-light" aria-labelledby="education-process-title">
+        <div class="shell split-heading reveal">
+          <div>
+            <p class="section-number">06</p>
+            <h2 id="education-process-title">Da necessidade à experiência.</h2>
           </div>
-          <div class="quote-editorial">
-            <blockquote>"A abordagem da Onra transformou a maneira como nossa equipe enxerga o planejamento financeiro."</blockquote>
-            <cite>— Gestor de RH, Instituição Parceira</cite>
-          </div>
+          <p>Um processo claro para que cada entrega faça sentido para a instituição e para o público.</p>
         </div>
-      </div>
+        <ol class="shell process-line reveal" data-delay="80">
+          <li><span>01</span><strong>Contexto</strong><p>Entendemos o público, o momento e o objetivo.</p></li>
+          <li><span>02</span><strong>Proposta</strong><p>Definimos formato, escopo e experiência.</p></li>
+          <li><span>03</span><strong>Personalização</strong><p>Adaptamos conteúdo, linguagem e materiais.</p></li>
+          <li><span>04</span><strong>Entrega</strong><p>Realizamos o encontro com presença e aplicação.</p></li>
+        </ol>
+      </section>
 
-      <div class="section" style="padding-top: 60px; padding-bottom: 120px;" id="form-educacao">
-        <div class="container grid-12">
-          <div style="grid-column: 1 / 7;">
-            <p class="section-label">Solicitar Proposta</p>
-            <form id="educacao-form">
-              <input type="text" class="form-input" placeholder="Nome e cargo *" required>
-              <input type="text" class="form-input" placeholder="Instituição *" required>
-              <input type="email" class="form-input" placeholder="E-mail *" required>
-              <input type="text" class="form-input" placeholder="Objetivo principal *" required>
-              <button type="submit" class="btn-primary">Enviar solicitação &rarr;</button>
-            </form>
-          </div>
+      <section class="journey-cta education-cta">
+        <div class="shell reveal">
+          <p class="eyebrow">PRÓXIMO PASSO</p>
+          <h2>Conte-nos sobre o público, o contexto e a transformação que deseja promover.</h2>
+          <button class="cta-arrow" type="button" data-open-contact="education">Solicitar uma proposta <span>↗</span></button>
         </div>
-      </div>
+      </section>
 
-      <footer class="site-footer" style="border-color: rgba(0,0,0,0.1); color: var(--azul-profundo);">
-        <div class="container">
-          <p>Onra - Vida Financeira &copy; 2026.</p>
-          <p style="margin-top: 8px; opacity: 0.5;">Consultoria de valores mobiliários autorizada pela CVM | Profissional certificado pela ANBIMA</p>
+      <footer class="site-footer footer-light">
+        <div class="shell footer-grid">
+          <button class="footer-brand" type="button" data-route="home">ONRA</button>
+          <p>Educação financeira com contexto, profundidade e aplicação.</p>
+          <div>
+            <button type="button" data-route="consulting">Conhecer Consultoria</button>
+            <button type="button" data-open-legal="privacy">Privacidade</button>
+          </div>
         </div>
       </footer>
     </section>
 
-    <!-- ==========================================
-         3. ESTADO CONSULTORIA
-         ========================================== -->
-    <section id="view-consultoria" class="view-container" aria-label="Jornada de Consultoria Financeira">
-      <div class="section" style="padding-top: 160px; padding-bottom: 60px;">
-        <div class="container grid-12">
-          <div style="grid-column: 1 / 10;">
-            <p class="section-label">Consultoria</p>
-            <h1 class="manifesto-text" style="color: var(--branco);">Decisões importantes não deveriam depender do improviso.</h1>
-            <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin-top: 24px; font-family: var(--font-base);">Orientação individualizada para organizar sua realidade financeira, seus projetos e seu patrimônio com mais clareza.</p>
-            <a href="#form-consultoria" class="btn-primary" style="margin-top: 48px;">Solicitar conversa de avaliação &rarr;</a>
+    <!-- CONSULTORIA -->
+    <section class="view view-consulting" data-view="consulting" aria-labelledby="consulting-title" hidden>
+      <div class="journey-hero consulting-hero">
+        <div class="shell journey-hero-grid">
+          <div class="journey-title reveal">
+            <button class="back-link" type="button" data-route="home">← Voltar para a Onra</button>
+            <p class="eyebrow">CONSULTORIA</p>
+            <h1 id="consulting-title">Decisões importantes não deveriam depender do improviso.</h1>
+          </div>
+          <div class="journey-intro reveal" data-delay="100">
+            <p>Orientação individualizada para organizar sua realidade financeira, seus projetos e seu patrimônio com mais clareza.</p>
+            <button class="text-link" type="button" data-open-contact="consulting">Solicitar conversa de avaliação <span>↗</span></button>
           </div>
         </div>
       </div>
 
-      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
-        <div class="container grid-12">
-          <div style="grid-column: 1 / 11;" class="bloco-editorial">
-            <p style="font-size: 2rem; font-weight: 300; color: var(--branco); font-family: var(--font-editorial);">"Patrimônio não é apenas aquilo que você acumulou. É aquilo que precisa sustentar suas escolhas futuras."</p>
+      <section class="statement statement-dark">
+        <div class="shell statement-grid reveal">
+          <p class="section-number">01</p>
+          <blockquote>Patrimônio não é apenas aquilo que você acumulou. É aquilo que precisa sustentar suas escolhas futuras.</blockquote>
+          <p>Uma estratégia coerente começa antes da escolha de qualquer investimento. Começa pela compreensão da vida, dos objetivos, das responsabilidades e do tempo.</p>
+        </div>
+      </section>
+
+      <section class="situations section-ink" aria-labelledby="situations-title">
+        <div class="shell split-heading split-heading-light reveal">
+          <div>
+            <p class="section-number">02</p>
+            <h2 id="situations-title">Quando a orientação deixa de ser opcional.</h2>
+          </div>
+          <p>A consultoria é indicada para quem percebeu que algumas decisões já não deveriam ser tomadas sozinho.</p>
+        </div>
+        <div class="shell situation-list reveal" data-delay="80">
+          <p><span>01</span> Tenho renda, mas meu patrimônio não avança na mesma proporção.</p>
+          <p><span>02</span> Possuo investimentos, mas não enxergo uma estratégia integrada.</p>
+          <p><span>03</span> Tenho projetos importantes e ainda não os transformei em um plano.</p>
+          <p><span>04</span> Estou vivendo uma mudança e preciso reorganizar decisões.</p>
+          <p><span>05</span> Não quero mais depender de recomendações genéricas.</p>
+        </div>
+      </section>
+
+      <section class="method section-paper" aria-labelledby="method-title">
+        <div class="shell split-heading reveal">
+          <div>
+            <p class="section-number">03</p>
+            <h2 id="method-title">Como a Onra trabalha.</h2>
+          </div>
+          <p>Um processo conduzido com método, proximidade e visão de longo prazo.</p>
+        </div>
+        <ol class="shell method-line reveal" data-delay="80">
+          <li><span>01</span><h3>Compreender</h3><p>Realidade, objetivos, responsabilidades e projetos.</p></li>
+          <li><span>02</span><h3>Estruturar</h3><p>Prioridades, prazos, riscos e possibilidades.</p></li>
+          <li><span>03</span><h3>Orientar</h3><p>Alternativas coerentes com o perfil e o contexto.</p></li>
+          <li><span>04</span><h3>Acompanhar</h3><p>Revisões e ajustes à medida que a vida evolui.</p></li>
+        </ol>
+      </section>
+
+      <section class="solutions section-light" aria-labelledby="solutions-title">
+        <div class="shell split-heading reveal">
+          <div>
+            <p class="section-number">04</p>
+            <h2 id="solutions-title">Soluções organizadas pela sua necessidade.</h2>
+          </div>
+          <p>Você não precisa saber o nome do serviço. Precisa reconhecer o momento que está vivendo.</p>
+        </div>
+
+        <div class="shell solution-selector reveal" data-delay="80">
+          <div class="solution-nav" role="tablist" aria-label="Soluções de consultoria">
+            <button id="solution-tab-diagnostic" role="tab" aria-selected="true" aria-controls="solution-diagnostic">Preciso entender minha situação</button>
+            <button id="solution-tab-follow" role="tab" aria-selected="false" aria-controls="solution-follow" tabindex="-1">Preciso mudar com acompanhamento</button>
+            <button id="solution-tab-project" role="tab" aria-selected="false" aria-controls="solution-project" tabindex="-1">Tenho um projeto importante</button>
+            <button id="solution-tab-invest" role="tab" aria-selected="false" aria-controls="solution-invest" tabindex="-1">Já possuo investimentos</button>
+          </div>
+
+          <div class="solution-panels">
+            <article class="solution-panel is-active" id="solution-diagnostic" role="tabpanel" aria-labelledby="solution-tab-diagnostic">
+              <span>01</span><h3>Diagnóstico Financeiro</h3>
+              <p>Uma leitura ampla da realidade atual para identificar desequilíbrios, riscos, prioridades e oportunidades de melhoria.</p>
+              <ul><li>Mapeamento financeiro</li><li>Organização de prioridades</li><li>Plano de ação inicial</li></ul>
+            </article>
+            <article class="solution-panel" id="solution-follow" role="tabpanel" aria-labelledby="solution-tab-follow" hidden>
+              <span>02</span><h3>Acompanhamento Financeiro</h3>
+              <p>Orientação contínua para transformar o planejamento em decisões práticas, acompanhar a evolução e realizar ajustes.</p>
+              <ul><li>Reuniões periódicas</li><li>Acompanhamento de metas</li><li>Revisões de estratégia</li></ul>
+            </article>
+            <article class="solution-panel" id="solution-project" role="tabpanel" aria-labelledby="solution-tab-project" hidden>
+              <span>03</span><h3>Planejamento de Projetos de Vida</h3>
+              <p>Estruturação financeira de objetivos como independência, aposentadoria, patrimônio, educação, viagens e transições profissionais.</p>
+              <ul><li>Definição de prazos</li><li>Cenários e recursos</li><li>Estratégia de execução</li></ul>
+            </article>
+            <article class="solution-panel" id="solution-invest" role="tabpanel" aria-labelledby="solution-tab-invest" hidden>
+              <span>04</span><h3>Consultoria de Investimentos</h3>
+              <p>Avaliação e recomendação de alternativas compatíveis com o perfil de risco, os objetivos, os prazos e a realidade patrimonial do cliente.</p>
+              <ul><li>Diagnóstico da carteira</li><li>Estratégia de alocação</li><li>Acompanhamento independente</li></ul>
+            </article>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
-        <div class="container grid-12">
-          <div style="grid-column: 1 / 13;">
-            <p class="section-label">Situações Comuns</p>
-            <ul class="lista-situacoes">
-              <li><strong>01</strong> Tenho renda, mas meu patrimônio não avança na mesma proporção.</li>
-              <li><strong>02</strong> Possuo investimentos, mas não enxergo uma estratégia integrada.</li>
-              <li><strong>03</strong> Tenho projetos importantes e ainda não transformei objetivos em plano.</li>
-              <li><strong>04</strong> Estou vivendo uma mudança e preciso reorganizar decisões.</li>
-              <li><strong>05</strong> Não quero mais decidir sozinho com base em recomendações genéricas.</li>
-            </ul>
+      <section class="difference section-ink" aria-labelledby="difference-title">
+        <div class="shell difference-grid reveal">
+          <div>
+            <p class="section-number">05</p>
+            <h2 id="difference-title">A vida vem antes da carteira.</h2>
+          </div>
+          <div class="difference-list">
+            <article><span>01</span><h3>Orientação individualizada</h3><p>O trabalho parte do contexto, não de uma solução pronta.</p></article>
+            <article><span>02</span><h3>Independência</h3><p>A recomendação não depende da venda de produtos financeiros.</p></article>
+            <article><span>03</span><h3>Decisões compreensíveis</h3><p>O cliente entende os critérios e participa de cada escolha.</p></article>
+            <article><span>04</span><h3>Visão integrada</h3><p>Finanças, projetos e investimentos são tratados como partes da mesma vida.</p></article>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- TIMELINE DE PROCESSO -->
-      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
-        <div class="container grid-12">
-          <div style="grid-column: 1 / 5;">
-            <p class="section-label">Como a Onra Trabalha</p>
-          </div>
-          <div style="grid-column: 5 / 11;">
-            <div class="timeline-processo">
-              <div class="timeline-item">
-                <h3>Compreender</h3>
-                <p>Conhecer realidade, objetivos, responsabilidades, projetos e limitações do cliente.</p>
-              </div>
-              <div class="timeline-item">
-                <h3>Estruturar</h3>
-                <p>Organizar prioridades, prazos, riscos, reservas e possibilidades.</p>
-              </div>
-              <div class="timeline-item">
-                <h3>Orientar</h3>
-                <p>Apresentar alternativas coerentes com perfil, objetivos e contexto.</p>
-              </div>
-              <div class="timeline-item" style="padding-bottom: 0;">
-                <h3>Acompanhar</h3>
-                <p>Revisar decisões e ajustar a estratégia conforme a vida evolui.</p>
-              </div>
-            </div>
+      <section class="founder section-paper" id="leo" aria-labelledby="founder-title">
+        <div class="shell founder-grid reveal">
+          <figure>
+            <img src="assets/images/leo-onra.webp" width="1200" height="1600" alt="Leo Campos, fundador da Onra" loading="lazy">
+          </figure>
+          <div class="founder-copy">
+            <p class="section-number">06</p>
+            <h2 id="founder-title">Experiência para orientar. Proximidade para compreender.</h2>
+            <p>Leo Campos é o fundador e especialista responsável pela Onra. Atua há mais de 14 anos no mercado financeiro e reúne experiência profissional, formação técnica e uma visão de planejamento centrada na vida real de cada cliente.</p>
+            <dl class="credentials">
+              <div><dt>CVM</dt><dd>Consultor de Valores Mobiliários · Registro nº 13.564</dd></div>
+              <div><dt>Formação</dt><dd>Administrador · MBA em Finanças</dd></div>
+              <div><dt>Especialização</dt><dd>MBA em Planejamento Financeiro Pessoal e Familiar</dd></div>
+              <div><dt>Atuação</dt><dd>Educador financeiro, palestrante e produtor de conteúdo</dd></div>
+            </dl>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- SELETOR VERTICAL DE SOLUÇÕES -->
-      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
-        <div class="container">
-          <p class="section-label">Soluções por Necessidade</p>
-          <div class="vertical-selector">
-            <div class="selector-nav">
-              <button class="selector-btn active" data-solucao="sol-diagnostico">Preciso entender minha situação</button>
-              <button class="selector-btn" data-solucao="sol-acompanhamento">Preciso mudar com acompanhamento</button>
-              <button class="selector-btn" data-solucao="sol-projeto">Tenho um projeto importante</button>
-              <button class="selector-btn" data-solucao="sol-investimentos" style="border-bottom: none;">Já possuo patrimônio investido</button>
-            </div>
-            
-            <div id="sol-diagnostico" class="selector-content active">
-              <h3>Diagnóstico Financeiro</h3>
-              <p>Análise ampla para identificar desequilíbrios, riscos, prioridades e oportunidades de melhoria estrutural.</p>
-            </div>
-            <div id="sol-acompanhamento" class="selector-content">
-              <h3>Acompanhamento Financeiro</h3>
-              <p>Orientação contínua para implementar, revisar e evoluir o planejamento estratégico estabelecido.</p>
-            </div>
-            <div id="sol-projeto" class="selector-content">
-              <h3>Planejamento de Projetos de Vida</h3>
-              <p>Estruturação financeira de objetivos concretos e prazos (aposentadoria, intercâmbio, sucessão).</p>
-            </div>
-            <div id="sol-investimentos" class="selector-content">
-              <h3>Consultoria de Investimentos</h3>
-              <p>Avaliação e recomendação de alternativas de investimento compatíveis com o perfil de risco, os objetivos, os prazos e a realidade patrimonial do cliente.</p>
-            </div>
+      <section class="start section-light" aria-labelledby="start-title">
+        <div class="shell split-heading reveal">
+          <div>
+            <p class="section-number">07</p>
+            <h2 id="start-title">Como começa.</h2>
           </div>
+          <p>A primeira conversa existe para entender o momento e verificar se a Onra é a orientação adequada.</p>
         </div>
-      </div>
+        <ol class="shell start-steps reveal" data-delay="80">
+          <li><span>01</span><p>Você apresenta brevemente sua necessidade.</p></li>
+          <li><span>02</span><p>A Onra analisa o contexto informado.</p></li>
+          <li><span>03</span><p>Realizamos uma conversa inicial de avaliação.</p></li>
+          <li><span>04</span><p>O serviço adequado é apresentado, quando houver compatibilidade.</p></li>
+        </ol>
+      </section>
 
-      <!-- PROVAS DE AUTORIDADE -->
-      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
-        <div class="container">
-          <p class="section-label">Leo Campos e Autoridade</p>
-          <div class="portfolio-grid">
-            <img src="assets/images/nova_foto_leo.jpg" class="portfolio-img" alt="Registro de evento corporativo">
-            <img src="assets/images/nova_foto_leo.jpg" class="portfolio-img" alt="Participação na TV">
-          </div>
-          <div class="quote-editorial">
-            <blockquote>"A organização do patrimônio finalmente deixou de ser estressante para se tornar clara e estratégica."</blockquote>
-            <cite>— Cliente Confidencial de Consultoria</cite>
-          </div>
+      <section class="journey-cta consulting-cta">
+        <div class="shell reveal">
+          <p class="eyebrow">CONVERSA PRIVADA</p>
+          <h2>Algumas decisões merecem tempo, contexto e atenção individual.</h2>
+          <button class="cta-arrow" type="button" data-open-contact="consulting">Solicitar conversa de avaliação <span>↗</span></button>
+          <p class="regulatory-note">A consultoria oferece orientação profissional e individualizada. A decisão e a implementação permanecem sob responsabilidade do cliente.</p>
         </div>
-      </div>
+      </section>
 
-      <div class="section" style="padding-top: 60px; padding-bottom: 120px;" id="form-consultoria">
-        <div class="container grid-12">
-          <div style="grid-column: 1 / 7;">
-            <p class="section-label">Agendar Avaliação</p>
-            <form id="consultoria-form">
-              <input type="text" class="form-input" placeholder="Principal necessidade *" required>
-              <input type="text" class="form-input" placeholder="Momento de vida *" required>
-              <input type="text" class="form-input" placeholder="Prazo para começar *" required>
-              <button type="submit" class="btn-primary">Qualificar interesse &rarr;</button>
-            </form>
+      <footer class="site-footer footer-dark">
+        <div class="shell footer-grid">
+          <button class="footer-brand" type="button" data-route="home">ONRA</button>
+          <p>Consultoria de valores mobiliários autorizada pela CVM.</p>
+          <div>
+            <button type="button" data-route="education">Conhecer Educação</button>
+            <button type="button" data-open-legal="privacy">Privacidade</button>
           </div>
-          <div style="grid-column: 8 / 13;">
-            <p style="color: var(--text-muted); font-size: 0.9rem; font-family: var(--font-base); border-top: 1px solid rgba(255,255,255,0.2); padding-top: 24px;">
-              Avaliação e recomendação de alternativas de investimento compatíveis com o perfil de risco, os objetivos, os prazos e a realidade patrimonial do cliente.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <footer class="site-footer">
-        <div class="container">
-          <p>Onra - Vida Financeira &copy; 2026. <a href="#">Aviso Regulatório</a> &middot; <a href="#">Privacidade</a></p>
-          <p style="margin-top: 8px; opacity: 0.5;">Consultoria de valores mobiliários autorizada pela CVM | Profissional certificado pela ANBIMA</p>
         </div>
       </footer>
     </section>
-
   </main>
 
-  <script type="module" src="js/main.js"></script>
+  <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-title">
+    <div class="dialog-shell">
+      <button class="dialog-close" type="button" aria-label="Fechar formulário">×</button>
+      <div class="dialog-intro">
+        <p class="eyebrow" id="contact-kicker">CONTATO</p>
+        <h2 id="contact-title">Vamos entender seu momento.</h2>
+        <p id="contact-description">Preencha as informações essenciais. A mensagem será preparada para o canal de contato configurado.</p>
+      </div>
+      <form id="contact-form" novalidate>
+        <input type="hidden" name="interest" id="contact-interest" value="Contato geral">
+        <div class="field-grid">
+          <label><span>Nome</span><input name="name" autocomplete="name" required></label>
+          <label><span>E-mail</span><input name="email" type="email" autocomplete="email" required></label>
+        </div>
+        <label><span>Telefone</span><input name="phone" type="tel" autocomplete="tel"></label>
+        <label><span>Como a Onra pode ajudar?</span><textarea name="message" rows="4" required></textarea></label>
+        <label class="consent"><input type="checkbox" name="consent" required><span>Autorizo o contato da Onra para responder a esta solicitação.</span></label>
+        <button class="submit-button" type="submit">Preparar mensagem <span>↗</span></button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </dialog>
+
+  <dialog class="legal-dialog" id="legal-dialog" aria-labelledby="legal-title">
+    <div class="dialog-shell legal-copy">
+      <button class="dialog-close" type="button" aria-label="Fechar aviso">×</button>
+      <p class="eyebrow">INFORMAÇÕES LEGAIS</p>
+      <h2 id="legal-title">Privacidade e uso de dados</h2>
+      <p>Esta versão demonstrativa não envia dados para servidores. Antes da publicação definitiva, o responsável técnico deverá inserir a política de privacidade, os dados da pessoa jurídica, os canais oficiais e a ferramenta de consentimento aplicável.</p>
+      <p>Os formulários deste protótipo apenas preparam uma mensagem no dispositivo do visitante, conforme configuração em <code>js/config.js</code>.</p>
+    </div>
+  </dialog>
+
+  <noscript>
+    <div class="noscript-message">Ative o JavaScript para navegar entre as áreas de Educação e Consultoria.</div>
+  </noscript>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>

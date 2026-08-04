@@ -1,0 +1,9 @@
+ONRA — ARQUIVOS REFEITOS DO ZERO
+
+1. Abra index.html para visualizar o protótipo.
+2. Configure WhatsApp, e-mail e domínio em js/config.js.
+3. Para publicar, envie todo o conteúdo desta pasta para a raiz da branch usada pelo GitHub Pages.
+4. Consulte README.md e docs/GUIA_IMPLEMENTACAO.md antes de alterar a estrutura.
+5. As imagens de referência estão em docs/previews/.
+
+A entrega demonstra a lógica: HOME MINIMALISTA -> EDUCAÇÃO OU CONSULTORIA -> CONTEÚDO DETALHADO SEM RECARREGAR A PÁGINA.
