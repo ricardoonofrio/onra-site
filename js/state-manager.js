@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ONRA - Gerenciador de Estado Dinâmico & Rotas (SPA sem reload)
+   ONRA - Gerenciador de Estado Dinâmico & Transição de Ambiente (SPA)
    ========================================================================== */
 
 (function () {
@@ -11,52 +11,49 @@
     EDUCACAO: 'educacao'
   };
 
-  // Elementos do DOM
   const neutralView = document.getElementById('estado-neutro');
   const consultoriaView = document.getElementById('jornada-consultoria');
   const educacaoView = document.getElementById('jornada-educacao');
-  const switcherBar = document.getElementById('journey-switcher-bar');
-  const btnSwitchConsultoria = document.getElementById('switch-btn-consultoria');
-  const btnSwitchEducacao = document.getElementById('switch-btn-educacao');
+  const envToggle = document.getElementById('header-environment-toggle');
+  const envConsultoriaBtn = document.getElementById('env-btn-consultoria');
+  const envEducacaoBtn = document.getElementById('env-btn-educacao');
 
   /**
-   * Altera o estado visual da página
+   * Transiciona a página para o estado/ambiente selecionado
    * @param {string} state - 'neutral' | 'consultoria' | 'educacao'
-   * @param {boolean} updateHistory - Se deve atualizar a URL via pushState
+   * @param {boolean} updateHistory - Se atualiza a URL sem recarregar
    */
   function setPageState(state, updateHistory = true) {
-    // Sanitize
     if (![STATES.NEUTRAL, STATES.CONSULTORIA, STATES.EDUCACAO].includes(state)) {
       state = STATES.NEUTRAL;
     }
 
-    // 1. Ocultar todas as visões
+    // 1. Reset de visibilidade
     if (neutralView) neutralView.style.display = 'none';
     if (consultoriaView) consultoriaView.classList.remove('active');
     if (educacaoView) educacaoView.classList.remove('active');
 
-    // Reset botões do seletor
-    if (btnSwitchConsultoria) btnSwitchConsultoria.classList.remove('active');
-    if (btnSwitchEducacao) btnSwitchEducacao.classList.remove('active');
+    if (envConsultoriaBtn) envConsultoriaBtn.classList.remove('active');
+    if (envEducacaoBtn) envEducacaoBtn.classList.remove('active');
 
-    // 2. Exibir estado selecionado
+    // 2. Aplicar estado ativo
     if (state === STATES.NEUTRAL) {
       if (neutralView) neutralView.style.display = 'block';
-      if (switcherBar) switcherBar.classList.remove('visible');
+      if (envToggle) envToggle.classList.remove('visible');
+      document.title = "Onra | Educação Financeira e Consultoria";
     } else if (state === STATES.CONSULTORIA) {
       if (consultoriaView) consultoriaView.classList.add('active');
-      if (switcherBar) switcherBar.classList.add('visible');
-      if (btnSwitchConsultoria) btnSwitchConsultoria.classList.add('active');
+      if (envToggle) envToggle.classList.add('visible');
+      if (envConsultoriaBtn) envConsultoriaBtn.classList.add('active');
+      document.title = "Consultoria Financeira e de Investimentos | Onra";
     } else if (state === STATES.EDUCACAO) {
       if (educacaoView) educacaoView.classList.add('active');
-      if (switcherBar) switcherBar.classList.add('visible');
-      if (btnSwitchEducacao) btnSwitchEducacao.classList.add('active');
+      if (envToggle) envToggle.classList.add('visible');
+      if (envEducacaoBtn) envEducacaoBtn.classList.add('active');
+      document.title = "Palestras, Workshops e Educação Financeira | Onra";
     }
 
-    // 3. Persistência em SessionStorage
-    sessionStorage.setItem('onra_last_state', state);
-
-    // 4. Atualizar a URL sem recarregar a página
+    // 3. Atualizar URL e Histórico
     if (updateHistory) {
       const url = new URL(window.location);
       if (state === STATES.NEUTRAL) {
@@ -68,69 +65,50 @@
     }
   }
 
-  /**
-   * Rola a tela suavemente para o início do conteúdo dinâmico ao alternar área
-   */
-  function scrollToContent() {
-    const target = document.getElementById('app-content-root') || document.body;
-    const headerHeight = 80;
-    const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = elementPosition - headerHeight;
-
-    window.scrollTo({
-      top: offsetPosition > 0 ? offsetPosition : 0,
-      behavior: 'smooth'
-    });
+  function scrollToJourneyStart() {
+    const root = document.getElementById('app-content-root') || document.body;
+    const headerHeight = 84;
+    const pos = root.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+    window.scrollTo({ top: pos > 0 ? pos : 0, behavior: 'smooth' });
   }
 
-  /**
-   * Detecta o estado inicial pela URL ou SessionStorage
-   */
   function getInitialState() {
     const urlParams = new URLSearchParams(window.location.search);
     const areaParam = urlParams.get('area');
-
     if (areaParam && [STATES.CONSULTORIA, STATES.EDUCACAO].includes(areaParam)) {
       return areaParam;
     }
-
-    // Suporte a hash como fallback
     const hash = window.location.hash.replace('#', '');
     if ([STATES.CONSULTORIA, STATES.EDUCACAO].includes(hash)) {
       return hash;
     }
-
     return STATES.NEUTRAL;
   }
 
-  // Event Listeners para botões e gatilhos
   document.addEventListener('DOMContentLoaded', () => {
-    // 1. Definir estado inicial
     const initialState = getInitialState();
     setPageState(initialState, false);
 
-    // 2. Escutar cliques nos cards da porta de entrada
-    document.querySelectorAll('[data-trigger-journey]').forEach(trigger => {
-      trigger.addEventListener('click', (e) => {
+    document.querySelectorAll('[data-trigger-journey]').forEach(el => {
+      el.addEventListener('click', (e) => {
         e.preventDefault();
-        const targetJourney = trigger.getAttribute('data-trigger-journey');
-        setPageState(targetJourney, true);
-        scrollToContent();
+        const target = el.getAttribute('data-trigger-journey');
+        setPageState(target, true);
+        scrollToJourneyStart();
       });
     });
 
-    // 3. Escutar cliques no seletor do cabeçalho
-    if (btnSwitchConsultoria) {
-      btnSwitchConsultoria.addEventListener('click', () => {
+    if (envConsultoriaBtn) {
+      envConsultoriaBtn.addEventListener('click', () => {
         setPageState(STATES.CONSULTORIA, true);
-        scrollToContent();
+        scrollToJourneyStart();
       });
     }
 
-    if (btnSwitchEducacao) {
-      btnSwitchEducacao.addEventListener('click', () => {
+    if (envEducacaoBtn) {
+      envEducacaoBtn.addEventListener('click', () => {
         setPageState(STATES.EDUCACAO, true);
-        scrollToContent();
+        scrollToJourneyStart();
       });
     }
 
@@ -142,20 +120,14 @@
       });
     });
 
-    // 4. Suporte ao botão voltar/avançar do navegador (popstate)
-    window.addEventListener('popstate', (event) => {
-      if (event.state && event.state.state) {
-        setPageState(event.state.state, false);
+    window.addEventListener('popstate', (e) => {
+      if (e.state && e.state.state) {
+        setPageState(e.state.state, false);
       } else {
-        const stateFromUrl = getInitialState();
-        setPageState(stateFromUrl, false);
+        setPageState(getInitialState(), false);
       }
     });
   });
 
-  // Exportar globalmente se necessário
-  window.ONRAState = {
-    setPageState,
-    STATES
-  };
+  window.ONRAState = { setPageState, STATES };
 })();

@@ -1,11 +1,21 @@
 /* ==========================================================================
-   ONRA - Lógica de Interação, Acessibilidade ARIA e WhatsApp Contextual
+   ONRA - Interatividade, Seletor Editorial de Soluções e Acessibilidade
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  /* ── 1. MENU MOBILE ─────────────────────────────────────────────────── */
+  /* ── 1. CABEÇALHO TRANSPARENTE NA ROLAGEM ───────────────────────────── */
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }, { passive: true });
+
+  /* ── 2. MENU MOBILE TELA CHEIA ───────────────────────────────────────── */
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
 
@@ -13,20 +23,36 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.addEventListener('click', () => {
       const isOpen = navLinks.classList.toggle('open');
       menuToggle.setAttribute('aria-expanded', isOpen);
-      menuToggle.classList.toggle('active', isOpen);
     });
 
-    // Fechar menu ao clicar num link
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
         menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.classList.remove('active');
       });
     });
   }
 
-  /* ── 2. ACORDEÃO DE FAQ COM ACESSIBILIDADE WCAG (ARIA) ───────────────── */
+  /* ── 3. SELETOR EDITORIAL INTERATIVO DE SOLUÇÕES (SEÇÃO 10.5) ───────── */
+  const solutionBtns = document.querySelectorAll('.solucao-menu-btn');
+  const solutionPanels = document.querySelectorAll('.solucao-panel');
+
+  solutionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target-panel');
+
+      solutionBtns.forEach(b => b.classList.remove('active'));
+      solutionPanels.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      const activePanel = document.getElementById(targetId);
+      if (activePanel) {
+        activePanel.classList.add('active');
+      }
+    });
+  });
+
+  /* ── 4. ACORDEÃO DE FAQ COM ACESSIBILIDADE WCAG ─────────────────────── */
   const faqButtons = document.querySelectorAll('.faq-btn');
 
   faqButtons.forEach((btn, index) => {
@@ -34,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const answer = btn.nextElementSibling;
     const answerId = `faq-answer-${index + 1}`;
 
-    // Atributos de acessibilidade
     btn.setAttribute('id', `faq-btn-${index + 1}`);
     btn.setAttribute('aria-controls', answerId);
     btn.setAttribute('aria-expanded', 'false');
@@ -48,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
 
-      // Fechar todos os outros itens do FAQ
       document.querySelectorAll('.faq-item').forEach(otherItem => {
         if (otherItem !== item) {
           otherItem.classList.remove('open');
@@ -59,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Alternar item atual
       if (isOpen) {
         item.classList.remove('open');
         btn.setAttribute('aria-expanded', 'false');
@@ -70,18 +93,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
       }
     });
-
-    // Suporte a teclado (Enter e Espaço já funcionam nativamente em <button>)
   });
 
-  /* ── 3. GERADOR DE LINK CONTEXTUAL DE WHATSAPP ────────────────────── */
-  const PHONE_NUMBER = '5527988055172'; // Número oficial Onra
+  /* ── 5. GERADOR CONTEXTUAL DE WHATSAPP (SEM FRASES CLICHÊS) ───────────── */
+  const PHONE_NUMBER = '5527988055172';
 
   const MESSAGES = {
-    consultoria_geral: 'Olá, conheci a Onra pelo site e gostaria de conversar sobre meu momento financeiro.',
-    consultoria_investimentos: 'Olá, gostaria de entender como funciona a consultoria de investimentos da Onra.',
-    educacao_institucional: 'Olá, gostaria de solicitar uma proposta de palestra/workshop para minha instituição.',
-    metodo_pleno: 'Olá, gostaria de saber mais e entrar na lista de interesse do Método Pleno.'
+    consultoria_geral: 'Olá, conheci a Onra pelo site e gostaria de agendar uma conversa sobre meu momento financeiro.',
+    consultoria_investimentos: 'Olá, gostaria de entender o funcionamento da consultoria de investimentos da Onra.',
+    educacao_institucional: 'Olá, gostaria de solicitar uma proposta de palestra/workshop para nossa instituição.',
+    metodo_pleno: 'Olá, gostaria de saber mais informações sobre a formação Método Pleno.'
   };
 
   document.querySelectorAll('[data-wapp-context]').forEach(el => {
