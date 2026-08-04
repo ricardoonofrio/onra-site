@@ -1,52 +1,39 @@
 /* ==========================================================================
-   ONRA - Tokens de Design com Tipografia Lato & Proporções Balanceadas
-   Paleta Oficial:
-   - Azul profundo: #172638 (Fundos institucionais escuros, herói, rodapé)
-   - Azul institucional: #375984 (Subtítulos, bordas, elementos secundários)
-   - Azul destaque: #6AACFF (Botões CTA, links ativos, indicadores de foco)
-   - Cinza claro: #EFF0F2 (Fundo de seções claras e respiro visual)
-   - Branco puro: #FFFFFF (Cartões, contrastes e textos claros)
+   ONRA - Tokens de Design & Tipografia Inter
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Cores Principais */
+  /* Paleta Oficial */
   --azul-profundo: #172638;
-  --azul-profundo-rgb: 23, 38, 56;
   --azul-institucional: #375984;
-  --azul-institucional-rgb: 55, 89, 132;
-  --azul-destaque: #6AACFF;
-  --azul-destaque-rgb: 106, 172, 255;
+  --azul-luminoso: #6AACFF;
   --cinza-claro: #EFF0F2;
-  --cinza-claro-rgb: 239, 240, 242;
   --branco: #FFFFFF;
 
-  /* Hierarquia de Texto */
-  --texto-escuro: #172638;
-  --texto-suave: #4C5D70;
-  --texto-claro: #F5F8FA;
-  --texto-mutado: rgba(245, 248, 250, 0.75);
-
-  /* Linhas e Bordas */
-  --borda-clara: rgba(23, 38, 56, 0.12);
-  --borda-escura: rgba(245, 248, 250, 0.12);
-  --borda-destaque: rgba(106, 172, 255, 0.4);
-
-  /* Sombras e Elevação */
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+  /* Aplicação das Cores */
+  --bg-dark: var(--azul-profundo);
+  --bg-light: var(--cinza-claro);
+  --bg-white: var(--branco);
+  
+  --text-dark: var(--azul-profundo);
+  --text-light: var(--branco);
+  --text-muted: #8C9BAB;
 
   /* Dimensões */
-  --container-max: 1240px;
+  --container-max: 1280px;
   --header-height: 80px;
 
-  /* Tipografia Lato */
-  --font-lato: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Tipografia Inter */
+  --font-principal: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Transições */
-  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-smooth: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  /* Transições Suaves */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Grid Setup Base */
+  --grid-gap: 24px;
 }
 
 /* Reset Global */
@@ -57,12 +44,11 @@
 }
 
 html {
-  font-family: var(--font-lato);
+  font-family: var(--font-principal);
   font-size: 16px;
-  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  background-color: var(--cinza-claro);
-  color: var(--texto-escuro);
+  background-color: var(--bg-dark); /* Fundo padrão antes do JS agir */
+  color: var(--text-light);
 }
 
 body {
@@ -94,6 +80,7 @@ img {
   display: block;
 }
 
+/* Utilitário para Leitor de Tela */
 .sr-only {
   position: absolute;
   width: 1px;

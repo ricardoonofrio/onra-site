@@ -1,133 +1,82 @@
 /* ==========================================================================
-   ONRA - Gerenciador de Estado Dinâmico & Transição de Ambiente (SPA)
+   ONRA - Gerenciador de Estados (SPA)
    ========================================================================== */
-
-(function () {
+(function() {
   'use strict';
 
-  const STATES = {
-    NEUTRAL: 'neutral',
-    CONSULTORIA: 'consultoria',
-    EDUCACAO: 'educacao'
+  const viewInicio = document.getElementById('view-inicio');
+  const viewEducacao = document.getElementById('view-educacao');
+  const viewConsultoria = document.getElementById('view-consultoria');
+  const header = document.getElementById('siteHeader');
+  
+  const rotas = {
+    '': { view: viewInicio, bodyClass: 'state-inicio', title: 'Onra | Educação Financeira e Consultoria' },
+    'educacao': { view: viewEducacao, bodyClass: 'state-educacao', title: 'Palestras, Workshops e Educação Financeira | Onra' },
+    'consultoria': { view: viewConsultoria, bodyClass: 'state-consultoria', title: 'Consultoria Financeira e de Investimentos | Onra' }
   };
 
-  const neutralView = document.getElementById('estado-neutro');
-  const consultoriaView = document.getElementById('jornada-consultoria');
-  const educacaoView = document.getElementById('jornada-educacao');
-  const envToggle = document.getElementById('header-environment-toggle');
-  const envConsultoriaBtn = document.getElementById('env-btn-consultoria');
-  const envEducacaoBtn = document.getElementById('env-btn-educacao');
+  function updateActiveView(area, push = true) {
+    // Esconder todas
+    viewInicio.classList.remove('active');
+    viewEducacao.classList.remove('active');
+    viewConsultoria.classList.remove('active');
 
-  /**
-   * Transiciona a página para o estado/ambiente selecionado
-   * @param {string} state - 'neutral' | 'consultoria' | 'educacao'
-   * @param {boolean} updateHistory - Se atualiza a URL sem recarregar
-   */
-  function setPageState(state, updateHistory = true) {
-    if (![STATES.NEUTRAL, STATES.CONSULTORIA, STATES.EDUCACAO].includes(state)) {
-      state = STATES.NEUTRAL;
+    // Remover classes do body e header
+    document.body.className = '';
+    header.className = 'site-header';
+
+    const rotaAtual = rotas[area] || rotas[''];
+    
+    // Atualizar UI
+    rotaAtual.view.classList.add('active');
+    document.body.classList.add(rotaAtual.bodyClass);
+    document.title = rotaAtual.title;
+    
+    // Header Style
+    if (area === 'educacao') {
+      header.classList.add('bg-light');
+      document.querySelectorAll('.btn-voltar').forEach(b => b.style.display = 'block');
+    } else if (area === 'consultoria') {
+      header.classList.add('bg-dark');
+      document.querySelectorAll('.btn-voltar').forEach(b => b.style.display = 'block');
+    } else {
+      header.classList.add('bg-dark');
+      document.querySelectorAll('.btn-voltar').forEach(b => b.style.display = 'none');
     }
 
-    // 1. Reset de visibilidade
-    if (neutralView) neutralView.style.display = 'none';
-    if (consultoriaView) consultoriaView.classList.remove('active');
-    if (educacaoView) educacaoView.classList.remove('active');
+    // Scroll to top on transition
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    if (envConsultoriaBtn) envConsultoriaBtn.classList.remove('active');
-    if (envEducacaoBtn) envEducacaoBtn.classList.remove('active');
-
-    // 2. Aplicar estado ativo
-    if (state === STATES.NEUTRAL) {
-      if (neutralView) neutralView.style.display = 'block';
-      if (envToggle) envToggle.classList.remove('visible');
-      document.title = "Onra | Educação Financeira e Consultoria";
-    } else if (state === STATES.CONSULTORIA) {
-      if (consultoriaView) consultoriaView.classList.add('active');
-      if (envToggle) envToggle.classList.add('visible');
-      if (envConsultoriaBtn) envConsultoriaBtn.classList.add('active');
-      document.title = "Consultoria Financeira e de Investimentos | Onra";
-    } else if (state === STATES.EDUCACAO) {
-      if (educacaoView) educacaoView.classList.add('active');
-      if (envToggle) envToggle.classList.add('visible');
-      if (envEducacaoBtn) envEducacaoBtn.classList.add('active');
-      document.title = "Palestras, Workshops e Educação Financeira | Onra";
-    }
-
-    // 3. Atualizar URL e Histórico
-    if (updateHistory) {
-      const url = new URL(window.location);
-      if (state === STATES.NEUTRAL) {
-        url.searchParams.delete('area');
-      } else {
-        url.searchParams.set('area', state);
-      }
-      window.history.pushState({ state: state }, '', url);
+    // History API
+    if (push) {
+      const newUrl = area ? `/?area=${area}` : '/';
+      window.history.pushState({ area: area }, '', newUrl);
     }
   }
 
-  function scrollToJourneyStart() {
-    const root = document.getElementById('app-content-root') || document.body;
-    const headerHeight = 84;
-    const pos = root.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-    window.scrollTo({ top: pos > 0 ? pos : 0, behavior: 'smooth' });
+  function handleNavigation(e) {
+    const trigger = e.target.closest('[data-area]');
+    if (trigger) {
+      e.preventDefault();
+      const area = trigger.getAttribute('data-area');
+      updateActiveView(area);
+    }
   }
 
-  function getInitialState() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const areaParam = urlParams.get('area');
-    if (areaParam && [STATES.CONSULTORIA, STATES.EDUCACAO].includes(areaParam)) {
-      return areaParam;
-    }
-    const hash = window.location.hash.replace('#', '');
-    if ([STATES.CONSULTORIA, STATES.EDUCACAO].includes(hash)) {
-      return hash;
-    }
-    return STATES.NEUTRAL;
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const initialState = getInitialState();
-    setPageState(initialState, false);
-
-    document.querySelectorAll('[data-trigger-journey]').forEach(el => {
-      el.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = el.getAttribute('data-trigger-journey');
-        setPageState(target, true);
-        scrollToJourneyStart();
-      });
-    });
-
-    if (envConsultoriaBtn) {
-      envConsultoriaBtn.addEventListener('click', () => {
-        setPageState(STATES.CONSULTORIA, true);
-        scrollToJourneyStart();
-      });
-    }
-
-    if (envEducacaoBtn) {
-      envEducacaoBtn.addEventListener('click', () => {
-        setPageState(STATES.EDUCACAO, true);
-        scrollToJourneyStart();
-      });
-    }
-
-    document.querySelectorAll('[data-reset-home]').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        setPageState(STATES.NEUTRAL, true);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
-
+  // Init
+  function init() {
+    document.addEventListener('click', handleNavigation);
     window.addEventListener('popstate', (e) => {
-      if (e.state && e.state.state) {
-        setPageState(e.state.state, false);
-      } else {
-        setPageState(getInitialState(), false);
-      }
+      const area = e.state ? e.state.area : '';
+      updateActiveView(area, false);
     });
-  });
 
-  window.ONRAState = { setPageState, STATES };
+    // Check initial URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialArea = urlParams.get('area') || '';
+    updateActiveView(initialArea, false);
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+
 })();
