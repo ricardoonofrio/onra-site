@@ -3,6 +3,10 @@
 .grid-12 { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--grid-gap); }
 .section { padding: 120px 0; position: relative; }
 .site-header { position: fixed; top: 0; left: 0; right: 0; height: 80px; display: flex; align-items: center; z-index: 1000; transition: background-color var(--transition-normal); }
+.nav { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.nav-links { display: flex; gap: 32px; }
+.brand { font-family: var(--font-base); font-weight: 600; font-size: 1.25rem; letter-spacing: 0.1em; color: var(--branco); }
+body.state-educacao .brand, body.state-educacao .nav-links a { color: var(--azul-profundo); }
 .site-footer { padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; text-align: center; opacity: 0.7; }
 .view-container { opacity: 0; pointer-events: none; position: absolute; top: 0; left: 0; width: 100%; transition: opacity var(--transition-slow); visibility: hidden; }
 .view-container.active { opacity: 1; pointer-events: auto; position: relative; visibility: visible; }
