@@ -38,7 +38,9 @@
   </header>
 
   <main>
-    <!-- 1. ESTADO INICIAL -->
+    <!-- ==========================================
+         1. ESTADO INICIAL
+         ========================================== -->
     <section id="view-inicio" class="view-container active" aria-label="Escolha sua jornada">
       
       <div class="container hero-minimalista">
@@ -81,11 +83,14 @@
       <footer class="site-footer">
         <div class="container">
           <p>Onra - Vida Financeira &copy; 2026. <a href="#">Aviso Regulatório</a> &middot; <a href="#">Privacidade</a></p>
+          <p style="margin-top: 8px; opacity: 0.5;">Consultoria de valores mobiliários autorizada pela CVM | Profissional certificado pela ANBIMA</p>
         </div>
       </footer>
     </section>
 
-    <!-- 2. ESTADO EDUCAÇÃO -->
+    <!-- ==========================================
+         2. ESTADO EDUCAÇÃO
+         ========================================== -->
     <section id="view-educacao" class="view-container" aria-label="Jornada de Educação Financeira">
       <div class="section" style="padding-top: 160px; padding-bottom: 60px;">
         <div class="container grid-12">
@@ -106,15 +111,58 @@
         </div>
       </div>
 
+      <!-- SELETOR INTERNO DE PÚBLICOS (TABS) -->
       <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
-        <div class="container grid-12">
-          <div style="grid-column: 1 / 6;">
-            <h3 style="font-size: 1.5rem; font-family: var(--font-base); font-weight: 500; margin-bottom: 24px; color: var(--azul-profundo);">Para Instituições</h3>
-            <p style="font-size: 1.1rem; color: var(--text-muted); font-family: var(--font-base);">Empresas, institutos, servidores, associações, igrejas e organizações. A comunicação deve falar com quem contrata: gestores, diretores, RH e lideranças.</p>
+        <div class="container">
+          <div class="tabs-container">
+            <button class="tab-btn active" data-tab="tab-instituicoes">Para Instituições</button>
+            <button class="tab-btn" data-tab="tab-pessoas">Para Pessoas</button>
           </div>
-          <div style="grid-column: 7 / 12;">
-            <h3 style="font-size: 1.5rem; font-family: var(--font-base); font-weight: 500; margin-bottom: 24px; color: var(--azul-profundo);">Para Pessoas</h3>
-            <p style="font-size: 1.1rem; color: var(--text-muted); font-family: var(--font-base);">Famílias, casais, profissionais e pessoas que desejam organizar a vida financeira, aprender com profundidade e conhecer o Método Pleno.</p>
+          
+          <div id="tab-instituicoes" class="tab-content active">
+            <p>Palestras, workshops e programas para empresas, institutos, servidores, associações, igrejas e organizações. A comunicação deve falar com quem contrata: gestores, diretores, RH e lideranças.</p>
+          </div>
+          <div id="tab-pessoas" class="tab-content">
+            <p>Conteúdos, cursos, Método Pleno e materiais educacionais. Direcionado a famílias, casais, profissionais e pessoas que desejam organizar a vida financeira e aprender com profundidade.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMATOS (FAIXAS AMPLAS) -->
+      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
+        <div class="container">
+          <p class="section-label">Formatos Educacionais</p>
+          
+          <div class="faixa-formato">
+            <h3>Palestras</h3>
+            <p>Encontros objetivos e envolventes, adaptados ao perfil do público e ao objetivo da instituição.</p>
+          </div>
+          <div class="faixa-formato">
+            <h3>Workshops</h3>
+            <p>Experiências práticas, com atividades, ferramentas e aplicação direta dos conceitos.</p>
+          </div>
+          <div class="faixa-formato">
+            <h3>Programas Continuados</h3>
+            <p>Jornadas compostas por encontros, materiais e ações de acompanhamento de longo prazo.</p>
+          </div>
+          <div class="faixa-formato" style="border-bottom: 1px solid rgba(0,0,0,0.1);">
+            <h3>Método Pleno</h3>
+            <p>Programa imersivo para pessoas que desejam compreender sua realidade, organizar prioridades e desenvolver autonomia financeira definitiva.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROVAS EDITORIAIS E PORTFÓLIO -->
+      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
+        <div class="container">
+          <p class="section-label">Experiência em Movimento</p>
+          <div class="portfolio-grid">
+            <img src="assets/images/nova_foto_leo.jpg" class="portfolio-img" alt="Registro de evento">
+            <img src="assets/images/nova_foto_leo.jpg" class="portfolio-img" alt="Registro de palestra">
+          </div>
+          <div class="quote-editorial">
+            <blockquote>"A abordagem da Onra transformou a maneira como nossa equipe enxerga o planejamento financeiro."</blockquote>
+            <cite>— Gestor de RH, Instituição Parceira</cite>
           </div>
         </div>
       </div>
@@ -133,9 +181,18 @@
           </div>
         </div>
       </div>
+
+      <footer class="site-footer" style="border-color: rgba(0,0,0,0.1); color: var(--azul-profundo);">
+        <div class="container">
+          <p>Onra - Vida Financeira &copy; 2026.</p>
+          <p style="margin-top: 8px; opacity: 0.5;">Consultoria de valores mobiliários autorizada pela CVM | Profissional certificado pela ANBIMA</p>
+        </div>
+      </footer>
     </section>
 
-    <!-- 3. ESTADO CONSULTORIA -->
+    <!-- ==========================================
+         3. ESTADO CONSULTORIA
+         ========================================== -->
     <section id="view-consultoria" class="view-container" aria-label="Jornada de Consultoria Financeira">
       <div class="section" style="padding-top: 160px; padding-bottom: 60px;">
         <div class="container grid-12">
@@ -171,6 +228,82 @@
         </div>
       </div>
 
+      <!-- TIMELINE DE PROCESSO -->
+      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
+        <div class="container grid-12">
+          <div style="grid-column: 1 / 5;">
+            <p class="section-label">Como a Onra Trabalha</p>
+          </div>
+          <div style="grid-column: 5 / 11;">
+            <div class="timeline-processo">
+              <div class="timeline-item">
+                <h3>Compreender</h3>
+                <p>Conhecer realidade, objetivos, responsabilidades, projetos e limitações do cliente.</p>
+              </div>
+              <div class="timeline-item">
+                <h3>Estruturar</h3>
+                <p>Organizar prioridades, prazos, riscos, reservas e possibilidades.</p>
+              </div>
+              <div class="timeline-item">
+                <h3>Orientar</h3>
+                <p>Apresentar alternativas coerentes com perfil, objetivos e contexto.</p>
+              </div>
+              <div class="timeline-item" style="padding-bottom: 0;">
+                <h3>Acompanhar</h3>
+                <p>Revisar decisões e ajustar a estratégia conforme a vida evolui.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SELETOR VERTICAL DE SOLUÇÕES -->
+      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
+        <div class="container">
+          <p class="section-label">Soluções por Necessidade</p>
+          <div class="vertical-selector">
+            <div class="selector-nav">
+              <button class="selector-btn active" data-solucao="sol-diagnostico">Preciso entender minha situação</button>
+              <button class="selector-btn" data-solucao="sol-acompanhamento">Preciso mudar com acompanhamento</button>
+              <button class="selector-btn" data-solucao="sol-projeto">Tenho um projeto importante</button>
+              <button class="selector-btn" data-solucao="sol-investimentos" style="border-bottom: none;">Já possuo patrimônio investido</button>
+            </div>
+            
+            <div id="sol-diagnostico" class="selector-content active">
+              <h3>Diagnóstico Financeiro</h3>
+              <p>Análise ampla para identificar desequilíbrios, riscos, prioridades e oportunidades de melhoria estrutural.</p>
+            </div>
+            <div id="sol-acompanhamento" class="selector-content">
+              <h3>Acompanhamento Financeiro</h3>
+              <p>Orientação contínua para implementar, revisar e evoluir o planejamento estratégico estabelecido.</p>
+            </div>
+            <div id="sol-projeto" class="selector-content">
+              <h3>Planejamento de Projetos de Vida</h3>
+              <p>Estruturação financeira de objetivos concretos e prazos (aposentadoria, intercâmbio, sucessão).</p>
+            </div>
+            <div id="sol-investimentos" class="selector-content">
+              <h3>Consultoria de Investimentos</h3>
+              <p>Avaliação e recomendação de alternativas de investimento compatíveis com o perfil de risco, os objetivos, os prazos e a realidade patrimonial do cliente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROVAS DE AUTORIDADE -->
+      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
+        <div class="container">
+          <p class="section-label">Leo Campos e Autoridade</p>
+          <div class="portfolio-grid">
+            <img src="assets/images/nova_foto_leo.jpg" class="portfolio-img" alt="Registro de evento corporativo">
+            <img src="assets/images/nova_foto_leo.jpg" class="portfolio-img" alt="Participação na TV">
+          </div>
+          <div class="quote-editorial">
+            <blockquote>"A organização do patrimônio finalmente deixou de ser estressante para se tornar clara e estratégica."</blockquote>
+            <cite>— Cliente Confidencial de Consultoria</cite>
+          </div>
+        </div>
+      </div>
+
       <div class="section" style="padding-top: 60px; padding-bottom: 120px;" id="form-consultoria">
         <div class="container grid-12">
           <div style="grid-column: 1 / 7;">
@@ -183,10 +316,19 @@
             </form>
           </div>
           <div style="grid-column: 8 / 13;">
-            <p style="color: var(--text-muted); font-size: 0.9rem; font-family: var(--font-base); border-top: 1px solid rgba(255,255,255,0.2); padding-top: 24px;">Avaliação e recomendação de alternativas de investimento compatíveis com o perfil de risco, os objetivos, os prazos e a realidade patrimonial do cliente.</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem; font-family: var(--font-base); border-top: 1px solid rgba(255,255,255,0.2); padding-top: 24px;">
+              Avaliação e recomendação de alternativas de investimento compatíveis com o perfil de risco, os objetivos, os prazos e a realidade patrimonial do cliente.
+            </p>
           </div>
         </div>
       </div>
+
+      <footer class="site-footer">
+        <div class="container">
+          <p>Onra - Vida Financeira &copy; 2026. <a href="#">Aviso Regulatório</a> &middot; <a href="#">Privacidade</a></p>
+          <p style="margin-top: 8px; opacity: 0.5;">Consultoria de valores mobiliários autorizada pela CVM | Profissional certificado pela ANBIMA</p>
+        </div>
+      </footer>
     </section>
 
   </main>
