@@ -1,0 +1,7 @@
+/* css/states.css */
+body.state-inicio { background-color: var(--azul-profundo); color: var(--branco); }
+body.state-educacao { background-color: var(--cinza-claro); color: var(--azul-profundo); }
+body.state-consultoria { background-color: var(--azul-profundo); color: var(--branco); }
+.site-header.bg-dark { background: rgba(23, 38, 56, 0.95); backdrop-filter: blur(10px); color: var(--branco); }
+.site-header.bg-light { background: rgba(239, 240, 242, 0.95); backdrop-filter: blur(10px); color: var(--azul-profundo); }
+.site-header.bg-transparent { background: transparent; color: var(--branco); }

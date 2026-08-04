@@ -4,206 +4,193 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Onra | Educação Financeira e Consultoria</title>
-  <meta name="description" content="A Onra transforma conhecimento e orientação financeira em decisões mais conscientes. Educação financeira e Consultoria de Investimentos CVM." />
+  <meta name="description" content="Marca de educação e orientação financeira para pessoas e instituições." />
   <link rel="canonical" href="https://onra.com.br/" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Onra | Vida Financeira" />
   <meta property="og:description" content="Dinheiro bem cuidado sustenta escolhas, projetos e futuros." />
-  <meta property="og:image" content="assets/images/nova_foto_leo.jpg" />
+  <meta property="og:image" content="https://ricardoonofrio.github.io/onra-site/assets/images/nova_foto_leo.jpg" />
+  <meta property="og:image:alt" content="Leo Campos - Consultor Onra" />
   <meta property="og:type" content="website" />
 
-  <!-- CSS -->
+  <!-- Arquitetura CSS Modular -->
   <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/states.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/accessibility.css">
 </head>
-<body>
+<body class="state-inicio">
 
-  <!-- CABEÇALHO -->
-  <header class="site-header bg-dark" id="siteHeader">
-    <div class="container nav">
-      <a href="#" class="brand" data-area="">ONRA</a>
+  <header class="site-header bg-transparent" id="siteHeader">
+    <nav class="container nav" aria-label="Navegação Principal">
+      <a href="#" class="brand" data-area="" aria-label="Página Inicial da Onra">ONRA</a>
       
-      <nav class="nav-links">
-        <a href="#" data-area="">Início</a>
+      <div class="nav-links">
         <a href="#" data-area="educacao">Educação</a>
         <a href="#" data-area="consultoria">Consultoria</a>
-      </nav>
+      </div>
       
-      <button class="btn-voltar" data-area="">✕ Voltar para o início</button>
-    </div>
+      <button class="btn-voltar" data-area="" aria-label="Voltar para a página inicial">✕ Início</button>
+    </nav>
   </header>
 
-  <!-- 1. ESTADO INICIAL -->
-  <div id="view-inicio" class="view-container active">
-    
-    <section class="section hero-minimalista">
-      <div class="container grid-12 hero-grid">
-        <div class="hero-copy-col">
-          <h1>O dinheiro deve sustentar a vida que você deseja construir.</h1>
-          <p>Educação financeira e orientação profissional para pessoas e instituições que desejam tomar decisões com mais clareza, estrutura e visão de futuro.</p>
-          <span class="hero-credencial">Fundada por Leo Campos - mais de 14 anos de experiência no mercado financeiro.</span>
-        </div>
-        <div class="hero-photo-col">
-          <img src="assets/images/nova_foto_leo.jpg" alt="Leo Campos" class="hero-photo-arch">
-        </div>
-      </div>
-    </section>
-
-    <section class="portais-section">
-      <div class="container grid-12">
-        <!-- PORTAL EDUCAÇÃO -->
-        <div class="portal-editorial" style="grid-column: 1 / 7;" data-area="educacao">
-          <div>
-            <h2>Educação</h2>
-            <h3>Conhecimento para transformar a relação com o dinheiro.</h3>
-            <p>Palestras, workshops, programas e conteúdos desenvolvidos para pessoas, empresas e instituições.</p>
+  <main>
+    <!-- 1. ESTADO INICIAL -->
+    <section id="view-inicio" class="view-container active" aria-label="Escolha sua jornada">
+      
+      <div class="container hero-minimalista">
+        <div class="grid-12 hero-grid">
+          <div class="hero-copy-col">
+            <h1 class="hero-title">O dinheiro deve sustentar a vida que você deseja construir.</h1>
+            <p class="hero-text">Educação financeira e orientação profissional para decisões que exigem clareza, estrutura e visão de futuro.</p>
+            <span class="hero-auth">Leo Campos &middot; Consultor de Valores Mobiliários &middot; Mais de 14 anos de experiência.</span>
           </div>
-          <div class="cta-text">Explorar Educação →</div>
-        </div>
-
-        <!-- PORTAL CONSULTORIA -->
-        <div class="portal-editorial" style="grid-column: 7 / 13; border-left: 1px solid rgba(255,255,255,0.15);" data-area="consultoria">
-          <div>
-            <h2>Consultoria</h2>
-            <h3>Estrutura para decisões financeiras mais importantes.</h3>
-            <p>Diagnóstico, planejamento, acompanhamento e consultoria de investimentos conduzidos de forma individualizada.</p>
+          <div class="hero-photo-col">
+            <img src="assets/images/nova_foto_leo.jpg" alt="Fotografia de Leo Campos" class="hero-photo-arch">
           </div>
-          <div class="cta-text">Conhecer a Consultoria →</div>
+        </div>
+      </div>
+
+      <div class="portais-section">
+        <div class="container grid-12">
+          <!-- PORTAL EDUCAÇÃO -->
+          <button class="portal-editorial" style="grid-column: 1 / 7;" data-area="educacao" aria-label="Explorar jornada de Educação Financeira">
+            <div>
+              <h2>Educação</h2>
+              <h3>Conhecimento para transformar a relação com o dinheiro.</h3>
+              <p>Palestras, workshops, programas e conteúdos para pessoas e instituições.</p>
+            </div>
+            <span class="portal-cta">Explorar Educação &rarr;</span>
+          </button>
+
+          <!-- PORTAL CONSULTORIA -->
+          <button class="portal-editorial" style="grid-column: 7 / 13; border-left: 1px solid rgba(255,255,255,0.15);" data-area="consultoria" aria-label="Conhecer a Consultoria de Investimentos">
+            <div>
+              <h2>Consultoria</h2>
+              <h3>Estrutura para decisões financeiras mais importantes.</h3>
+              <p>Diagnóstico, planejamento, acompanhamento e consultoria de investimentos.</p>
+            </div>
+            <span class="portal-cta">Conhecer a Consultoria &rarr;</span>
+          </button>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="container">
+          <p>Onra - Vida Financeira &copy; 2026. <a href="#">Aviso Regulatório</a> &middot; <a href="#">Privacidade</a></p>
+        </div>
+      </footer>
+    </section>
+
+    <!-- 2. ESTADO EDUCAÇÃO -->
+    <section id="view-educacao" class="view-container" aria-label="Jornada de Educação Financeira">
+      <div class="section" style="padding-top: 160px; padding-bottom: 60px;">
+        <div class="container grid-12">
+          <div style="grid-column: 1 / 10;">
+            <p class="section-label">Educação Financeira</p>
+            <h1 class="manifesto-text" style="color: var(--azul-profundo);">Educação financeira que continua fazendo sentido depois do encontro.</h1>
+            <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin-top: 24px; font-family: var(--font-base);">Experiências desenvolvidas para aproximar o conhecimento financeiro da realidade de cada público.</p>
+            <a href="#form-educacao" class="btn-primary" style="margin-top: 48px;">Solicitar uma proposta &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
+        <div class="container grid-12">
+          <div style="grid-column: 1 / 11;" class="bloco-editorial">
+            <p style="font-size: 2rem; font-weight: 300; color: var(--azul-profundo); font-family: var(--font-editorial);">"Educação financeira não começa nos números. Começa na forma como as pessoas compreendem suas escolhas."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
+        <div class="container grid-12">
+          <div style="grid-column: 1 / 6;">
+            <h3 style="font-size: 1.5rem; font-family: var(--font-base); font-weight: 500; margin-bottom: 24px; color: var(--azul-profundo);">Para Instituições</h3>
+            <p style="font-size: 1.1rem; color: var(--text-muted); font-family: var(--font-base);">Empresas, institutos, servidores, associações, igrejas e organizações. A comunicação deve falar com quem contrata: gestores, diretores, RH e lideranças.</p>
+          </div>
+          <div style="grid-column: 7 / 12;">
+            <h3 style="font-size: 1.5rem; font-family: var(--font-base); font-weight: 500; margin-bottom: 24px; color: var(--azul-profundo);">Para Pessoas</h3>
+            <p style="font-size: 1.1rem; color: var(--text-muted); font-family: var(--font-base);">Famílias, casais, profissionais e pessoas que desejam organizar a vida financeira, aprender com profundidade e conhecer o Método Pleno.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" style="padding-top: 60px; padding-bottom: 120px;" id="form-educacao">
+        <div class="container grid-12">
+          <div style="grid-column: 1 / 7;">
+            <p class="section-label">Solicitar Proposta</p>
+            <form id="educacao-form">
+              <input type="text" class="form-input" placeholder="Nome e cargo *" required>
+              <input type="text" class="form-input" placeholder="Instituição *" required>
+              <input type="email" class="form-input" placeholder="E-mail *" required>
+              <input type="text" class="form-input" placeholder="Objetivo principal *" required>
+              <button type="submit" class="btn-primary">Enviar solicitação &rarr;</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Rodapé Enxuto -->
-    <footer class="section" style="padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1);">
-      <div class="container text-center" style="font-size: 0.8rem; color: var(--text-muted);">
-        <p>Onra - Vida Financeira &copy; 2026. Todos os direitos reservados.</p>
-      </div>
-    </footer>
-  </div>
-
-  <!-- 2. ESTADO EDUCAÇÃO -->
-  <div id="view-educacao" class="view-container">
-    <section class="section" style="padding-top: 180px;">
-      <div class="container grid-12">
-        <div style="grid-column: 1 / 10;">
-          <h2 class="section-title">Educação Financeira</h2>
-          <h1 class="manifesto-text" style="color: var(--text-dark);">Educação financeira que continua fazendo sentido depois do encontro.</h1>
-          <p style="font-size: 1.25rem; color: #555; max-width: 600px; margin-top: 24px;">Experiências desenvolvidas para aproximar o conhecimento financeiro da realidade de cada público.</p>
-          <a href="#form-edu" class="btn-primary" style="margin-top: 40px;">Solicitar uma proposta →</a>
+    <!-- 3. ESTADO CONSULTORIA -->
+    <section id="view-consultoria" class="view-container" aria-label="Jornada de Consultoria Financeira">
+      <div class="section" style="padding-top: 160px; padding-bottom: 60px;">
+        <div class="container grid-12">
+          <div style="grid-column: 1 / 10;">
+            <p class="section-label">Consultoria</p>
+            <h1 class="manifesto-text" style="color: var(--branco);">Decisões importantes não deveriam depender do improviso.</h1>
+            <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin-top: 24px; font-family: var(--font-base);">Orientação individualizada para organizar sua realidade financeira, seus projetos e seu patrimônio com mais clareza.</p>
+            <a href="#form-consultoria" class="btn-primary" style="margin-top: 48px;">Solicitar conversa de avaliação &rarr;</a>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="container grid-12">
-        <div style="grid-column: 1 / 11;">
-          <p style="font-size: 2rem; font-weight: 300; color: var(--text-dark); border-left: 4px solid var(--azul-luminoso); padding-left: 32px;">
-            "Educação financeira não começa nos números. Começa na forma como as pessoas compreendem suas escolhas."
-          </p>
+      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
+        <div class="container grid-12">
+          <div style="grid-column: 1 / 11;" class="bloco-editorial">
+            <p style="font-size: 2rem; font-weight: 300; color: var(--branco); font-family: var(--font-editorial);">"Patrimônio não é apenas aquilo que você acumulou. É aquilo que precisa sustentar suas escolhas futuras."</p>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="container grid-12">
-        <div style="grid-column: 1 / 6;">
-          <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 24px;">PARA INSTITUIÇÕES</h3>
-          <p style="font-size: 1.1rem; color: #555;">Empresas, institutos, servidores, associações, igrejas, organizações sociais, escolas e comunidades. A comunicação deve falar com quem contrata: gestores, diretores, RH, lideranças e responsáveis por eventos.</p>
-        </div>
-        <div style="grid-column: 7 / 12;">
-          <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 24px;">PARA PESSOAS</h3>
-          <p style="font-size: 1.1rem; color: #555;">Famílias, casais, profissionais e pessoas que desejam organizar a vida financeira, aprender com profundidade e conhecer o Método Pleno.</p>
+      <div class="section" style="padding-top: 60px; padding-bottom: 60px;">
+        <div class="container grid-12">
+          <div style="grid-column: 1 / 13;">
+            <p class="section-label">Situações Comuns</p>
+            <ul class="lista-situacoes">
+              <li><strong>01</strong> Tenho renda, mas meu patrimônio não avança na mesma proporção.</li>
+              <li><strong>02</strong> Possuo investimentos, mas não enxergo uma estratégia integrada.</li>
+              <li><strong>03</strong> Tenho projetos importantes e ainda não transformei objetivos em plano.</li>
+              <li><strong>04</strong> Estou vivendo uma mudança e preciso reorganizar decisões.</li>
+              <li><strong>05</strong> Não quero mais decidir sozinho com base em recomendações genéricas.</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="container grid-12">
-        <div style="grid-column: 1 / 13;">
-          <h2 class="section-title">Formatos</h2>
-        </div>
-        <div class="formato-row">
-          <h3>Palestras</h3>
-          <p>Encontros objetivos e envolventes, adaptados ao perfil do público e ao objetivo da instituição.</p>
-        </div>
-        <div class="formato-row">
-          <h3>Workshops</h3>
-          <p>Experiências práticas, com atividades, ferramentas e aplicação direta dos conceitos.</p>
-        </div>
-        <div class="formato-row">
-          <h3>Programas continuados</h3>
-          <p>Jornadas compostas por encontros, materiais e ações de acompanhamento.</p>
-        </div>
-        <div class="formato-row" style="border-bottom: 1px solid rgba(23, 38, 56, 0.1);">
-          <h3>Método Pleno</h3>
-          <p>Programa para pessoas que desejam compreender sua realidade, organizar prioridades e desenvolver autonomia financeira.</p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- 3. ESTADO CONSULTORIA -->
-  <div id="view-consultoria" class="view-container">
-    <section class="section" style="padding-top: 180px;">
-      <div class="container grid-12">
-        <div style="grid-column: 1 / 10;">
-          <h2 class="section-title">Consultoria</h2>
-          <h1 class="manifesto-text">Decisões importantes não deveriam depender do improviso.</h1>
-          <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin-top: 24px;">Orientação individualizada para organizar sua realidade financeira, seus projetos e seu patrimônio com mais clareza.</p>
-          <a href="#form-cons" class="btn-primary" style="margin-top: 40px;">Solicitar uma conversa de avaliação →</a>
+      <div class="section" style="padding-top: 60px; padding-bottom: 120px;" id="form-consultoria">
+        <div class="container grid-12">
+          <div style="grid-column: 1 / 7;">
+            <p class="section-label">Agendar Avaliação</p>
+            <form id="consultoria-form">
+              <input type="text" class="form-input" placeholder="Principal necessidade *" required>
+              <input type="text" class="form-input" placeholder="Momento de vida *" required>
+              <input type="text" class="form-input" placeholder="Prazo para começar *" required>
+              <button type="submit" class="btn-primary">Qualificar interesse &rarr;</button>
+            </form>
+          </div>
+          <div style="grid-column: 8 / 13;">
+            <p style="color: var(--text-muted); font-size: 0.9rem; font-family: var(--font-base); border-top: 1px solid rgba(255,255,255,0.2); padding-top: 24px;">Avaliação e recomendação de alternativas de investimento compatíveis com o perfil de risco, os objetivos, os prazos e a realidade patrimonial do cliente.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container grid-12">
-        <div style="grid-column: 1 / 11;">
-          <p style="font-size: 2rem; font-weight: 300; color: var(--text-light); border-left: 4px solid var(--azul-luminoso); padding-left: 32px;">
-            "Patrimônio não é apenas aquilo que você acumulou. É aquilo que precisa sustentar suas escolhas futuras."
-          </p>
-        </div>
-      </div>
-    </section>
+  </main>
 
-    <section class="section">
-      <div class="container grid-12">
-        <div style="grid-column: 1 / 13;">
-          <h2 class="section-title">Situações de Identificação</h2>
-          <div class="situacao-frase"><strong>1.</strong> Tenho renda, mas não consigo transformar meu esforço em patrimônio.</div>
-          <div class="situacao-frase"><strong>2.</strong> Possuo investimentos, mas não sei se eles formam uma estratégia coerente.</div>
-          <div class="situacao-frase"><strong>3.</strong> Tenho projetos importantes, mas ainda não transformei esses objetivos em um plano.</div>
-          <div class="situacao-frase"><strong>4.</strong> Estou vivendo uma mudança e preciso reorganizar decisões financeiras.</div>
-          <div class="situacao-frase" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);"><strong>5.</strong> Quero orientação profissional sem depender apenas de bancos ou recomendações genéricas.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container grid-12">
-        <div style="grid-column: 1 / 13;">
-          <h2 class="section-title">Como a Onra Trabalha</h2>
-        </div>
-        <div style="grid-column: 1 / 4;" class="metodo-col">
-          <h3>Compreender</h3>
-          <p>Conhecer a realidade, os objetivos, as responsabilidades e os projetos do cliente.</p>
-        </div>
-        <div style="grid-column: 4 / 7;" class="metodo-col">
-          <h3>Estruturar</h3>
-          <p>Organizar prioridades, prazos, riscos e possibilidades.</p>
-        </div>
-        <div style="grid-column: 7 / 10;" class="metodo-col">
-          <h3>Orientar</h3>
-          <p>Apresentar alternativas coerentes com o perfil e com os objetivos definidos.</p>
-        </div>
-        <div style="grid-column: 10 / 13;" class="metodo-col">
-          <h3>Acompanhar</h3>
-          <p>Revisar decisões e ajustar a estratégia à medida que a vida evolui.</p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <script src="js/state-manager.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
