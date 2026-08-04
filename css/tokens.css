@@ -1,0 +1,112 @@
+/* ==========================================================================
+   ONRA - Sistema Visual & Tokens de Design
+   Paleta Oficial:
+   - Azul profundo: #172638 (Fundos institucionais, herói, rodapé, títulos)
+   - Azul institucional: #375984 (Links, subtítulos, estados ativos, bordas)
+   - Azul de destaque: #6AACFF (CTA, foco, detalhes, microinterações - usar com disciplina)
+   - Cinza claro: #EFF0F2 (Fundo, respiro, cards claros)
+   - Branco técnico: #FFFFFF
+   ========================================================================== */
+
+:root {
+  /* Cores Principais */
+  --azul-profundo: #172638;
+  --azul-profundo-rgb: 23, 38, 56;
+  --azul-institucional: #375984;
+  --azul-institucional-rgb: 55, 89, 132;
+  --azul-destaque: #6AACFF;
+  --azul-destaque-rgb: 106, 172, 255;
+  --cinza-claro: #EFF0F2;
+  --cinza-claro-rgb: 239, 240, 242;
+  --branco: #FFFFFF;
+  
+  /* Variações de Texto e Transparências */
+  --texto-escuro: #121E2C;
+  --texto-suave: #4A5B6D;
+  --texto-claro: #F4F7FA;
+  --texto-mutado: rgba(244, 247, 250, 0.72);
+  
+  --borda-clara: rgba(23, 38, 56, 0.12);
+  --borda-escura: rgba(244, 247, 250, 0.12);
+  --borda-destaque: rgba(106, 172, 255, 0.35);
+
+  --card-bg-escuro: rgba(255, 255, 255, 0.04);
+  --card-bg-claro: #FFFFFF;
+
+  /* Modadores de Layout */
+  --container-max: 1200px;
+  --content-max: 1040px;
+  --header-height: 80px;
+
+  /* Tipografia */
+  --font-heading: 'Inter Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Sombras & Elevacoes */
+  --shadow-sm: 0 2px 8px rgba(23, 38, 56, 0.06);
+  --shadow-md: 0 12px 32px rgba(23, 38, 56, 0.08);
+  --shadow-lg: 0 20px 48px rgba(23, 38, 56, 0.12);
+
+  /* Transicoes */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Reset Global e Normalizacao */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  background-color: var(--cinza-claro);
+  color: var(--texto-escuro);
+}
+
+body {
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Visivelmente oculto para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
