@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Onra | Educação Financeira e Consultoria</title>
-  <meta name="description" content="Educação financeira e orientação profissional para decisões que exigem clareza, estrutura e visão de futuro. Conheça a Onra." />
+  <title>ONRA • Vida Financeira | Clareza para decidir. Estrutura para avançar.</title>
+  <meta name="description" content="A Onra transforma conhecimento e orientação financeira em decisões mais conscientes para pessoas, famílias e instituições. Descubra nossas jornadas de Educação e Consultoria." />
   <link rel="canonical" href="https://onra.com.br/" />
 
-  <!-- Metatags Open Graph & Redes Sociais -->
-  <meta property="og:title" content="Onra — Autoridade Silenciosa" />
-  <meta property="og:description" content="O dinheiro deve sustentar a vida que você deseja construir. Educação financeira e consultoria privada." />
+  <!-- Metatags Open Graph -->
+  <meta property="og:title" content="ONRA • Vida Financeira" />
+  <meta property="og:description" content="Dinheiro bem cuidado sustenta escolhas, projetos e futuros. Conhecimento que vira prática e estratégia para avançar." />
   <meta property="og:image" content="assets/images/foto_leo_campos.jpeg" />
-  <meta property="og:image:alt" content="Leo Campos — Consultor de Valores Mobiliários e Fundador da Onra" />
   <meta property="og:type" content="website" />
 
-  <!-- Google Fonts (Cormorant Garamond & Inter) -->
+  <!-- Google Fonts (Lato) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
 
   <!-- Estilos da Aplicação -->
   <link rel="stylesheet" href="css/tokens.css">
@@ -28,8 +27,8 @@
   {
     "@context": "https://schema.org",
     "@type": "FinancialService",
-    "name": "Onra - Vida Financeira",
-    "description": "Consultoria financeira privada, planejamento de projetos de vida, consultoria de investimentos CVM e educação financeira.",
+    "name": "ONRA - Vida Financeira",
+    "description": "Consultoria financeira pessoal, planejamento de projetos de vida, consultoria de investimentos CVM e educação financeira.",
     "founder": {
       "@type": "Person",
       "name": "Leo Campos",
@@ -40,31 +39,35 @@
 </head>
 <body>
 
-  <!-- ── CABEÇALHO MINIMALISTA BOUTIQUE ────────────────────────────────── -->
+  <!-- ── CABEÇALHO DA MARCA & NAVEGAÇÃO ─────────────────────────────────── -->
   <header class="site-header" id="siteHeader">
     <div class="container nav">
-      <a href="#" class="brand" data-reset-home aria-label="Onra - Voltar ao início">
-        <span class="brand-logo">ONRA</span>
+      <a href="#" class="brand" data-reset-home aria-label="ONRA - Voltar ao início">
+        <span class="brand-logo">
+          ONRA <span>•</span>
+        </span>
         <span class="brand-tagline">Vida Financeira</span>
       </a>
 
-      <!-- Alternador Discreto de Ambiente -->
-      <div class="header-environment-toggle" id="header-environment-toggle">
-        <button class="env-link" id="env-btn-consultoria">Consultoria</button>
-        <button class="env-link" id="env-btn-educacao">Educação</button>
-        <button class="env-home-reset" data-reset-home title="Voltar ao início">✕ Início</button>
+      <!-- Seletor Compacto no Header (Ativado quando em uma jornada) -->
+      <div class="journey-switcher-bar" id="journey-switcher-bar">
+        <button class="switch-btn" id="switch-btn-consultoria">Consultoria</button>
+        <button class="switch-btn" id="switch-btn-educacao">Educação</button>
+        <button class="home-reset-btn" data-reset-home title="Voltar ao início">✕ Início</button>
       </div>
 
-      <!-- Links de Navegação Principal -->
+      <!-- Links de Navegação Padrão -->
       <nav class="nav-links" id="navLinks">
+        <a href="#estado-neutro" data-reset-home>Início</a>
         <a href="#" data-trigger-journey="consultoria">Consultoria</a>
         <a href="#" data-trigger-journey="educacao">Educação</a>
-        <a href="#sobre-onra">Sobre</a>
+        <a href="#sobre-onra">Sobre a Onra</a>
         <a href="#contato">Contato</a>
       </nav>
 
       <!-- Botão Hambúrguer Mobile -->
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <span></span>
         <span></span>
         <span></span>
       </button>
@@ -75,72 +78,86 @@
   <main id="app-content-root">
 
     <!-- ====================================================================
-         01. ESTADO INICIAL (HERÓI + OS DOIS GRANDES PORTAIS)
+         01. ESTADO INICIAL (NEUTRO) - PÁGINA INSTITUCIONAL ONRA
          ==================================================================== -->
     <div id="estado-neutro">
       
-      <!-- Hero Principal (~100vh Full Screen) -->
-      <section class="hero-editorial" id="inicio">
-        <div class="container hero-editorial-grid">
-          
-          <div class="hero-editorial-content">
-            <span class="eyebrow eyebrow-light">ONRA</span>
-            <h1>O dinheiro deve sustentar a vida que você deseja construir.</h1>
-            <p class="lead-text">
-              Educação financeira e orientação profissional para decisões que exigem clareza, estrutura e visão de futuro.
+      <!-- Herói Institucional Neutro -->
+      <section class="section section-dark hero-neutro" id="inicio">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">ONRA • VIDA FINANCEIRA</span>
+            <h1>Dinheiro bem cuidado sustenta escolhas, projetos e futuros.</h1>
+            <p>
+              A Onra transforma conhecimento e orientação financeira em decisões mais conscientes para pessoas, famílias e instituições.
             </p>
             
-            <div class="hero-credential-line">
-              Leo Campos · Consultor de Valores Mobiliários · Mais de 14 anos de experiência
+            <div class="btn-row">
+              <a href="#" data-trigger-journey="consultoria" class="btn btn-primary">Conhecer a Consultoria</a>
+              <a href="#" data-trigger-journey="educacao" class="btn btn-outline">Explorar Educação</a>
             </div>
 
-            <div class="hero-scroll-trigger" onclick="document.getElementById('portais-entrada').scrollIntoView({behavior: 'smooth'})">
-              <span>Conheça a Onra ↓</span>
+            <div class="prova-curta">
+              <span>+14 anos de experiência no mercado</span>
+              <span>•</span>
+              <span>Consultor CVM</span>
+              <span>•</span>
+              <span>Especialista ANBIMA</span>
             </div>
           </div>
 
-          <!-- Fotografia Real em Enquadramento Editorial Direct Cover -->
-          <div class="hero-photo-container">
-            <img src="assets/images/foto_leo_campos.jpeg" alt="Leo Campos — Consultor de Valores Mobiliários e Fundador da Onra" loading="eager" />
+          <div class="hero-photo-box">
+            <img src="assets/images/foto_leo_campos.jpeg" alt="Leo Campos - Fundador da Onra e Consultor CVM" width="420" height="525" loading="eager" />
+            <div class="hero-photo-badge">
+              <strong>Leo Campos</strong>
+              <small>Fundador & Especialista Responsável</small>
+            </div>
           </div>
-
         </div>
       </section>
 
-      <!-- Os Dois Grandes Portais Editoriais -->
-      <section class="portais-section" id="portais-entrada">
-        <div class="portais-grid">
-          
-          <!-- Portal 1: Educação -->
-          <div class="portal-block portal-educacao" data-trigger-journey="educacao" role="button" tabindex="0">
-            <div>
-              <span class="eyebrow" style="color: var(--azul-institucional);">EDUCAÇÃO FINANCEIRA</span>
-              <h3>Conhecimento para transformar a relação com o dinheiro.</h3>
-              <p>Palestras, workshops, cursos e conteúdos para pessoas, empresas e instituições.</p>
-            </div>
-            <div style="margin-top: 48px;">
-              <span class="link-editorial link-editorial-dark">
-                Explorar Educação
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
-            </div>
+      <!-- Bloco de Escolha (As Duas Portas de Entrada) -->
+      <section class="section bloco-escolha" id="como-ajudamos">
+        <div class="container content-narrow text-center">
+          <div class="section-header" style="margin: 0 auto 48px;">
+            <span class="eyebrow">DIRETRIZ DE ENTRADA</span>
+            <h2>Como a Onra pode ajudar agora?</h2>
+            <p>
+              Uma marca. Duas formas de transformar a sua vida financeira. Escolha o caminho que corresponde ao seu momento atual.
+            </p>
           </div>
 
-          <!-- Portal 2: Consultoria -->
-          <div class="portal-block portal-consultoria" data-trigger-journey="consultoria" role="button" tabindex="0">
-            <div>
-              <span class="eyebrow" style="color: var(--texto-mutado);">CONSULTORIA PRIVADA</span>
-              <h3>Estrutura para decisões financeiras mais importantes.</h3>
-              <p>Diagnóstico, planejamento, acompanhamento e consultoria de investimentos.</p>
+          <div class="cards-escolha-grid" style="text-align: left;">
+            
+            <!-- Porta 1: Educação Financeira -->
+            <div class="card-porta" data-trigger-journey="educacao" role="button" tabindex="0">
+              <div>
+                <span class="card-porta-badge">EDUCAÇÃO FINANCEIRA</span>
+                <h3>Conhecimento que muda a forma de lidar com dinheiro.</h3>
+                <p>
+                  Palestras, workshops, cursos e conteúdos que aproximam finanças da vida real e transformam informação em capacidade prática de decisão.
+                </p>
+              </div>
+              <div class="card-porta-cta">
+                <span>Explorar Educação →</span>
+              </div>
             </div>
-            <div style="margin-top: 48px;">
-              <span class="link-editorial">
-                Conhecer a Consultoria
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
-            </div>
-          </div>
 
+            <!-- Porta 2: Consultoria -->
+            <div class="card-porta" data-trigger-journey="consultoria" role="button" tabindex="0">
+              <div>
+                <span class="card-porta-badge">CONSULTORIA</span>
+                <h3>Estratégia personalizada para organizar, planejar e investir.</h3>
+                <p>
+                  Diagnóstico, acompanhamento contínuo, projetos de vida e consultoria de investimentos para decisões mais estruturadas e sustentáveis.
+                </p>
+              </div>
+              <div class="card-porta-cta">
+                <span>Conhecer Consultoria →</span>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -148,273 +165,228 @@
 
 
     <!-- ====================================================================
-         02. AMBIENTE DA CONSULTORIA (DISCRIÇÃO, PRECISÃO, LONGO PRAZO)
+         02. JORNADA CONSULTORIA (DINÂMICA)
          ==================================================================== -->
     <div id="jornada-consultoria" class="journey-container">
       
-      <!-- Abertura da Consultoria (10.1) -->
-      <section class="journey-opening-hero">
-        <div class="container content-narrow">
-          <span class="eyebrow">CONSULTORIA PRIVADA</span>
-          <h1>Decisões importantes não deveriam depender do improviso.</h1>
-          <p class="lead-text">
-            A Onra ajuda pessoas e famílias a compreender sua realidade financeira, organizar prioridades e construir estratégias coerentes com seus projetos de vida.
-          </p>
-        </div>
-      </section>
-
-      <!-- Manifesto Editorial (10.2) -->
-      <section class="section section-dark">
-        <div class="container content-narrow">
-          <div class="manifesto-box">
-            <div class="manifesto-quote">
-              “Patrimônio não é apenas aquilo que você acumulou. É aquilo que precisa sustentar suas escolhas futuras.”
-            </div>
-            <p class="lead-text">
-              Uma boa estratégia financeira começa antes da escolha de qualquer investimento. Ela começa pela compreensão da vida, das responsabilidades, dos objetivos e do tempo.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Para Quem É a Consultoria (10.3) -->
-      <section class="section section-dark">
-        <div class="container content-narrow">
-          <div class="section-editorial-header">
-            <span class="eyebrow">PERFIL E NECESSIDADES</span>
-            <h2>Para quem percebeu que algumas decisões já não deveriam ser tomadas sozinho.</h2>
-            <p class="lead-text">
-              A Consultoria Onra foi desenvolvida para pessoas, famílias, profissionais e empresários que construíram renda, patrimônio ou responsabilidades, mas precisam de mais clareza para organizar os próximos passos.
-            </p>
-          </div>
-
-          <div class="situacoes-list">
-            <div class="situacao-item">
-              <div class="situacao-number">01</div>
-              <div class="situacao-text">
-                <h4>Você possui renda, mas sente que seu patrimônio não avança na mesma proporção.</h4>
-                <p>A energia gerada pelo seu trabalho precisa se transformar em estrutura sólida, reservas e ativos que façam sentido.</p>
-              </div>
-            </div>
-
-            <div class="situacao-item">
-              <div class="situacao-number">02</div>
-              <div class="situacao-text">
-                <h4>Você acumulou investimentos, mas não sabe se eles formam uma estratégia coerente.</h4>
-                <p>Produtos soltos e decisões esparsas são substituídos por uma visão consolidada de carteira, riscos e prazos.</p>
-              </div>
-            </div>
-
-            <div class="situacao-item">
-              <div class="situacao-number">03</div>
-              <div class="situacao-text">
-                <h4>Você possui projetos importantes e precisa transformar intenções em um plano financeiro possível.</h4>
-                <p>Aposentadoria, aquisição patrimonial, sucessão familiar ou transições de carreira exigem método e acompanhamento.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Forma de Trabalho (10.4) -->
-      <section class="section section-dark" style="border-top: 1px solid var(--linha-escura);">
+      <!-- Banner de Abertura Consultoria -->
+      <section class="journey-hero">
         <div class="container">
-          <div class="section-editorial-header">
-            <span class="eyebrow">MÉTODO ONRA</span>
-            <h2>Forma de trabalho</h2>
+          <span class="eyebrow">ONRA CONSULTORIA</span>
+          <h1>Mais clareza para organizar o presente, planejar o futuro e investir com coerência.</h1>
+          <p style="max-width: 720px; font-size: 1.1rem; color: var(--texto-mutado);">
+            A consultoria parte da sua realidade, dos seus objetivos e do seu momento de vida para construir decisões financeiras mais conscientes, estruturadas e sustentáveis.
+          </p>
+          <div class="btn-row">
+            <a href="#" data-wapp-context="consultoria_geral" class="btn btn-primary">Conversar sobre meu momento financeiro</a>
+            <a href="#servicos-consultoria" class="btn btn-outline">Entender como funciona</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bloco de Identificação (Dores) -->
+      <section class="section section-light">
+        <div class="container content-narrow">
+          <div class="section-header">
+            <span class="eyebrow">IDENTIFICAÇÃO DE MOMENTO</span>
+            <h2>Quando o dinheiro existe, mas ainda falta estrutura.</h2>
+            <p>Se você se identifica com uma dessas situações, a consultoria foi desenhada para a sua realidade:</p>
           </div>
 
-          <div class="fluxo-trabalho-grid">
-            <div class="fluxo-step">
-              <div class="fluxo-step-num">ETAPA 01</div>
-              <h4>Compreender</h4>
-              <p>Conhecer a realidade, os objetivos, os projetos e as responsabilidades do cliente.</p>
+          <div class="cards-grid-2">
+            <div class="card-content">
+              <span class="card-content-tag">CENÁRIO 01</span>
+              <h3>Você ganha, mas não percebe avanço</h3>
+              <p>A renda entra, as contas são pagas, porém o dinheiro não se transforma em tranquilidade, reserva ou patrimônio consistente.</p>
             </div>
 
-            <div class="fluxo-step">
-              <div class="fluxo-step-num">ETAPA 02</div>
-              <h4>Estruturar</h4>
-              <p>Organizar prioridades, riscos, prazos e possibilidades.</p>
+            <div class="card-content">
+              <span class="card-content-tag">CENÁRIO 02</span>
+              <h3>Você investe, mas não enxerga uma estratégia</h3>
+              <p>Existem produtos e aplicações espalhadas, mas falta uma lógica coerente que conecte carteira, riscos, prazos e objetivos reais.</p>
             </div>
 
-            <div class="fluxo-step">
-              <div class="fluxo-step-num">ETAPA 03</div>
-              <h4>Orientar</h4>
-              <p>Apresentar caminhos coerentes com o perfil e com os objetivos definidos.</p>
+            <div class="card-content">
+              <span class="card-content-tag">CENÁRIO 03</span>
+              <h3>Você vive uma mudança importante</h3>
+              <p>Casamento, filhos, compra de imóvel, transição de carreira, sucessão ou aposentadoria exigem reorganização e novos critérios.</p>
             </div>
 
-            <div class="fluxo-step">
-              <div class="fluxo-step-num">ETAPA 04</div>
-              <h4>Acompanhar</h4>
-              <p>Revisar decisões e ajustar a estratégia à medida que a vida evolui.</p>
+            <div class="card-content">
+              <span class="card-content-tag">CENÁRIO 04</span>
+              <h3>Você não quer mais decidir sozinho</h3>
+              <p>Falta tempo, método ou segurança para acompanhar tudo. Um processo profissional ajuda a manter direção e consistência.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Seletor Interativo de Soluções (10.5) -->
-      <section class="section section-light" id="solucoes-consultoria">
+      <!-- O Processo Onra -->
+      <section class="section section-white">
+        <div class="container">
+          <div class="section-header text-center" style="margin: 0 auto 48px;">
+            <span class="eyebrow">MÉTODO PROPRIETÁRIO</span>
+            <h2>O processo Onra de consultoria</h2>
+            <p>Uma metodologia em quatro etapas contínuas para tirar suas escolhas do improviso.</p>
+          </div>
+
+          <div class="process-grid">
+            <div class="process-card">
+              <div class="process-num">01</div>
+              <h4>Compreender</h4>
+              <p>Leitura profunda da realidade atual, contexto familiar, receitas, despesas, objetivos e prioridades de vida.</p>
+            </div>
+
+            <div class="process-card">
+              <div class="process-num">02</div>
+              <h4>Estruturar</h4>
+              <p>Elaboração de um plano personalizado com critérios claros de organização, reserva e alocação.</p>
+            </div>
+
+            <div class="process-card">
+              <div class="process-num">03</div>
+              <h4>Implementar</h4>
+              <p>Ações práticas, recomendações independentes e orientações de ajuste aplicadas ao dia a dia.</p>
+            </div>
+
+            <div class="process-card">
+              <div class="process-num">04</div>
+              <h4>Acompanhar</h4>
+              <p>Revisões periódicas, aprendizado conjunto e evolução mensurável do plano conforme a vida avança.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Serviços da Consultoria com Seletor Interativo -->
+      <section class="section section-light" id="servicos-consultoria">
         <div class="container content-narrow">
-          <div class="section-editorial-header">
-            <span class="eyebrow" style="color: var(--azul-institucional);">ESCOPO DE ATUAÇÃO</span>
-            <h2>Soluções privadas</h2>
+          <div class="section-header">
+            <span class="eyebrow">SOLUÇÕES PRIVADAS</span>
+            <h2>Serviços de Consultoria</h2>
+            <p>Selecione um formato abaixo para visualizar a proposta detalhada:</p>
           </div>
 
           <div class="solucoes-interactive-layout">
-            
-            <!-- Coluna Esquerda: Menu de Seleção -->
-            <div class="solucoes-menu" role="tablist">
-              <button class="solucao-menu-btn active" data-target-panel="panel-diagnostico" role="tab" aria-selected="true">Diagnóstico Financeiro</button>
-              <button class="solucao-menu-btn" data-target-panel="panel-acompanhamento" role="tab" aria-selected="false">Acompanhamento Financeiro</button>
-              <button class="solucao-menu-btn" data-target-panel="panel-projetos" role="tab" aria-selected="false">Planejamento de Projetos</button>
-              <button class="solucao-menu-btn" data-target-panel="panel-investimentos" role="tab" aria-selected="false">Consultoria de Investimentos</button>
+            <div class="solucoes-tab-list">
+              <button class="solucao-tab-btn active" data-target-panel="tab-diagnostico">Diagnóstico Financeiro</button>
+              <button class="solucao-tab-btn" data-target-panel="tab-acompanhamento">Acompanhamento (12m)</button>
+              <button class="solucao-tab-btn" data-target-panel="tab-projetos">Projetos de Vida</button>
+              <button class="solucao-tab-btn" data-target-panel="tab-investimentos">Consultoria de Investimentos CVM</button>
             </div>
 
-            <!-- Coluna Direita: Exibição do Painel -->
-            <div class="solucao-content-display">
-              
-              <div class="solucao-panel active" id="panel-diagnostico" role="tabpanel">
-                <h3 style="color: var(--azul-profundo);">Diagnóstico Financeiro</h3>
-                <p style="color: var(--texto-suave); font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
-                  Uma análise ampla da vida financeira para identificar desequilíbrios, prioridades, riscos e oportunidades de melhoria.
-                </p>
-                <p style="font-size: 0.9rem; color: var(--texto-suave);">
-                  Ideal para obter um retrato claro da situação atual e fundamentar os próximos passos.
-                </p>
+            <div class="solucao-tab-display">
+              <div class="solucao-tab-panel active" id="tab-diagnostico">
+                <span class="card-content-tag">SERVIÇO 01</span>
+                <h3>Diagnóstico das Finanças Pessoais</h3>
+                <p>Uma leitura objetiva da sua realidade atual para identificar desorganizações, riscos, desperdícios e prioridades de ajuste imediato.</p>
+                <div class="card-content-meta">
+                  <strong>QUANDO FAZ SENTIDO</strong>
+                  <p>Para quem precisa enxergar a situação atual antes de tomar novas decisões.</p>
+                </div>
+                <div class="card-content-meta">
+                  <strong>RESULTADO ESPERADO</strong>
+                  <p>Uma leitura organizada da realidade e um plano inicial de correção de rota.</p>
+                </div>
               </div>
 
-              <div class="solucao-panel" id="panel-acompanhamento" role="tabpanel">
-                <h3 style="color: var(--azul-profundo);">Acompanhamento Financeiro</h3>
-                <p style="color: var(--texto-suave); font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
-                  Um processo contínuo para transformar o planejamento em decisões práticas, acompanhar a evolução e realizar ajustes.
-                </p>
-                <p style="font-size: 0.9rem; color: var(--texto-suave);">
-                  Orientação periódica e parceria para manter o plano alinhado à dinâmica da vida real.
-                </p>
+              <div class="solucao-tab-panel" id="tab-acompanhamento">
+                <span class="card-content-tag">SERVIÇO 02</span>
+                <h3>Acompanhamento Financeiro — 12 meses</h3>
+                <p>Um processo completo para reorganizar a estrutura financeira, amadurecer decisões e construir evolução consistente com encontros periódicos.</p>
+                <div class="card-content-meta">
+                  <strong>QUANDO FAZ SENTIDO</strong>
+                  <p>Para quem deseja mudança mais profunda e suporte contínuo ao longo da implementação.</p>
+                </div>
+                <div class="card-content-meta">
+                  <strong>RESULTADO ESPERADO</strong>
+                  <p>Método, acompanhamento real e evolução mensurável da estrutura financeira.</p>
+                </div>
               </div>
 
-              <div class="solucao-panel" id="panel-projetos" role="tabpanel">
-                <h3 style="color: var(--azul-profundo);">Planejamento de Projetos de Vida</h3>
-                <p style="color: var(--texto-suave); font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
-                  Estruturação financeira de objetivos como independência, aposentadoria, aquisição de patrimônio, educação, viagens e transições profissionais.
-                </p>
-                <p style="font-size: 0.9rem; color: var(--texto-suave);">
-                  Alinhamento entre prazos, custos e estratégias de acúmulo sustentável.
-                </p>
+              <div class="solucao-tab-panel" id="tab-projetos">
+                <span class="card-content-tag">SERVIÇO 03</span>
+                <h3>Planejamento de Projetos de Vida</h3>
+                <p>Serviço voltado para quem deseja alinhar objetivos importantes de curto, médio e longo prazo à capacidade de geração e acúmulo de patrimônio.</p>
+                <div class="card-content-meta">
+                  <strong>QUANDO FAZ SENTIDO</strong>
+                  <p>Para quem possui projetos específicos como compra de imóvel, independência ou sucessão.</p>
+                </div>
+                <div class="card-content-meta">
+                  <strong>RESULTADO ESPERADO</strong>
+                  <p>Um caminho financeiro possível para transformar projetos em decisões concretas.</p>
+                </div>
               </div>
 
-              <div class="solucao-panel" id="panel-investimentos" role="tabpanel">
-                <span class="eyebrow" style="color: var(--azul-institucional);">REGULADA CVM</span>
-                <h3 style="color: var(--azul-profundo);">Consultoria de Investimentos</h3>
-                <p style="color: var(--texto-suave); font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
-                  Avaliação e recomendação de alternativas de investimento compatíveis com o perfil de risco, os objetivos, os prazos e a realidade patrimonial do cliente.
-                </p>
-                <p style="font-size: 0.9rem; color: var(--texto-suave); margin-bottom: 24px;">
-                  Serviço prestado de forma independente, sem promessas irrealistas de rentabilidade ou conflitos de interesse.
-                </p>
-                <a href="#" data-wapp-context="consultoria_investimentos" class="link-editorial link-editorial-dark">
-                  Entender Consultoria de Investimentos
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
+              <div class="solucao-tab-panel" id="tab-investimentos">
+                <span class="card-content-tag" style="color: var(--azul-destaque);">SERVIÇO 04 • CVM</span>
+                <h3>Consultoria de Investimentos</h3>
+                <p>Serviço independente que indica as melhores opções de investimento conforme seu perfil de risco, objetivos e prazos, criando uma estratégia de alocação sob medida.</p>
+                <div class="card-content-meta">
+                  <strong>CRITÉRIO PATRIMONIAL</strong>
+                  <p>Indicado para quem já acumulou patrimônio a partir de R$ 300.000,00.</p>
+                </div>
+                <div class="card-content-meta">
+                  <strong>RESULTADO ESPERADO</strong>
+                  <p>Uma carteira estruturada com critérios claros, diversificação coerente e alinhamento a metas.</p>
+                </div>
+                <div style="margin-top: 20px;">
+                  <a href="#" data-wapp-context="consultoria_investimentos" class="btn btn-secondary" style="width: 100%;">Entender Consultoria de Investimentos →</a>
+                </div>
               </div>
-
             </div>
-
           </div>
         </div>
       </section>
 
-      <!-- Sobre Leo Campos (10.6) -->
+      <!-- FAQ Consultoria -->
       <section class="section section-white">
         <div class="container content-narrow">
-          <div class="section-editorial-header">
-            <span class="eyebrow" style="color: var(--azul-institucional);">AUTORIDADE E EXPERIÊNCIA</span>
-            <h2>Experiência para orientar. Proximidade para compreender.</h2>
+          <div class="section-header">
+            <span class="eyebrow">ESCLARECIMENTOS</span>
+            <h2>Dúvidas frequentes sobre a consultoria</h2>
           </div>
 
-          <p class="lead-text" style="color: var(--texto-suave); margin-bottom: 40px;">
-            Leo Campos atua há mais de 14 anos no mercado financeiro e reúne experiência profissional, formação técnica e uma visão de planejamento centrada na vida real de cada cliente.
-          </p>
-
-          <!-- Credenciais em Lista Tipográfica Limpa -->
-          <div class="credenciais-lista">
-            <div class="credencial-linha">
-              <strong>CVM</strong>
-              <span>Consultor de Valores Mobiliários autorizado pela Comissão de Valores Mobiliários</span>
-            </div>
-            <div class="credencial-linha">
-              <strong>ANBIMA</strong>
-              <span>Especialista em Investimentos certificado</span>
-            </div>
-            <div class="credencial-linha">
-              <strong>Formação</strong>
-              <span>Administrador com MBA em Finanças e MBA em Planejamento Financeiro Pessoal e Familiar</span>
-            </div>
-            <div class="credencial-linha">
-              <strong>Atuação</strong>
-              <span>Educador financeiro, palestrante e produtor de conteúdo técnico</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ da Consultoria -->
-      <section class="section section-light">
-        <div class="container content-narrow">
-          <div class="section-editorial-header">
-            <span class="eyebrow" style="color: var(--azul-institucional);">ESCLARECIMENTOS</span>
-            <h2>Dúvidas sobre o trabalho</h2>
-          </div>
-
-          <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="faq-list">
             <div class="faq-item">
               <button class="faq-btn">
                 <span>A consultoria é indicada apenas para quem está endividado?</span>
-                <span>+</span>
+                <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
                 <div class="faq-answer-inner">
-                  Não. Ela apoia quem precisa reorganizar as finanças, quem vive uma transição importante e também quem já investe, mas busca uma estratégia mais coerente entre patrimônio, objetivos e riscos.
+                  Não. Ela apoia quem precisa reorganizar as finanças, quem vive uma mudança importante e também quem já investe, mas busca uma estratégia mais coerente entre patrimônio, objetivos e riscos.
                 </div>
               </div>
             </div>
 
             <div class="faq-item">
               <button class="faq-btn">
-                <span>Como saber qual serviço faz sentido para o meu momento?</span>
-                <span>+</span>
+                <span>Como saber qual serviço faz sentido para mim?</span>
+                <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
                 <div class="faq-answer-inner">
-                  A conversa inicial serve para entender sua realidade. A partir disso, é indicado o formato mais coerente ou orientado que você ainda não precisa contratar um serviço.
+                  A conversa inicial serve para entender sua realidade e sua necessidade. A partir disso, a Onra apresenta o formato mais adequado ou orienta que você ainda não precisa contratar um serviço.
                 </div>
               </div>
             </div>
 
             <div class="faq-item">
               <button class="faq-btn">
-                <span>A Onra administra ou movimenta meus recursos?</span>
-                <span>+</span>
+                <span>A Onra administra ou movimenta meus investimentos?</span>
+                <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
                 <div class="faq-answer-inner">
-                  Não. A consultoria orienta e recomenda de forma individualizada. A decisão e a execução das operações pertencem exclusivamente ao cliente.
+                  Não. A consultoria orienta, recomenda e aconselha de forma individualizada. A decisão e a implementação das operações permanecem sob responsabilidade do cliente.
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- CTA Final Consultoria (10.8) -->
-      <section class="section section-dark" style="text-align: center;">
-        <div class="container content-narrow">
-          <h2>Algumas decisões merecem ser tratadas com tempo, contexto e atenção individual.</h2>
-          <div style="margin-top: 40px;">
-            <a href="#" data-wapp-context="consultoria_geral" class="link-editorial" style="font-size: 1.1rem;">
-              Agendar uma conversa
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+          <div class="btn-row" style="margin-top: 40px;">
+            <a href="#" data-wapp-context="consultoria_geral" class="btn btn-primary">Conversar com a Onra pelo WhatsApp →</a>
           </div>
         </div>
       </section>
@@ -423,95 +395,74 @@
 
 
     <!-- ====================================================================
-         03. AMBIENTE DA EDUCAÇÃO (CONHECIMENTO, MOVIMENTO, PROXIMIDADE)
+         03. JORNADA EDUCAÇÃO (DINÂMICA)
          ==================================================================== -->
     <div id="jornada-educacao" class="journey-container">
       
-      <!-- Abertura da Educação (11.1) -->
-      <section class="journey-opening-hero" style="background-color: var(--cinza-claro); color: var(--texto-escuro);">
-        <div class="container content-narrow">
-          <span class="eyebrow" style="color: var(--azul-institucional);">ONRA EDUCAÇÃO</span>
-          <h1 style="color: var(--texto-escuro);">Conhecimento financeiro para escolhas mais conscientes.</h1>
-          <p class="lead-text" style="color: var(--texto-suave);">
-            Experiências de educação financeira desenvolvidas para pessoas, empresas, servidores, instituições e comunidades.
+      <!-- Banner de Abertura Educação -->
+      <section class="journey-hero">
+        <div class="container">
+          <span class="eyebrow">ONRA EDUCAÇÃO FINANCEIRA</span>
+          <h1>Educação financeira que aproxima conhecimento, escolhas e vida real.</h1>
+          <p style="max-width: 720px; font-size: 1.1rem; color: var(--texto-mutado);">
+            Conteúdos e experiências desenvolvidos para ajudar pessoas e instituições a compreenderem melhor o dinheiro, mudarem comportamentos e tomarem decisões mais conscientes.
           </p>
-        </div>
-      </section>
-
-      <!-- Manifesto Educação (11.2) -->
-      <section class="section section-white">
-        <div class="container content-narrow">
-          <div class="manifesto-box" style="border-color: var(--linha-clara);">
-            <div class="manifesto-quote" style="color: var(--azul-profundo);">
-              “Educação financeira não começa nos números. Começa na forma como as pessoas compreendem suas escolhas.”
-            </div>
-            <p class="lead-text" style="color: var(--texto-suave);">
-              O conteúdo precisa conversar com a realidade de quem participa, transformar conceitos em decisões práticas e continuar fazendo sentido depois do encontro.
-            </p>
+          <div class="btn-row">
+            <a href="#" data-wapp-context="educacao_institucional" class="btn btn-primary">Levar a Onra para minha instituição</a>
+            <a href="#ofertas-educacao" class="btn btn-outline">Conhecer conteúdos e cursos</a>
           </div>
         </div>
       </section>
 
-      <!-- Formatos (11.3) em Faixas Editoriais -->
-      <section class="section section-light">
+      <!-- Ofertas de Educação -->
+      <section class="section section-light" id="ofertas-educacao">
         <div class="container content-narrow">
-          <div class="section-editorial-header">
-            <span class="eyebrow" style="color: var(--azul-institucional);">SOLUÇÕES DE APRENDIZAGEM</span>
-            <h2>Formatos</h2>
+          <div class="section-header">
+            <span class="eyebrow">SOLUÇÕES EDUCACIONAIS</span>
+            <h2>Formatos de Aprendizagem</h2>
           </div>
 
-          <div style="display: flex; flex-direction: column; gap: 40px;">
-            <div style="padding-bottom: 32px; border-bottom: 1px solid var(--linha-clara);">
-              <span class="eyebrow" style="color: var(--azul-institucional);">EVENTOS E CONTEXTOS</span>
-              <h3 style="color: var(--azul-profundo);">Palestras</h3>
-              <p style="font-size: 1.05rem; color: var(--texto-suave); max-width: 760px;">
-                Encontros objetivos e envolventes, desenvolvidos para despertar reflexão, ampliar consciência e gerar movimento.
-              </p>
+          <div class="cards-grid-2">
+            <div class="card-content">
+              <span class="card-content-tag">PRESENCIAL / ONLINE</span>
+              <h3>Palestras</h3>
+              <p>Conteúdo envolvente para abrir conversas, gerar consciência e provocar mudança de perspectiva sobre finanças e futuro.</p>
+              <div style="margin-top: 20px;">
+                <a href="#" data-wapp-context="educacao_institucional" class="btn btn-secondary" style="width: 100%;">Solicitar proposta de palestra →</a>
+              </div>
             </div>
 
-            <div style="padding-bottom: 32px; border-bottom: 1px solid var(--linha-clara);">
-              <span class="eyebrow" style="color: var(--azul-institucional);">APLICAÇÃO PRÁTICA</span>
-              <h3 style="color: var(--azul-profundo);">Workshops</h3>
-              <p style="font-size: 1.05rem; color: var(--texto-suave); max-width: 760px;">
-                Experiências práticas com atividades, ferramentas e aplicação direta dos conceitos apresentados à realidade dos participantes.
-              </p>
-            </div>
-
-            <div style="padding-bottom: 32px; border-bottom: 1px solid var(--linha-clara);">
-              <span class="eyebrow" style="color: var(--azul-institucional);">CONTINUIDADE</span>
-              <h3 style="color: var(--azul-profundo);">Programas de formação</h3>
-              <p style="font-size: 1.05rem; color: var(--texto-suave); max-width: 760px;">
-                Jornadas estruturadas de aprendizagem para desenvolver conhecimento, hábitos e autonomia financeira.
-              </p>
+            <div class="card-content">
+              <span class="card-content-tag">PRÁTICO</span>
+              <h3>Workshops</h3>
+              <p>Experiências práticas, com participação do público, exercícios de aplicação a situações reais e construção de mapas de ação.</p>
+              <div style="margin-top: 20px;">
+                <a href="#" data-wapp-context="educacao_institucional" class="btn btn-secondary" style="width: 100%;">Construir um workshop →</a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- Método Pleno (11.6) -->
-      <section class="section section-dark">
-        <div class="container content-narrow">
-          <span class="eyebrow">FORMAÇÃO CONTINUADA</span>
-          <h2>Método Pleno</h2>
-          <p class="lead-text" style="margin-bottom: 36px;">
-            Uma jornada de educação financeira desenvolvida para ajudar pessoas a compreender sua realidade, organizar prioridades e construir uma relação mais consciente com o dinheiro.
-          </p>
-          <a href="#" data-wapp-context="metodo_pleno" class="link-editorial">
-            Conhecer o Método Pleno
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </section>
-
-      <!-- CTA Final Educação (11.7) -->
-      <section class="section section-white" style="text-align: center;">
-        <div class="container content-narrow">
-          <h2 style="color: var(--azul-profundo);">Conte-nos sobre o público, o contexto e a transformação que deseja promover.</h2>
-          <div style="margin-top: 40px;">
-            <a href="#" data-wapp-context="educacao_institucional" class="link-editorial link-editorial-dark" style="font-size: 1.1rem;">
-              Solicitar uma proposta
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+          <!-- Método Pleno -->
+          <div class="metodo-pleno-box">
+            <div class="metodo-pleno-grid">
+              <div>
+                <span class="eyebrow">FORMAÇÃO CONTINUADA</span>
+                <h3 style="font-size: 2rem; color: var(--branco);">Método Pleno</h3>
+                <p style="font-size: 1.05rem; color: var(--texto-mutado); margin-bottom: 24px;">
+                  Uma jornada de educação financeira desenvolvida para ajudar pessoas a compreender sua realidade, organizar prioridades e construir uma relação mais consciente com o dinheiro.
+                </p>
+                <a href="#" data-wapp-context="metodo_pleno" class="btn btn-primary">Conhecer o Método Pleno →</a>
+              </div>
+              <div style="border-left: 1px solid rgba(245, 248, 250, 0.15); padding-left: 32px;">
+                <h4 style="font-size: 1.1rem; color: var(--branco); margin-bottom: 12px;">Destaques da formação:</h4>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; color: var(--texto-mutado);">
+                  <li>✓ Organização e clareza de orçamento</li>
+                  <li>✓ Construção de reserva e proteção</li>
+                  <li>✓ Estratégia prática para começar a investir</li>
+                  <li>✓ Autonomia de decisão para o futuro</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -520,48 +471,84 @@
 
 
     <!-- ====================================================================
-         04. SEÇÃO SOBRE COMPARTILHADA
+         04. SEÇÃO SOBRE A ONRA E LEO CAMPOS (COMPARTILHADA)
          ==================================================================== -->
-    <section class="section section-dark" id="sobre-onra" style="border-top: 1px solid var(--linha-escura);">
+    <section class="section section-white" id="sobre-onra">
       <div class="container content-narrow">
-        <div class="sobre-editorial-grid">
+        <div class="sobre-grid">
+          
           <div>
-            <span class="eyebrow">A MARCA</span>
-            <h2>Onra</h2>
-            <p class="lead-text" style="font-size: 1rem; margin-bottom: 16px;">
-              A Onra nasceu para aproximar a vida financeira daquilo que realmente importa. Dinheiro não é um fim isolado; ele sustenta escolhas, segurança e liberdade.
+            <span class="eyebrow">A MARCA INSTITUCIONAL</span>
+            <h2>A Onra nasceu para aproximar a vida financeira daquilo que realmente importa.</h2>
+            <p style="font-size: 1.05rem; color: var(--texto-suave); margin-bottom: 16px; line-height: 1.6;">
+              Dinheiro não é um fim isolado. Ele sustenta escolhas, relações, projetos, segurança e liberdade.
+            </p>
+            <p style="font-size: 1rem; color: var(--texto-suave); line-height: 1.6;">
+              Por isso, a Onra une educação e orientação profissional para ajudar pessoas, famílias e instituições a tomarem decisões mais conscientes.
             </p>
           </div>
 
           <div>
-            <span class="eyebrow">O FUNDADOR</span>
+            <span class="eyebrow">O FUNDADOR & ESPECIALISTA</span>
             <h2>Leo Campos</h2>
-            <p class="lead-text" style="font-size: 1rem;">
-              Consultor de Valores Mobiliários autorizado pela CVM, especialista em investimentos e educador com mais de 14 anos de atuação no mercado financeiro.
+            <p style="font-size: 0.98rem; color: var(--texto-suave); margin-bottom: 20px; line-height: 1.6;">
+              Leo Campos é consultor de valores mobiliários e especialista em investimentos, com mais de 14 anos de experiência no mercado financeiro. É administrador e possui formação em Finanças e em Planejamento Financeiro Pessoal e Familiar.
             </p>
+
+            <div class="credenciais-grid">
+              <div class="credencial-card">
+                <span>EXPERIÊNCIA</span>
+                <strong>+14 anos</strong>
+                <p>No mercado financeiro</p>
+              </div>
+
+              <div class="credencial-card">
+                <span>CVM</span>
+                <strong>Consultor</strong>
+                <p>Valores mobiliários autorizados</p>
+              </div>
+
+              <div class="credencial-card">
+                <span>ANBIMA</span>
+                <strong>Especialista</strong>
+                <p>Em investimentos</p>
+              </div>
+
+              <div class="credencial-card">
+                <span>ACADÊMICO</span>
+                <strong>MBAs</strong>
+                <p>Finanças & Planejamento</p>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ── RODAPÉ BOUTIQUE E COMPLIANCE REGULATÓRIO ───────────────────────── -->
+  <!-- ── RODAPÉ E COMPLIANCE ───────────────────────────────────────────── -->
   <footer class="site-footer" id="contato">
-    <div class="container">
+    <div class="container content-narrow">
       
-      <div class="footer-main-grid">
+      <div class="footer-grid">
         <div>
-          <span class="brand-logo" style="display: block; margin-bottom: 16px;">ONRA</span>
-          <p style="font-size: 0.9rem; color: var(--texto-mutado); line-height: 1.6;">
+          <span class="brand-logo" style="margin-bottom: 12px; display: inline-block;">
+            ONRA <span>•</span>
+          </span>
+          <p style="font-size: 0.9rem; color: var(--texto-mutado); line-height: 1.5; margin-bottom: 16px;">
             Clareza para decidir.<br>Estrutura para avançar.
+          </p>
+          <p style="font-size: 0.82rem; color: var(--azul-destaque);">
+            Conteúdos da Onra com Leo Campos
           </p>
         </div>
 
         <div class="footer-col">
           <h4>JORNADAS</h4>
-          <ul class="footer-nav">
-            <li><a href="#" data-trigger-journey="consultoria">Consultoria Privada</a></li>
+          <ul class="footer-links">
+            <li><a href="#" data-trigger-journey="consultoria">Consultoria</a></li>
             <li><a href="#" data-trigger-journey="educacao">Educação Financeira</a></li>
             <li><a href="#sobre-onra">Sobre a Onra</a></li>
           </ul>
@@ -569,7 +556,7 @@
 
         <div class="footer-col">
           <h4>CONTEÚDOS</h4>
-          <ul class="footer-nav">
+          <ul class="footer-links">
             <li><a href="https://www.instagram.com/leocamposfin" target="_blank" rel="noopener">Instagram (@leocamposfin)</a></li>
             <li><a href="https://www.youtube.com/@leocamposfin" target="_blank" rel="noopener">YouTube</a></li>
             <li><a href="https://www.linkedin.com/in/leocamposfin/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -579,22 +566,22 @@
 
         <div class="footer-col">
           <h4>CONTATO</h4>
-          <ul class="footer-nav">
+          <ul class="footer-links">
             <li><a href="#" data-wapp-context="consultoria_geral">WhatsApp Institucional</a></li>
             <li><a href="mailto:contato@onra.com.br">contato@onra.com.br</a></li>
           </ul>
         </div>
       </div>
 
-      <!-- Aviso Obrigatório de Compliance Regulatório (Seção 19) -->
-      <div class="compliance-legal-box">
+      <!-- Aviso Regulatório CVM -->
+      <div class="compliance-box">
         <strong>Aviso Regulatório:</strong> Consultoria de valores mobiliários autorizada pela CVM | Profissional com certificação ANBIMA.<br>
         Os conteúdos de educação financeira possuem caráter informativo e educacional. A consultoria de valores mobiliários é prestada de forma individualizada, conforme contrato, perfil, objetivos e condições do cliente. Investimentos envolvem riscos e não há garantia de rentabilidade.
       </div>
 
-      <div class="footer-bottom-bar">
-        <span>© 2026 ONRA · Todos os direitos reservados.</span>
-        <span>Autoridade Silenciosa</span>
+      <div class="footer-bottom">
+        <span>© 2026 ONRA • Vida Financeira. Todos os direitos reservados.</span>
+        <span>CVM & ANBIMA • Consultoria Autorizada</span>
       </div>
 
     </div>

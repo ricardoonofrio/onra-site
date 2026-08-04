@@ -1,11 +1,11 @@
 /* ==========================================================================
-   ONRA - Sistema Visual & Tokens de Design (Autoridade Silenciosa)
+   ONRA - Tokens de Design com Tipografia Lato & Proporções Balanceadas
    Paleta Oficial:
-   - Azul profundo (#172638) [60% - 65%]
-   - Cinza claro (#EFF0F2) [25% - 30%]
-   - Azul institucional (#375984) [8%]
-   - Azul luminoso (#6AACFF) [Até 2% - Foco, destaques sutis e cursor]
-   - Branco puro (#FFFFFF) [Texto sobre fundo escuro e respiros]
+   - Azul profundo: #172638 (Fundos institucionais escuros, herói, rodapé)
+   - Azul institucional: #375984 (Subtítulos, bordas, elementos secundários)
+   - Azul destaque: #6AACFF (Botões CTA, links ativos, indicadores de foco)
+   - Cinza claro: #EFF0F2 (Fundo de seções claras e respiro visual)
+   - Branco puro: #FFFFFF (Cartões, contrastes e textos claros)
    ========================================================================== */
 
 :root {
@@ -14,39 +14,42 @@
   --azul-profundo-rgb: 23, 38, 56;
   --azul-institucional: #375984;
   --azul-institucional-rgb: 55, 89, 132;
-  --azul-luminoso: #6AACFF;
-  --azul-luminoso-rgb: 106, 172, 255;
+  --azul-destaque: #6AACFF;
+  --azul-destaque-rgb: 106, 172, 255;
   --cinza-claro: #EFF0F2;
   --cinza-claro-rgb: 239, 240, 242;
   --branco: #FFFFFF;
 
   /* Hierarquia de Texto */
-  --texto-escuro: #101924;
-  --texto-suave: #485868;
-  --texto-claro: #F2F5F8;
-  --texto-mutado: rgba(242, 245, 248, 0.65);
+  --texto-escuro: #172638;
+  --texto-suave: #4C5D70;
+  --texto-claro: #F5F8FA;
+  --texto-mutado: rgba(245, 248, 250, 0.75);
 
-  /* Elementos de Linha e Divisores */
-  --linha-clara: rgba(23, 38, 56, 0.08);
-  --linha-escura: rgba(242, 245, 248, 0.1);
-  --linha-destaque: rgba(106, 172, 255, 0.4);
+  /* Linhas e Bordas */
+  --borda-clara: rgba(23, 38, 56, 0.12);
+  --borda-escura: rgba(245, 248, 250, 0.12);
+  --borda-destaque: rgba(106, 172, 255, 0.4);
 
-  /* Grid e Dimensões */
-  --container-max: 1320px;
-  --content-narrow: 920px;
-  --header-height: 84px;
+  /* Sombras e Elevação */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
 
-  /* Tipografia Editorial */
-  --font-serif: 'Cormorant Garamond', 'Instrument Serif', Georgia, serif;
-  --font-sans: 'Inter', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Dimensões */
+  --container-max: 1240px;
+  --header-height: 80px;
 
-  /* Microinterações e Transições */
-  --transition-fast: 0.2s cubic-bezier(0.25, 1, 0.5, 1);
-  --transition-normal: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Tipografia Lato */
+  --font-lato: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Transições */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Reset Global e Estilo Base */
+/* Reset Global */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -54,16 +57,16 @@
 }
 
 html {
-  font-family: var(--font-sans);
+  font-family: var(--font-lato);
   font-size: 16px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  background-color: var(--azul-profundo);
-  color: var(--texto-claro);
+  background-color: var(--cinza-claro);
+  color: var(--texto-escuro);
 }
 
 body {
-  line-height: 1.65;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -75,7 +78,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color var(--transition-fast), opacity var(--transition-fast);
+  transition: all var(--transition-fast);
 }
 
 button {
@@ -91,7 +94,6 @@ img {
   display: block;
 }
 
-/* Utilitários de Acessibilidade */
 .sr-only {
   position: absolute;
   width: 1px;
