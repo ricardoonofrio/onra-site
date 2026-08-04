@@ -34,6 +34,7 @@
 
 /* ── CABEÇALHO & NAVEGAÇÃO ─────────────────────────────────────────────── */
 .site-header {
+  display: none !important;
   position: fixed;
   top: 0;
   left: 0;
@@ -43,7 +44,6 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   height: var(--header-height);
-  display: flex;
   align-items: center;
   border-bottom: 1px solid rgba(245, 248, 250, 0.08);
   transition: all var(--transition-normal);
@@ -286,13 +286,15 @@ h3 {
 
 /* ── HERÓI INSTITUCIONAL (ESTADO NEUTRO) ────────────────────────────────── */
 .hero-neutro {
-  min-height: 88vh;
-  padding-top: calc(var(--header-height) + 40px);
+  min-height: 100vh;
+  padding-top: 80px;
   padding-bottom: 80px;
   display: flex;
   align-items: center;
-  background: radial-gradient(circle at 85% 15%, rgba(55, 89, 132, 0.22) 0%, transparent 60%),
+  background: radial-gradient(circle at 75% 30%, rgba(106, 172, 255, 0.15) 0%, transparent 60%),
+              radial-gradient(circle at 20% 80%, rgba(55, 89, 132, 0.25) 0%, transparent 50%),
               var(--azul-profundo);
+  position: relative;
 }
 
 .hero-grid {
@@ -327,12 +329,15 @@ h3 {
 .hero-photo-box {
   width: min(100%, 420px);
   aspect-ratio: 4 / 5;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: var(--shadow-lg);
+  border-radius: 12px;
+  border: 1px solid rgba(106, 172, 255, 0.3);
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.5), 
+    0 0 0 10px rgba(255, 255, 255, 0.03), 
+    0 0 0 20px rgba(255, 255, 255, 0.01);
   position: relative;
   margin-left: auto;
+  overflow: hidden;
 }
 
 .hero-photo-box img {
