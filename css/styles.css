@@ -193,7 +193,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 .statement{padding:var(--section-y-sm) 0}
 .statement-light{background:var(--white);color:var(--ink)}
 .statement-dark{background:#102131;color:var(--dark-text)}
-.statement-grid{display:grid;grid-template-columns:minmax(8rem,.35fr) minmax(0,1.65fr);gap:clamp(2rem,5vw,6rem);align-items:start}
+.statement-grid{display:grid;grid-template-columns:minmax(14rem,.65fr) minmax(0,1.35fr);gap:clamp(2rem,5vw,6rem);align-items:start}
 .statement-grid blockquote{margin:0;font-family:var(--font-display);font-size:var(--text-quote);line-height:1.02;letter-spacing:-.02em}
 .statement-grid>p:last-child{grid-column:2;max-width:42rem;margin:0;padding-top:.35rem;font-size:1rem;line-height:1.8;opacity:.64}
 .statement-dark .section-number{color:var(--dark-faint)}
@@ -346,12 +346,8 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   --section-y: clamp(3.5rem, 4.5vw, 4.5rem) !important;
   --section-y-sm: clamp(2.5rem, 3.5vw, 3.5rem) !important;
 }
-.view-consulting .split-heading h2 {
-  font-size: clamp(2.5rem, 4vw, 4rem) !important;
-}
-.view-consulting .journey-title h1 {
-  font-size: clamp(3.2rem, 5vw, 5.5rem) !important;
-}
+
+
 
 /* Responsive -------------------------------------------------------------- */
 
@@ -384,7 +380,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   .portals{grid-template-columns:1fr}
   .portal{padding:clamp(2.4rem,6vw,4rem) var(--gutter)}
   .portal+.portal{border-top:1px solid rgba(255,255,255,.08)}
-  .portal strong{max-width:18ch;margin-top:clamp(1.25rem,4vw,2rem);}
+.portal strong{margin-top:clamp(1.25rem,4vw,2rem);}
   .portal-description{max-width:38rem}
   .portal-action{margin-top:1.5rem}
   .principle-grid{grid-template-columns:minmax(9rem,.45fr) minmax(0,1.55fr);gap:clamp(2rem,5vw,4rem)}
@@ -398,22 +394,21 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   .home-hero{display:flex;flex-direction:column;min-height:auto;padding-top:calc(var(--header-h) + 4rem);gap:3.25rem}
   .home-hero-content{width:100%;padding:0;margin:0}
   .home-copy{max-width:43rem;padding-bottom:0}
-  .home-copy h1{max-width:20ch;}
+
   .portrait-stage{min-height:32rem;height:32rem;width:calc(100% + (var(--gutter) * 2));max-width:none;margin-left:calc(var(--gutter) * -1)}
   .home-scroll-cue{display:none}
 
   .principle-grid,.journey-hero-grid,.statement-grid,.split-heading,.tab-panel,.authority-grid,.difference-grid,.founder-grid,.solution-selector{grid-template-columns:1fr}
   .principle-grid{gap:1.75rem}
-  .principle-grid blockquote{max-width:18ch}
 
   .journey-hero{min-height:auto;padding:calc(var(--header-h) + 4.5rem) 0 4.5rem}
-  .journey-title h1{max-width:13ch;}
+
   .journey-intro{max-width:42rem}
   .back-link{margin-bottom:3.25rem}
   .statement-grid{gap:1.75rem}
-  .statement-grid blockquote{max-width:18ch;}
+
   .split-heading{gap:1.75rem}
-  .split-heading h2{max-width:17ch;}
+
   .tab-panel{gap:2.5rem}
 
   .format-row{grid-template-columns:2.5rem minmax(0,1fr);gap:1rem 1.5rem}
@@ -447,7 +442,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 
   .home-hero{padding-top:calc(var(--header-h) + 2.8rem);gap:2.5rem}
   .home-copy .eyebrow{margin-bottom:1rem}
-  .home-copy h1{max-width:13ch;line-height:1.01;letter-spacing:-.05em}
+.home-copy h1{line-height:1.01;letter-spacing:-.05em}
   .home-copy .lead{margin-top:1.5rem;font-size:.97rem;line-height:1.75}
   .founder-line{display:grid;gap:.55rem;margin-top:1.75rem}
   .founder-line span+span::before{display:none}
@@ -455,7 +450,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 
   .portal{min-height:24rem;padding:2rem var(--gutter)}
   .portal-index{top:2rem;right:var(--gutter)}
-  .portal strong{max-width:22ch;margin-top:3.25rem;line-height:1.06}
+.portal strong{margin-top:3.25rem;line-height:1.06}
   .portal-description{font-size:.92rem;line-height:1.7}
   .portal-action{margin-top:2rem;font-size:.62rem;letter-spacing:.1em}
 
@@ -519,6 +514,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
 }
+
 
 
 
