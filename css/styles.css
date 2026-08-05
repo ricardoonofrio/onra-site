@@ -23,8 +23,8 @@
   --line-light: rgba(23,38,56,.14);
   --line-light-strong: rgba(23,38,56,.22);
 
-  --font-display: "Instrument Serif", Georgia, serif;
-  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Lato", sans-serif;
+  --font-sans: "Lato", sans-serif;
 
   --text-hero: clamp(2.8rem, 4.5vw, 4.2rem);
   --text-h2: clamp(2.2rem, 3.5vw, 3.2rem);
