@@ -25,10 +25,10 @@
 
   --font-display: "Lato", sans-serif;
   --font-sans: "Lato", sans-serif;
-  --text-hero: clamp(2.6rem, 4vw, 3.8rem);
-  --text-h2: clamp(2.2rem, 3.2vw, 3rem);
+  --text-hero: clamp(2.2rem, 4vw, 3.8rem);
+  --text-h2: clamp(1.8rem, 3.2vw, 3rem);
   --text-h3: clamp(1.4rem, 2vw, 1.8rem);
-  --text-quote: clamp(1.8rem, 2.8vw, 2.6rem);
+  --text-quote: clamp(1.5rem, 2.8vw, 2.6rem);
   --text-lead: clamp(1.2rem, 1.5vw, 1.45rem);
   --text-body: clamp(1rem, 1.1vw, 1.15rem);
   --text-sm: clamp(0.85rem, 0.9vw, 0.95rem);
@@ -387,6 +387,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 }
 
 @media (max-width: 900px){
+  .statement-grid>p:last-child{grid-column:1;max-width:none}
   :root{--header-h:4.5rem;--section-y:5.25rem;--section-y-sm:4rem}
   .desktop-nav{display:none}
   .menu-toggle{display:block}
@@ -514,6 +515,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
 }
+
 
 
 
