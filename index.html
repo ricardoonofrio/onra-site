@@ -30,13 +30,15 @@
 <body data-state="home">
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-  <div class="page-transition" aria-hidden="true"><img src="assets/images/logos/PNG Logo V03 Onra.png" alt="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140px; opacity: 0.15; pointer-events: none;"></div>
+  <div class="page-transition" aria-hidden="true">
+    <img src="assets/icons/favicon.svg" alt="" class="page-transition-logo" aria-hidden="true">
+  </div>
 
   <header class="site-header" data-header>
     <div class="shell header-inner">
       <button class="brand" type="button" data-route="home" aria-label="Voltar para o início da Onra">
         <img src="assets/images/logos/PNG Logo V01 Onra.png" alt="Onra" class="brand-img-light">
-        <img src="assets/images/logos/PNG Logo V02 Onra.png" alt="Onra" class="brand-img-dark" hidden>
+        <img src="assets/images/logos/PNG Logo V02 Onra.png" alt="" aria-hidden="true" class="brand-img-dark">
       </button>
 
       <nav class="desktop-nav" aria-label="Navegação principal">
@@ -69,7 +71,7 @@
       <div class="home-hero">
         <div class="shell home-hero-grid">
           <div class="home-copy reveal">
-            <p class="eyebrow">ONRA · VIDA FINANCEIRA</p>
+            <p class="eyebrow">EDUCAÇÃO FINANCEIRA &middot; CONSULTORIA</p>
             <h1 id="home-title">O dinheiro deve sustentar a vida que você deseja construir.</h1>
             <p class="lead">Educação financeira e orientação profissional para decisões que exigem clareza, estrutura e visão de futuro.</p>
             <div class="founder-line">
@@ -257,13 +259,19 @@
             <h2 id="authority-education-title">Autoridade construída em conteúdo, presença e experiência.</h2>
             <p>Leo Campos reúne atuação no mercado financeiro, formação técnica e experiência em traduzir temas complexos para diferentes públicos.</p>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; border-top: 1px solid var(--line-light); padding-top: 1.5rem;" aria-label="Registros de eventos">
-            <img src="assets/images/leo-onra.webp" style="grid-column: 1 / 3; width: 100%; height: 260px; object-fit: cover; object-position: center 25%;" alt="Palestra principal" loading="lazy">
-            <img src="assets/images/leo-onra.webp" style="width: 100%; height: 160px; object-fit: cover; object-position: center 15%; filter: grayscale(50%);" alt="Registro de evento corporativo" loading="lazy">
-            <div style="background: var(--mist-2); padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; border: 1px solid var(--line-light);">
-              <p style="font-size: 0.85rem; color: var(--ink-soft); font-style: italic; margin: 0 0 1rem;">"A abordagem transformou a forma como enxergamos o planejamento futuro da nossa equipe."</p>
-              <span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint);">Gestor de RH Institucional</span>
+          <div class="media-ledger" aria-label="Canais e experiências">
+            <a href="https://www.youtube.com/@leocamposfin" target="_blank" rel="noopener">
+              <span>YouTube</span><strong>Conteúdo aprofundado</strong><i>↗</i>
+            </a>
+            <a href="https://www.instagram.com/leocamposfin/" target="_blank" rel="noopener">
+              <span>Instagram</span><strong>Educação no cotidiano</strong><i>↗</i>
+            </a>
+            <div>
+              <span>RedeTV/ES</span><strong>Quadro Papo que Rende</strong><i>TV</i>
             </div>
+            <a href="https://br.linkedin.com/in/leocamposfin" target="_blank" rel="noopener">
+              <span>LinkedIn</span><strong>Atuação profissional</strong><i>↗</i>
+            </a>
           </div>
         </div>
       </section>
@@ -293,7 +301,7 @@
 
       <footer class="site-footer footer-light">
         <div class="shell footer-grid">
-          <button class="footer-brand" type="button" data-route="home"><img src="assets/images/logos/PNG Logo V02 Onra.png" alt="Onra" style="width: 5.5rem;"></button>
+          <button class="footer-brand" type="button" data-route="home"><img src="assets/images/logos/PNG Logo V02 Onra.png" alt="Onra" class="footer-brand-img"></button>
           <p>Educação financeira com contexto, profundidade e aplicação.</p>
           <div>
             <button type="button" data-route="consulting">Conhecer Consultoria</button>
@@ -457,7 +465,7 @@
 
       <footer class="site-footer footer-dark">
         <div class="shell footer-grid">
-          <button class="footer-brand" type="button" data-route="home"><img src="assets/images/logos/PNG Logo V01 Onra.png" alt="Onra" style="width: 5.5rem;"></button>
+          <button class="footer-brand" type="button" data-route="home"><img src="assets/images/logos/PNG Logo V01 Onra.png" alt="Onra" class="footer-brand-img"></button>
           <p>Consultoria de valores mobiliários autorizada pela CVM.</p>
           <div>
             <button type="button" data-route="education">Conhecer Educação</button>
