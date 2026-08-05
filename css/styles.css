@@ -117,22 +117,22 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 
 /* HOME -------------------------------------------------------------------- */
 
-.home-hero{position:relative;width:100%;max-width:100%;min-height:min(52rem,100svh);background:var(--navy);color:var(--dark-text);overflow:hidden}
+.home-hero{position:relative;width:100%;max-width:100%;min-height:min(54rem,100svh);background:var(--navy);color:var(--dark-text);overflow:hidden}
 .home-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 77% 38%,rgba(55,89,132,.28),transparent 32%),linear-gradient(90deg,rgba(13,24,35,.18),transparent 55%);pointer-events:none}
-.home-hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(31rem,44vw);gap:0;align-items:center;min-height:min(52rem,100svh);padding-top:calc(var(--header-h) + 3rem);padding-bottom:4.5rem}
-.home-copy{align-self:center;max-width:48rem}
-.home-copy .eyebrow{margin-bottom:1.55rem;color:rgba(255,255,255,.72)}
-.home-copy h1{margin:0;max-width:12ch;font-family:var(--font-sans);font-size:clamp(3.4rem,4vw,4.65rem);font-weight:400;line-height:1.02;letter-spacing:-.03em}
-.home-copy .lead{max-width:39rem;margin:2rem 0 0;color:var(--dark-muted);font-size:clamp(1rem,1.15vw,1.18rem);line-height:1.85}
-.founder-line{display:flex;flex-wrap:wrap;gap:.65rem 1.7rem;margin-top:2.5rem;color:var(--dark-faint);font-size:.64rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase}
+.home-hero-content{position:relative;z-index:2;display:flex;align-items:center;min-height:min(54rem,100svh);padding-top:calc(var(--header-h) + 2rem);padding-bottom:3.5rem}
+.home-copy{max-width:36rem}
+.home-copy .eyebrow{margin-bottom:1.4rem;color:rgba(255,255,255,.72)}
+.home-copy h1{margin:0;font-family:var(--font-sans);font-size:clamp(3.6rem, 4.5vw, 4.2rem);font-weight:400;line-height:1.02;letter-spacing:-.03em}
+.home-copy .lead{max-width:34rem;margin:1.75rem 0 0;color:var(--dark-muted);font-size:1.05rem;line-height:1.8}
+.founder-line{display:flex;flex-wrap:wrap;gap:.65rem 1.7rem;margin-top:2.25rem;color:var(--dark-faint);font-size:.64rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase}
 .founder-line span{position:relative}
 .founder-line span+span::before{content:"";position:absolute;left:-.88rem;top:50%;width:.18rem;height:.18rem;border-radius:50%;background:var(--accent);transform:translateY(-50%)}
-.portrait-stage{position:absolute;inset:0 0 0 auto;width:44vw;min-height:100%;margin:0;overflow:hidden;background:var(--navy-800)}
-.portrait-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 54%,rgba(13,24,35,.55));pointer-events:none}
+.portrait-stage{position:absolute;inset:0 0 0 auto;width:44vw;max-width:44rem;min-height:100%;margin:0;overflow:hidden;background:var(--navy-800)}
+.portrait-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(13,24,35,.4));pointer-events:none}
 .portrait-stage picture,.portrait-stage img{width:100%;height:100%}
 .portrait-stage img{object-fit:cover;object-position:center 24%;filter:saturate(.88) contrast(1.02)}
 .portrait-stage figcaption{position:absolute;z-index:2;left:1.5rem;right:1.5rem;bottom:1.3rem;display:flex;justify-content:space-between;margin:0;color:rgba(255,255,255,.75);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase}
-.home-scroll-cue{position:absolute;z-index:2;left:50%;bottom:1.45rem;display:flex;align-items:center;gap:1rem;transform:translateX(-50%);color:var(--dark-faint);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase}
+.home-scroll-cue{position:absolute;z-index:2;left:var(--gutter);bottom:1.75rem;display:flex;align-items:center;gap:1rem;color:var(--dark-faint);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase}
 .scroll-line{width:3.5rem;height:1px;background:linear-gradient(90deg,var(--accent),rgba(255,255,255,.12))}
 
 .portals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;max-width:90rem;margin:0 auto;min-height:0;background:var(--mist);overflow:hidden}
@@ -150,10 +150,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 .portal-action i{flex:0 0 auto;margin-left:1rem;font-style:normal;font-size:1rem;transition:transform .25s var(--ease)}
 .portal:hover .portal-action i,.portal:focus-visible .portal-action i{transform:translate(.16rem,-.16rem)}
 
-.home-principle{background:var(--white);padding:var(--section-y-sm) 0}
-.principle-grid{display:grid;grid-template-columns:1fr minmax(0,2.4fr);gap:clamp(2.5rem,6vw,7rem);align-items:start}
-.principle-grid .eyebrow{color:var(--ink-faint);padding-top:.5rem}
-.principle-grid blockquote{max-width:24ch;margin:0;font-family:var(--font-display);font-size:clamp(2.6rem,4.6vw,5.6rem);line-height:.98;letter-spacing:-.025em;color:var(--ink)}
+
 
 /* JOURNEY HERO ------------------------------------------------------------ */
 
