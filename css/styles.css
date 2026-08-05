@@ -176,7 +176,6 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 .education-hero{background:linear-gradient(135deg,#f4f6f8 0%,#e9edf2 100%);color:var(--ink)}
 .education-hero::after{content:"";position:absolute;right:-12vw;bottom:-25vw;width:44vw;height:44vw;border:1px solid rgba(55,89,132,.14);border-radius:50%;box-shadow:0 0 0 6vw rgba(55,89,132,.035),0 0 0 12vw rgba(55,89,132,.025)}
 .consulting-hero{background:linear-gradient(135deg,var(--navy) 0%,#142a3f 100%);color:var(--dark-text)}
-.consulting-hero::after{content:"";position:absolute;right:-4rem;top:18%;width:34vw;height:34vw;border:1px solid rgba(255,255,255,.09);transform:rotate(45deg)}
 .journey-hero-grid{position:relative;z-index:1}
 
 /* Shared section architecture -------------------------------------------- */
@@ -334,6 +333,18 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 .submit-button{display:flex;justify-content:space-between;align-items:center;margin-top:.7rem;padding:1rem 0;border:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:none;cursor:pointer;font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
 .form-status{min-height:1.4rem;margin:0;color:var(--ink-soft);font-size:.75rem}
 .legal-copy{line-height:1.8}.legal-copy p{color:var(--ink-soft)}
+
+/* Consulting Overrides ---------------------------------------------------- */
+.view-consulting {
+  --section-y: clamp(3.5rem, 4.5vw, 4.5rem) !important;
+  --section-y-sm: clamp(2.5rem, 3.5vw, 3.5rem) !important;
+}
+.view-consulting .split-heading h2 {
+  font-size: clamp(2.5rem, 4vw, 4rem) !important;
+}
+.view-consulting .journey-title h1 {
+  font-size: clamp(3.2rem, 5vw, 5.5rem) !important;
+}
 
 /* Responsive -------------------------------------------------------------- */
 
