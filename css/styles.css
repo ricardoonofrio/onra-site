@@ -81,6 +81,11 @@ p{overflow-wrap:break-word;text-wrap:pretty}
 .site-header.is-scrolled{background:rgba(13,24,35,.84);border-color:var(--line-dark);backdrop-filter:blur(18px) saturate(125%)}
 body[data-state="education"] .site-header{color:var(--ink)}
 body[data-state="education"] .site-header.is-scrolled{background:rgba(239,240,242,.88);border-color:var(--line-light)}
+
+.brand-img-light{display:block;width:5.5rem}
+.brand-img-dark{display:none;width:5.5rem}
+body[data-state="education"] .site-header .brand-img-light{display:none}
+body[data-state="education"] .site-header .brand-img-dark{display:block}
 .header-inner{display:flex;height:100%;align-items:center;justify-content:space-between}
 .brand,.desktop-nav button,.menu-toggle,.mobile-menu button,.footer-brand{border:0;background:none;cursor:pointer}
 .brand{display:inline-flex;align-items:center;gap:.62rem;padding:.75rem 0}
