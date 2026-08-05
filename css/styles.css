@@ -251,7 +251,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 
 .situations{padding:var(--section-y) 0}
 .situation-list{border-top:1px solid var(--line-dark)}
-.situation-list p{display:grid;grid-template-columns:4rem 1fr;gap:1.5rem;align-items:center;margin:0;padding:1.45rem 0;border-bottom:1px solid var(--line-dark);font-family:var(--font-sans);font-size:clamp(1.35rem,2.1vw,2.35rem);font-weight:400;line-height:1.25;letter-spacing:-.025em}
+.situation-list p{margin:0;padding:1.45rem 0;border-bottom:1px solid var(--line-dark);font-family:var(--font-sans);font-size:clamp(1.35rem,2.1vw,2.35rem);font-weight:400;line-height:1.25;letter-spacing:-.025em}
 .situation-list span{color:var(--dark-faint);font-family:var(--font-sans);font-size:.62rem;letter-spacing:.14em}
 .method{padding:var(--section-y) 0}
 
@@ -476,7 +476,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   .process-line li:first-child,.method-line li:first-child,.start-steps li:first-child{border-top:0!important}
   .process-line span,.method-line span,.start-steps span{margin-bottom:1rem}
 
-  .situation-list p{grid-template-columns:2.4rem minmax(0,1fr);gap:.8rem;padding:1.25rem 0;font-size:1.35rem}
+  .situation-list p{padding:1.25rem 0;font-size:1.35rem}
   .solution-nav button{padding-right:2rem}
   .solution-panels{padding:1.5rem}
   .solution-panel h3{max-width:14ch;font-size:clamp(2.4rem,10.5vw,3.65rem)}
@@ -504,7 +504,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   .journey-title h1{font-size:clamp(2.6rem,12vw,3.65rem)}
   .statement-grid blockquote,.split-heading h2{font-size:clamp(2.15rem,10.7vw,3rem)}
   .format-row{grid-template-columns:2rem minmax(0,1fr);gap:.8rem 1rem}
-  .situation-list p{grid-template-columns:2rem minmax(0,1fr);font-size:1.25rem}
+  .situation-list p{font-size:1.25rem}
 }
 
 @media (prefers-reduced-motion: reduce){
