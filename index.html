@@ -30,13 +30,13 @@
 <body data-state="home">
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-  <div class="page-transition" aria-hidden="true"></div>
+  <div class="page-transition" aria-hidden="true"><img src="assets/icons/favicon.svg" alt="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 48px; opacity: 0.15; pointer-events: none;"></div>
 
   <header class="site-header" data-header>
     <div class="shell header-inner">
       <button class="brand" type="button" data-route="home" aria-label="Voltar para o início da Onra">
+        <img src="assets/icons/favicon.svg" alt="" aria-hidden="true" style="width: 1.2rem; height: 1.2rem;">
         <span class="brand-word">ONRA</span>
-        <span class="brand-dot" aria-hidden="true"></span>
       </button>
 
       <nav class="desktop-nav" aria-label="Navegação principal">
@@ -116,12 +116,6 @@
         </button>
       </section>
 
-      <section class="home-principle">
-        <div class="shell principle-grid reveal">
-          <p class="eyebrow">NOSSA VISÃO</p>
-          <blockquote>Dinheiro bem cuidado não é um fim. É a base para escolhas, relações, projetos e futuros.</blockquote>
-        </div>
-      </section>
 
       <footer class="site-footer home-footer">
         <div class="shell footer-minimal">
@@ -150,7 +144,7 @@
 
       <section class="statement statement-light">
         <div class="shell statement-grid reveal">
-          <p class="section-number">01</p>
+          <div></div>
           <blockquote>Educação financeira não começa nos números. Começa na forma como as pessoas compreendem suas escolhas.</blockquote>
           <p>O conteúdo da Onra nasce do contexto de quem participa. A proposta não é apenas informar, mas transformar conceitos em decisões possíveis para a vida real.</p>
         </div>
@@ -159,7 +153,6 @@
       <section class="audiences section-light" aria-labelledby="audiences-title">
         <div class="shell split-heading reveal">
           <div>
-            <p class="section-number">02</p>
             <h2 id="audiences-title">Duas formas de levar a educação financeira adiante.</h2>
           </div>
           <p>O mesmo rigor de conteúdo, com objetivos, formatos e linguagem adequados a quem contrata e a quem aprende.</p>
@@ -206,7 +199,6 @@
       <section class="formats section-ink" aria-labelledby="formats-title">
         <div class="shell split-heading split-heading-light reveal">
           <div>
-            <p class="section-number">03</p>
             <h2 id="formats-title">Formatos que respeitam o objetivo de cada encontro.</h2>
           </div>
           <p>Da sensibilização inicial a uma jornada continuada de aprendizagem.</p>
@@ -243,7 +235,6 @@
       <section class="themes section-light" aria-labelledby="themes-title">
         <div class="shell split-heading reveal">
           <div>
-            <p class="section-number">04</p>
             <h2 id="themes-title">Temas conectados à vida real.</h2>
           </div>
           <p>Os conteúdos podem ser ajustados ao público, ao momento e ao objetivo de cada instituição.</p>
@@ -263,23 +254,16 @@
       <section class="authority section-paper" aria-labelledby="authority-education-title">
         <div class="shell authority-grid reveal">
           <div class="authority-copy">
-            <p class="section-number">05</p>
             <h2 id="authority-education-title">Autoridade construída em conteúdo, presença e experiência.</h2>
             <p>Leo Campos reúne atuação no mercado financeiro, formação técnica e experiência em traduzir temas complexos para diferentes públicos.</p>
           </div>
-          <div class="media-ledger" aria-label="Canais e experiências">
-            <a href="https://www.youtube.com/@leocamposfin" target="_blank" rel="noopener">
-              <span>YouTube</span><strong>Conteúdo aprofundado</strong><i>↗</i>
-            </a>
-            <a href="https://www.instagram.com/leocamposfin/" target="_blank" rel="noopener">
-              <span>Instagram</span><strong>Educação no cotidiano</strong><i>↗</i>
-            </a>
-            <div>
-              <span>RedeTV/ES</span><strong>Quadro Papo que Rende</strong><i>TV</i>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; border-top: 1px solid var(--line-light); padding-top: 1.5rem;" aria-label="Registros de eventos">
+            <img src="assets/images/leo-onra.webp" style="grid-column: 1 / 3; width: 100%; height: 260px; object-fit: cover; object-position: center 25%;" alt="Palestra principal" loading="lazy">
+            <img src="assets/images/leo-onra.webp" style="width: 100%; height: 160px; object-fit: cover; object-position: center 15%; filter: grayscale(50%);" alt="Registro de evento corporativo" loading="lazy">
+            <div style="background: var(--mist-2); padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; border: 1px solid var(--line-light);">
+              <p style="font-size: 0.85rem; color: var(--ink-soft); font-style: italic; margin: 0 0 1rem;">"A abordagem transformou a forma como enxergamos o planejamento futuro da nossa equipe."</p>
+              <span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint);">Gestor de RH Institucional</span>
             </div>
-            <a href="https://br.linkedin.com/in/leocamposfin" target="_blank" rel="noopener">
-              <span>LinkedIn</span><strong>Atuação profissional</strong><i>↗</i>
-            </a>
           </div>
         </div>
       </section>
@@ -287,7 +271,6 @@
       <section class="process section-light" aria-labelledby="education-process-title">
         <div class="shell split-heading reveal">
           <div>
-            <p class="section-number">06</p>
             <h2 id="education-process-title">Da necessidade à experiência.</h2>
           </div>
           <p>Um processo claro para que cada entrega faça sentido para a instituição e para o público.</p>
@@ -310,7 +293,7 @@
 
       <footer class="site-footer footer-light">
         <div class="shell footer-grid">
-          <button class="footer-brand" type="button" data-route="home">ONRA</button>
+          <button class="footer-brand" type="button" data-route="home"><img src="assets/icons/favicon.svg" alt="" style="width: 1rem; margin-right: 0.5rem; vertical-align: middle;">ONRA</button>
           <p>Educação financeira com contexto, profundidade e aplicação.</p>
           <div>
             <button type="button" data-route="consulting">Conhecer Consultoria</button>
@@ -336,9 +319,9 @@
         </div>
       </div>
 
-      <section class="statement statement-dark">
+      <section class="statement statement-light">
         <div class="shell statement-grid reveal">
-          <p class="section-number">01</p>
+          <div></div>
           <blockquote>Patrimônio não é apenas aquilo que você acumulou. É aquilo que precisa sustentar suas escolhas futuras.</blockquote>
           <p>Uma estratégia coerente começa antes da escolha de qualquer investimento. Começa pela compreensão da vida, dos objetivos, das responsabilidades e do tempo.</p>
         </div>
@@ -347,7 +330,6 @@
       <section class="situations section-ink" aria-labelledby="situations-title">
         <div class="shell split-heading split-heading-light reveal">
           <div>
-            <p class="section-number">02</p>
             <h2 id="situations-title">Quando a orientação deixa de ser opcional.</h2>
           </div>
           <p>A consultoria é indicada para quem percebeu que algumas decisões já não deveriam ser tomadas sozinho.</p>
@@ -364,7 +346,6 @@
       <section class="method section-paper" aria-labelledby="method-title">
         <div class="shell split-heading reveal">
           <div>
-            <p class="section-number">03</p>
             <h2 id="method-title">Como a Onra trabalha.</h2>
           </div>
           <p>Um processo conduzido com método, proximidade e visão de longo prazo.</p>
@@ -380,7 +361,6 @@
       <section class="solutions section-light" aria-labelledby="solutions-title">
         <div class="shell split-heading reveal">
           <div>
-            <p class="section-number">04</p>
             <h2 id="solutions-title">Soluções organizadas pela sua necessidade.</h2>
           </div>
           <p>Você não precisa saber o nome do serviço. Precisa reconhecer o momento que está vivendo.</p>
@@ -422,7 +402,6 @@
       <section class="difference section-ink" aria-labelledby="difference-title">
         <div class="shell difference-grid reveal">
           <div>
-            <p class="section-number">05</p>
             <h2 id="difference-title">A vida vem antes da carteira.</h2>
           </div>
           <div class="difference-list">
@@ -437,10 +416,9 @@
       <section class="founder section-paper" id="leo" aria-labelledby="founder-title">
         <div class="shell founder-grid reveal">
           <figure>
-            <img src="assets/images/leo-onra.webp" width="1200" height="1600" alt="Leo Campos, fundador da Onra" loading="lazy">
+            <img src="assets/images/leo-consulting.webp" width="1200" height="1200" style="object-fit: cover; aspect-ratio: 1/1;" alt="Leo Campos, consultor" loading="lazy">
           </figure>
           <div class="founder-copy">
-            <p class="section-number">06</p>
             <h2 id="founder-title">Experiência para orientar. Proximidade para compreender.</h2>
             <p>Leo Campos é o fundador e especialista responsável pela Onra. Atua há mais de 14 anos no mercado financeiro e reúne experiência profissional, formação técnica e uma visão de planejamento centrada na vida real de cada cliente.</p>
             <dl class="credentials">
@@ -456,7 +434,6 @@
       <section class="start section-light" aria-labelledby="start-title">
         <div class="shell split-heading reveal">
           <div>
-            <p class="section-number">07</p>
             <h2 id="start-title">Como começa.</h2>
           </div>
           <p>A primeira conversa existe para entender o momento e verificar se a Onra é a orientação adequada.</p>
@@ -480,7 +457,7 @@
 
       <footer class="site-footer footer-dark">
         <div class="shell footer-grid">
-          <button class="footer-brand" type="button" data-route="home">ONRA</button>
+          <button class="footer-brand" type="button" data-route="home"><img src="assets/icons/favicon.svg" alt="" style="width: 1rem; margin-right: 0.5rem; vertical-align: middle;">ONRA</button>
           <p>Consultoria de valores mobiliários autorizada pela CVM.</p>
           <div>
             <button type="button" data-route="education">Conhecer Educação</button>
