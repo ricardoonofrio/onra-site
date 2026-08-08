@@ -128,75 +128,128 @@
       </footer>
     </section>
 
-    <!-- EDUCAÇÃO -->
+        <!-- EDUCAÇÃO -->
     <section class="view view-education" data-view="education" aria-labelledby="education-title" hidden>
-      <div class="journey-hero education-hero">
-        <div class="shell journey-hero-grid">
-          <div class="journey-title reveal">
+      
+      <!-- 1. HERO -->
+      <div class="edu-hero section-light">
+        <div class="shell edu-hero-grid">
+          <div class="edu-hero-copy reveal">
             <p class="eyebrow">EDUCAÇÃO FINANCEIRA</p>
-            <h1 id="education-title">Conhecimento que continua fazendo sentido depois do encontro.</h1>
+            <h1 id="education-title">Entender o dinheiro muda a forma como fazemos escolhas.</h1>
+            <p class="lead">Educação financeira para aproximar conhecimento, comportamento e decisões da vida real.</p>
+            
+            <div class="founder-line" style="margin: 2.5rem 0;">
+              <span>Leo Campos</span>
+              <span>+14 anos de experiência no mercado financeiro</span>
+              <span>Educador financeiro e palestrante</span>
+            </div>
+            
+            <button class="text-link" type="button" data-scroll-target="edu-formas">Conhecer as experiências <span>&darr;</span></button>
           </div>
-          <div class="journey-intro reveal" data-delay="100">
-            <p>Experiências desenhadas para aproximar o conhecimento financeiro da realidade de cada público — com linguagem humana, aplicação prática e profundidade.</p>
-            <button class="text-link" type="button" data-open-contact="education">Solicitar uma proposta <span>↗</span></button>
-          </div>
+          <figure class="edu-hero-media reveal" data-delay="100">
+            <!-- PLACEHOLDER FOR LEO PALESTRANDO -->
+            <img src="assets/images/leo-onra.webp" width="1200" height="1600" alt="Leo Campos educador financeiro" fetchpriority="high">
+          </figure>
         </div>
       </div>
 
-      <section class="statement statement-light">
-        <div class="shell statement-grid reveal">
-          <blockquote>Educação financeira não começa nos números. Começa na forma como as pessoas compreendem suas escolhas.</blockquote>
-          <p>O conteúdo da Onra nasce do contexto de quem participa. A proposta não é apenas informar, mas transformar conceitos em decisões possíveis para a vida real.</p>
-        </div>
-      </section>
-
-      <section class="audiences section-light" aria-labelledby="audiences-title">
+      <!-- 2. FORMAS DE EDUCAÇÃO -->
+      <section class="edu-formas section-mist" id="edu-formas" aria-labelledby="formas-title">
         <div class="shell split-heading reveal">
           <div>
-            <h2 id="audiences-title">Duas formas de levar a educação financeira adiante.</h2>
+            <h2 id="formas-title">Conhecimento pode chegar de formas diferentes.</h2>
           </div>
-          <p>O mesmo rigor de conteúdo, com objetivos, formatos e linguagem adequados a quem contrata e a quem aprende.</p>
+          <p>A proposta muda conforme o público, o contexto e a profundidade necessária.</p>
         </div>
 
-        <div class="shell audience-switcher reveal" data-delay="80">
-          <div class="tab-list" role="tablist" aria-label="Públicos da Educação">
-            <button id="tab-institutions" role="tab" aria-selected="true" aria-controls="panel-institutions" tabindex="0">Para instituições</button>
-            <button id="tab-people" role="tab" aria-selected="false" aria-controls="panel-people" tabindex="-1">Para pessoas</button>
-          </div>
+        <div class="shell edu-editorial-list reveal" data-delay="80">
+          
+          <article class="editorial-row">
+            <div class="ed-meta">
+              <span>01</span>
+              <p class="eyebrow">Para instituições</p>
+            </div>
+            <div class="ed-content">
+              <h3>Palestras &amp; Workshops</h3>
+              <p>Experiências desenvolvidas para empresas, institutos, escolas, igrejas e eventos, com conteúdo adaptado ao perfil do público, linguagem acessível e aplicação prática.</p>
+              <p class="ed-note">Projetos pontuais ou programas continuados podem ser desenvolvidos conforme a necessidade da instituição.</p>
+              <p class="ed-note">Organização financeira, comportamento, crédito, investimentos, aposentadoria, projetos de vida e bem-estar financeiro são alguns dos temas que podem ser trabalhados.</p>
+              <button class="text-link" type="button" data-open-contact="education">Levar para minha instituição <span>&nearr;</span></button>
+            </div>
+          </article>
 
-          <div class="tab-panel is-active" id="panel-institutions" role="tabpanel" aria-labelledby="tab-institutions">
-            <div class="panel-lead">
-              <p class="eyebrow">EMPRESAS · INSTITUTOS · ORGANIZAÇÕES</p>
-              <h3>Educação financeira como instrumento de bem-estar, consciência e desenvolvimento.</h3>
+          <article class="editorial-row">
+            <div class="ed-meta">
+              <span>02</span>
+              <p class="eyebrow">Para aprender continuamente</p>
             </div>
-            <div class="panel-detail">
-              <p>Projetos para empresas, institutos de previdência, servidores, associações, igrejas, organizações sociais, escolas e comunidades.</p>
-              <ul class="quiet-list">
-                <li>Conteúdo adaptado ao contexto institucional</li>
-                <li>Experiências presenciais, online ou híbridas</li>
-                <li>Materiais de apoio e continuidade</li>
-              </ul>
+            <div class="ed-content">
+              <h3>Conteúdo Aberto</h3>
+              <p>Vídeos, análises, reflexões e conteúdos gratuitos para quem deseja desenvolver uma relação mais consciente com o dinheiro e tomar decisões com mais clareza.</p>
+              <a href="https://www.youtube.com/@leocamposfin" target="_blank" rel="noopener" class="text-link">Acompanhar os conteúdos <span>&nearr;</span></a>
             </div>
-          </div>
+          </article>
 
-          <div class="tab-panel" id="panel-people" role="tabpanel" aria-labelledby="tab-people" hidden>
-            <div class="panel-lead">
-              <p class="eyebrow">PESSOAS · CASAIS · FAMÍLIAS</p>
-              <h3>Conhecimento para compreender a realidade, organizar prioridades e construir autonomia.</h3>
+          <article class="editorial-row highlight-row">
+            <div class="ed-meta">
+              <span>03</span>
+              <span class="badge-soon">Em Breve</span>
             </div>
-            <div class="panel-detail">
-              <p>Conteúdos, cursos e jornadas para quem deseja transformar a relação com o dinheiro sem atalhos ou promessas fáceis.</p>
-              <ul class="quiet-list">
-                <li>Organização e clareza financeira</li>
-                <li>Projetos de vida e planejamento</li>
-                <li>Método Pleno e conteúdos abertos</li>
-              </ul>
+            <div class="ed-content">
+              <h3>Raio-X da Vida Financeira</h3>
+              <p class="sub-h3">Organize sua vida em 7 passos</p>
+              <p>Um curso prático para ajudar você a compreender sua realidade financeira, organizar prioridades e construir uma base mais clara para tomar decisões.</p>
+              <button class="text-link" type="button" data-open-contact="raiox">Quero ser avisado no lançamento <span>&nearr;</span></button>
+            </div>
+          </article>
+
+          <article class="editorial-row">
+            <div class="ed-meta">
+              <span>04</span>
+              <p class="eyebrow">Formação</p>
+            </div>
+            <div class="ed-content">
+              <h3>Método Pleno</h3>
+              <p>Uma jornada estruturada para quem deseja aprofundar sua organização financeira, planejar melhor e desenvolver maior autonomia para conduzir suas decisões.</p>
+              <button class="text-link" type="button" data-open-contact="pleno">Entrar na lista de interesse <span>&nearr;</span></button>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 3. FILOSOFIA EDUCACIONAL -->
+      <section class="edu-philosophy section-paper" aria-labelledby="philosophy-title">
+        <div class="shell split-heading reveal">
+          <div>
+            <h2 id="philosophy-title" style="max-width:32rem;">Educação financeira não começa nos números. Começa na forma como as pessoas compreendem suas escolhas.</h2>
+          </div>
+          <p>Por isso, os conteúdos não são construídos apenas em torno de orçamento, investimentos ou planilhas. Eles partem da realidade das pessoas, dos comportamentos, das prioridades e dos projetos que o dinheiro precisa sustentar.</p>
+        </div>
+        <div class="shell reveal" data-delay="80">
+          <div class="principles-grid">
+            <div class="principle-item">
+              <h4>Clareza</h4>
+              <p>Entender antes de decidir.</p>
+            </div>
+            <div class="principle-item">
+              <h4>Aplicação</h4>
+              <p>Transformar conhecimento em ação.</p>
+            </div>
+            <div class="principle-item">
+              <h4>Contexto</h4>
+              <p>Falar com a realidade de cada público.</p>
+            </div>
+            <div class="principle-item">
+              <h4>Autonomia</h4>
+              <p>Desenvolver capacidade para tomar melhores decisões.</p>
             </div>
           </div>
         </div>
       </section>
 
-            <!-- 4. LEO EM AÇÃO -->
+      <!-- 4. LEO EM AÇÃO -->
       <section class="edu-action section-light" aria-labelledby="action-title">
         <div class="shell split-heading reveal">
           <div>
@@ -263,7 +316,6 @@
         </div>
       </footer>
     </section>
-
     <!-- CONSULTORIA -->
     <section class="view view-consulting" data-view="consulting" aria-labelledby="consulting-title" hidden>
       <div class="journey-hero consulting-hero">
