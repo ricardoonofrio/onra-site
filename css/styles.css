@@ -922,3 +922,11 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 .reveal.is-visible .text-highlight::before {
   width: 102%;
 }
+
+/* PESO 700 PARA TEXTOS COM HIGHLIGHT */
+#education-title,
+#formas-title,
+#philosophy-title,
+#action-title {
+  font-weight: 700 !important;
+}
