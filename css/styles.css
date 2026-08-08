@@ -181,7 +181,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 .text-link span,.cta-arrow span{font-size:var(--text-body);transition:transform .3s var(--ease)}
 .text-link:hover span,.cta-arrow:hover span{transform:translate(.2rem,-.2rem)}
 .education-hero{background:linear-gradient(135deg,#f4f6f8 0%,#e9edf2 100%);color:var(--ink)}
-.education-hero::after{content:"";position:absolute;right:-12vw;bottom:-25vw;width:44vw;height:44vw;border:1px solid rgba(55,89,132,.14);border-radius:50%;box-shadow:0 0 0 6vw rgba(55,89,132,.035),0 0 0 12vw rgba(55,89,132,.025)}
+.education-hero::after{content:"";position:absolute;right:-15vw;bottom:-20vw;width:65vw;height:65vw;background-image:url('../assets/images/logos/transition-logo.png');background-size:contain;background-repeat:no-repeat;background-position:center;opacity:0.04;pointer-events:none}
 .consulting-hero{background:linear-gradient(135deg,var(--navy) 0%,#142a3f 100%);color:var(--dark-text)}
 .journey-hero-grid{position:relative;z-index:1}
 
