@@ -897,3 +897,27 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
     margin-top: 1.5rem;
   }
 }
+/* HIGHLIGHT ANIMADO (MARCADOR DE TEXTO) */
+.text-highlight {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  z-index: 1;
+}
+.text-highlight::before {
+  content: "";
+  position: absolute;
+  top: 2%;
+  bottom: 2%;
+  left: -1%;
+  width: 0;
+  background-color: #81B8FF; /* Azul suave e marcante */
+  opacity: 0.45; /* Deixa o texto perfeitamente legível */
+  z-index: -1;
+  border-radius: 2px;
+  transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0.25s; /* Aguarda a section revelar */
+}
+.reveal.is-visible .text-highlight::before {
+  width: 102%;
+}
