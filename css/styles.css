@@ -181,7 +181,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 .text-link span,.cta-arrow span{font-size:var(--text-body);transition:transform .3s var(--ease)}
 .text-link:hover span,.cta-arrow:hover span{transform:translate(.2rem,-.2rem)}
 .education-hero{background:linear-gradient(135deg,#f4f6f8 0%,#e9edf2 100%);color:var(--ink)}
-.education-hero::after{content:"";position:absolute;right:-15vw;bottom:-20vw;width:65vw;height:65vw;background-image:url('../assets/images/logos/transition-logo.png');background-size:contain;background-repeat:no-repeat;background-position:center;opacity:0.04;pointer-events:none}
+.education-hero::after{content:"";position:absolute;right:-12vw;top:calc(50% - 22vw);width:44vw;height:44vw;background-image:url('../assets/images/logos/transition-logo.png');background-size:contain;background-repeat:no-repeat;background-position:center;opacity:0.04;pointer-events:none;animation:slow-spin 60s linear infinite}
 .consulting-hero{background:linear-gradient(135deg,var(--navy) 0%,#142a3f 100%);color:var(--dark-text)}
 .journey-hero-grid{position:relative;z-index:1}
 
@@ -539,3 +539,5 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 
 
 
+
+@keyframes slow-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
