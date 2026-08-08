@@ -944,8 +944,8 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   opacity: 1; 
 }
 .growth-line {
-  stroke-dasharray: 1500;
-  stroke-dashoffset: 1500;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
   transition: stroke-dashoffset 2.5s cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: 0.1s;
 }
