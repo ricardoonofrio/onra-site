@@ -1,4 +1,4 @@
-﻿/* ========================================================================== 
+/* ========================================================================== 
    ONRA — SISTEMA VISUAL V4
    Direção: luxo discreto, precisão editorial, responsividade robusta e zero layout shift.
    ========================================================================== */
@@ -903,6 +903,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   display: inline-block;
   white-space: nowrap;
   z-index: 1;
+  font-weight: 700;
 }
 .text-highlight::before {
   content: "";
