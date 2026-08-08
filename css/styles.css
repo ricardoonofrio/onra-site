@@ -550,10 +550,9 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 /* 1. HERO FOTOGRÁFICO */
 .edu-hero {
   position: relative;
-  min-height: 85svh; /* Mais compacto, revela a próxima seção */
   display: flex;
   align-items: center;
-  padding: calc(var(--header-h) + 2rem) 0 4rem;
+  padding: calc(var(--header-h) + 2.5rem) 0 4rem;
   overflow: hidden;
 }
 .edu-hero-grid {
@@ -566,26 +565,26 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   z-index: 2;
 }
 .edu-hero-copy h1 {
-  font-size: clamp(2.25rem, 4vw, 3.5rem); /* Ligeiramente menor */
-  line-height: 1.1;
+  font-size: clamp(2.25rem, 3.5vw, 3rem);
+  line-height: 1.05;
   margin-bottom: 1.25rem;
-  max-width: 40rem;
+  max-width: 38rem;
+  letter-spacing: -0.02em;
 }
 .edu-hero-copy .lead {
-  font-size: clamp(1.125rem, 2vw, 1.25rem);
-  opacity: 0.8;
-  max-width: 32rem;
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  opacity: 0.75;
+  max-width: 30rem;
 }
 .edu-hero-copy .founder-line {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   opacity: 0.6;
 }
 .edu-hero-media {
   position: relative;
-  /* Sem border-radius ou shadow, aspecto editorial solto */
   aspect-ratio: 4/5;
   margin: 0;
 }
@@ -598,24 +597,24 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 
 @media (min-width: 900px) {
   .edu-hero-grid {
-    grid-template-columns: 1.2fr 1fr; /* Texto ganha um pouco mais de espaço */
-    gap: 4rem;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 5rem;
   }
 }
 
 /* 2. FORMAS DE EDUCAÇÃO (LISTA EDITORIAL) */
 .edu-formas {
-  padding: 4rem 0;
+  padding: 4.5rem 0;
 }
 .edu-editorial-list {
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 .editorial-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   padding: 2.5rem 0;
   border-top: 1px solid var(--line-light);
 }
@@ -623,74 +622,77 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   border-bottom: 1px solid var(--line-light);
 }
 .highlight-row {
-  background: rgba(23,38,56,0.03); /* Fundo sutil marca Onra */
+  background: rgba(23,38,56,0.02);
   margin: 0 -1rem;
   padding: 2.5rem 1rem;
-  border-top: 1px solid transparent; /* Remove linha no topo se empilhado */
+  border-top: 1px solid transparent;
   border-bottom: 1px solid transparent !important;
-  border-radius: 4px;
 }
 .ed-meta {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
 }
 .ed-meta span:first-child {
-  font-size: 1.125rem;
-  font-weight: 300;
-  opacity: 0.4;
-  font-family: var(--font-display); /* Sem aspecto técnico */
+  font-size: 0.875rem;
+  font-weight: 400;
+  opacity: 0.35;
+  font-family: var(--font-display);
 }
 .ed-content h3 {
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
 }
 .sub-h3 {
-  font-size: 1.125rem;
-  opacity: 0.7;
+  font-size: 1rem;
+  opacity: 0.65;
   margin-bottom: 1rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 .ed-content p {
-  opacity: 0.8;
+  opacity: 0.75;
   margin-bottom: 1.25rem;
-  max-width: 38rem; /* Evita linhas muito longas */
+  max-width: 34rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
 }
 .ed-note {
-  font-size: 0.875rem;
-  opacity: 0.6 !important;
+  font-size: 0.8125rem;
+  opacity: 0.5 !important;
   margin-bottom: 0.75rem !important;
 }
 .badge-soon {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.2rem 0.6rem;
-  border: 1px solid rgba(23,38,56,0.15);
-  color: var(--ink-soft); /* Tom da marca sutil */
-  border-radius: 20px;
-  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  background: rgba(23,38,56,0.04);
+  color: var(--ink-soft);
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   width: fit-content;
-}
-.badge-soon::before {
-  content: '';
-  display: block;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: currentColor;
 }
 
 @media (min-width: 768px) {
   .editorial-row {
-    grid-template-columns: 200px 1fr;
+    flex-direction: row;
     gap: 2rem;
+    padding: 3rem 0;
   }
   .highlight-row {
     margin: 0 -2rem;
-    padding: 2.5rem 2rem;
+    padding: 3rem 2rem;
+  }
+  .ed-meta {
+    width: 3rem;
+    flex-shrink: 0;
+    align-items: flex-start;
+  }
+  .ed-meta span:first-child {
+    font-size: 1rem;
   }
 }
 
@@ -698,10 +700,13 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 .edu-philosophy {
   padding: 5rem 0;
 }
+.edu-philosophy .split-heading {
+  margin-bottom: 1rem; /* Mais perto da grade */
+}
 .principles-grid {
   display: grid;
   grid-template-columns: 1fr;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   border-top: 1px solid var(--line-light);
 }
 .principle-item {
@@ -709,12 +714,13 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   border-bottom: 1px solid var(--line-light);
 }
 .principle-item h4 {
-  font-size: 1.125rem;
+  font-size: 1rem;
   margin-bottom: 0.25rem;
 }
 .principle-item p {
-  opacity: 0.7;
-  font-size: 0.95rem;
+  opacity: 0.65;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 @media (min-width: 768px) {
@@ -724,7 +730,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   }
   .principle-item {
     border-bottom: none;
-    border-right: 1px solid var(--line-light);
+    border-right: 1px solid rgba(23,38,56,0.05); /* Divisória quase imperceptível */
     padding: 2rem 1.5rem 2rem 0;
   }
   .principle-item:last-child {
@@ -738,23 +744,28 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 
 /* 4. LEO EM AÇÃO */
 .edu-action {
-  padding: 5rem 0;
+  padding: 5.5rem 0;
+}
+.edu-action-text-col {
+  max-width: 24rem; /* Força mancha menor, dá protagonismo às fotos */
 }
 .credentials-text {
-  font-size: 0.8125rem; /* Mais discreto */
-  opacity: 0.6;
-  line-height: 1.5;
-  margin-bottom: 2rem;
-  max-width: 32rem;
+  font-size: 0.6875rem;
+  opacity: 0.45;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 26rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 .action-links {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  font-size: 0.875rem;
+  gap: 0.6rem;
+  font-size: 0.8125rem;
 }
 .action-links a, .action-links span {
-  opacity: 0.7;
+  opacity: 0.6;
   text-decoration: none;
   transition: all 0.2s ease;
   display: flex;
@@ -762,7 +773,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 }
 .action-links a:hover {
   opacity: 1;
-  color: var(--blue); /* Tom discreto no hover */
+  color: var(--blue);
 }
 .action-photo-grid {
   display: grid;
@@ -773,7 +784,6 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 .photo-main, .photo-sub {
   width: 100%;
   object-fit: cover;
-  /* Sem border radius para aspecto editorial/documental */
 }
 .photo-main {
   aspect-ratio: 16/10;
@@ -784,25 +794,34 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 .photo-secondary-wrap {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.35rem;
 }
 .photo-caption {
-  font-size: 0.8125rem;
-  opacity: 0.5;
-  padding-left: 0.5rem;
-  border-left: 1px solid var(--line-light);
+  font-size: 0.625rem;
+  opacity: 0.35;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 @media (min-width: 900px) {
+  .edu-action .split-heading {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
   .action-photo-grid {
-    grid-template-columns: 1.5fr 1fr; /* Proporção melhorada */
+    grid-template-columns: 1.7fr 1fr;
+    align-items: end;
+    gap: 2rem;
+    margin-top: 4rem;
   }
 }
 
 /* 5. CTA FINAL */
 .edu-final-cta {
   padding: 5rem 0;
-  text-align: left; /* Passa a ser alinhado à esquerda */
+  text-align: left;
 }
 .split-cta-grid {
   display: grid;
@@ -814,28 +833,28 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0; /* Remove padding desnecessário no mobile */
+  padding: 0;
 }
 .split-cta-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
 }
 .split-cta-card p {
-  opacity: 0.7;
+  opacity: 0.65;
   margin-bottom: 1.5rem;
-  max-width: 22rem;
-  font-size: 0.95rem;
+  max-width: 20rem;
+  font-size: 0.875rem;
 }
 .split-cta-divider {
   width: 100%;
   height: 1px;
-  background: var(--line-light); /* Mais sutil que line-dark */
+  background: var(--line-light);
 }
 
 @media (min-width: 768px) {
   .split-cta-grid {
     grid-template-columns: 1fr 1px 1fr;
-    gap: 4rem; /* Mais respiro entre colunas */
+    gap: 5rem;
   }
   .split-cta-divider {
     width: 1px;
@@ -843,22 +862,38 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
     align-self: stretch;
   }
 }
+
+/* RESPONSIVIDADE MACRO (NOTEBOOKS & MONITORES) */
+@media (min-width: 1440px) {
+  .edu-hero {
+    padding: calc(var(--header-h) + 4rem) 0 6rem;
+  }
+  .edu-hero-grid {
+    gap: 8rem;
+  }
+  .edu-formas, .edu-philosophy, .edu-action, .edu-final-cta {
+    padding: 6rem 0;
+  }
+}
+
 @media (min-width: 1024px) and (max-height: 800px) {
   .edu-hero {
-    min-height: 75svh;
-    padding-top: calc(var(--header-h) + 1.5rem);
+    padding: calc(var(--header-h) + 1.5rem) 0 3rem;
+  }
+  .edu-hero-grid {
+    gap: 4rem;
   }
   .edu-hero-copy h1 {
-    font-size: clamp(2rem, 3.5vw, 2.75rem);
-    margin-bottom: 1rem;
+    font-size: clamp(2rem, 3.5vw, 2.5rem);
+    margin-bottom: 0.75rem;
   }
   .edu-formas, .edu-philosophy, .edu-action, .edu-final-cta {
     padding: 3.5rem 0;
   }
   .action-photo-grid {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
   }
   .edu-editorial-list {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
 }
