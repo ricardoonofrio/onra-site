@@ -553,7 +553,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   min-height: 85svh; /* Mais compacto, revela a próxima seção */
   display: flex;
   align-items: center;
-  padding: calc(var(--space-header) + 2rem) 0 4rem;
+  padding: calc(var(--header-h) + 2rem) 0 4rem;
   overflow: hidden;
 }
 .edu-hero-grid {
@@ -623,7 +623,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   border-bottom: 1px solid var(--line-light);
 }
 .highlight-row {
-  background: rgba(179,142,93,0.03); /* Fundo sutil marca Onra */
+  background: rgba(23,38,56,0.03); /* Fundo sutil marca Onra */
   margin: 0 -1rem;
   padding: 2.5rem 1rem;
   border-top: 1px solid transparent; /* Remove linha no topo se empilhado */
@@ -639,7 +639,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   font-size: 1.125rem;
   font-weight: 300;
   opacity: 0.4;
-  font-family: var(--font-main); /* Sem aspecto técnico */
+  font-family: var(--font-display); /* Sem aspecto técnico */
 }
 .ed-content h3 {
   font-size: 1.75rem;
@@ -666,8 +666,8 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   align-items: center;
   gap: 0.35rem;
   padding: 0.2rem 0.6rem;
-  border: 1px solid rgba(179,142,93,0.3);
-  color: #B38E5D; /* Tom da marca sutil */
+  border: 1px solid rgba(23,38,56,0.15);
+  color: var(--ink-soft); /* Tom da marca sutil */
   border-radius: 20px;
   font-size: 0.65rem;
   text-transform: uppercase;
@@ -762,7 +762,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 }
 .action-links a:hover {
   opacity: 1;
-  color: var(--brand); /* Tom discreto no hover */
+  color: var(--blue); /* Tom discreto no hover */
 }
 .action-photo-grid {
   display: grid;
@@ -841,5 +841,24 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
     width: 1px;
     height: 100%;
     align-self: stretch;
+  }
+}
+@media (min-width: 1024px) and (max-height: 800px) {
+  .edu-hero {
+    min-height: 75svh;
+    padding-top: calc(var(--header-h) + 1.5rem);
+  }
+  .edu-hero-copy h1 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    margin-bottom: 1rem;
+  }
+  .edu-formas, .edu-philosophy, .edu-action, .edu-final-cta {
+    padding: 3.5rem 0;
+  }
+  .action-photo-grid {
+    margin-top: 2rem;
+  }
+  .edu-editorial-list {
+    margin-top: 2rem;
   }
 }

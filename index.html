@@ -149,7 +149,7 @@
           </div>
           <figure class="edu-hero-media reveal" data-delay="100">
             <!-- PLACEHOLDER FOR LEO PALESTRANDO -->
-            <img src="assets/images/leo-onra.webp" width="1200" height="1600" alt="Leo Campos educador financeiro" fetchpriority="high">
+            <img src="assets/images/leo-palestra-hero.png" width="1200" height="1600" alt="Leo Campos educador financeiro" fetchpriority="high">
           </figure>
         </div>
       </div>
@@ -271,9 +271,9 @@
         
         <div class="shell action-photo-grid reveal" data-delay="80">
           <!-- PLACEHOLDERS FOR LEO EM AÇÃO -->
-          <img src="assets/images/leo-onra.webp" class="photo-main" alt="Leo palestrando" loading="lazy">
+          <img src="assets/images/leo-palestra-action1.png" class="photo-main" alt="Leo palestrando" loading="lazy">
           <div class="photo-secondary-wrap">
-            <img src="assets/images/leo-consulting.webp" class="photo-sub" alt="Leo em workshop" loading="lazy">
+            <img src="assets/images/leo-palestra-action2.png" class="photo-sub" alt="Leo em workshop" loading="lazy">
             <div class="photo-caption">
               <p>Experiência prática com públicos diversos.</p>
             </div>
@@ -529,8 +529,7 @@
           <label><span>Nome</span><input name="name" autocomplete="name" required></label>
           <label><span>WhatsApp</span><input name="phone" type="tel" autocomplete="tel" required></label>
         </div>
-        <label>
-          <span>Situação de interesse</span>
+        <label id="field-interest"><span>Situação de interesse</span>
           <select name="interest" id="contact-interest" required style="width: 100%; padding: 1rem; border-radius: 4px; border: 1px solid rgba(0,0,0,0.1); font-family: inherit; font-size: 1rem;">
             <option value="Contato geral">Selecione uma opção...</option>
             <option value="diagnostic">Diagnóstico Financeiro</option>
@@ -541,7 +540,7 @@
             <option value="consulting">Conversa de Avaliação</option>
           </select>
         </label>
-        <label><span>Mensagem (opcional)</span><textarea name="message" rows="3"></textarea></label>
+        <label id="field-message"><span>Mensagem (opcional)</span><textarea name="message" rows="3"></textarea></label>
         <label class="consent"><input type="checkbox" name="consent" required><span>Autorizo o contato da Onra pelo WhatsApp fornecido.</span></label>
         <button class="submit-button" type="submit">Continuar no WhatsApp <span>↗</span></button>
         <p class="form-status" role="status" aria-live="polite"></p>

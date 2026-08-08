@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   'use strict';
 
   const config = window.ONRA_CONFIG || {};
@@ -190,6 +190,18 @@
         title: 'Como a Onra pode ajudar?',
         description: 'Envie uma mensagem breve e indique a área de interesse.',
         interest: topic || 'Contato geral'
+      },
+      raiox: {
+        kicker: 'LISTA DE ESPERA',
+        title: 'Raio-X da Vida Financeira',
+        description: 'Quer ser avisado quando o curso for lançado?',
+        interest: 'Raio-X da Vida Financeira'
+      },
+      pleno: {
+        kicker: 'FORMAÇÃO',
+        title: 'Método Pleno',
+        description: 'Entre na lista de interesse para receber as próximas informações sobre a formação.',
+        interest: 'Método Pleno'
       }
     }[type] || null;
 
@@ -197,8 +209,33 @@
     document.getElementById('contact-kicker').textContent = copy.kicker;
     document.getElementById('contact-title').textContent = copy.title;
     document.getElementById('contact-description').textContent = copy.description;
-    document.getElementById('contact-interest').value = copy.interest;
-    contactForm.querySelector('[name="message"]').value = topic ? `Tenho interesse em ${topic}. ` : '';
+    
+    // Configura campos baseados no tipo
+    const isWaitlist = (type === 'raiox' || type === 'pleno');
+    const fieldInterest = document.getElementById('field-interest');
+    const fieldMessage = document.getElementById('field-message');
+    const submitBtn = contactForm.querySelector('.submit-button');
+    
+    if (fieldInterest) {
+      fieldInterest.style.display = isWaitlist ? 'none' : 'flex';
+      const select = document.getElementById('contact-interest');
+      if (select) {
+        select.required = !isWaitlist;
+        // Adiciona option temporária se não existir
+        if (isWaitlist && !select.querySelector(option[value="\"])) {
+           const opt = document.createElement('option');
+           opt.value = type;
+           opt.text = copy.interest;
+           select.appendChild(opt);
+        }
+        select.value = isWaitlist ? type : copy.interest;
+      }
+    }
+    
+    if (fieldMessage) fieldMessage.style.display = isWaitlist ? 'none' : 'flex';
+    if (submitBtn) submitBtn.innerHTML = isWaitlist ? 'Quero ser avisado <span>&nearr;</span>' : 'Continuar no WhatsApp <span>&nearr;</span>';
+    
+    contactForm.querySelector('[name="message"]').value = topic ? Tenho interesse em \.  : '';
     contactDialog.showModal();
     body.classList.add('is-locked');
     contactDialog.querySelector('input:not([type="hidden"])')?.focus();
