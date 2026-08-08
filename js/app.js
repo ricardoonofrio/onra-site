@@ -222,7 +222,7 @@
       if (select) {
         select.required = !isWaitlist;
         // Adiciona option temporária se não existir
-        if (isWaitlist && !select.querySelector(option[value="\"])) {
+        if (isWaitlist && !select.querySelector(`option[value="${type}"]`)) {
            const opt = document.createElement('option');
            opt.value = type;
            opt.text = copy.interest;
@@ -235,7 +235,7 @@
     if (fieldMessage) fieldMessage.style.display = isWaitlist ? 'none' : 'flex';
     if (submitBtn) submitBtn.innerHTML = isWaitlist ? 'Quero ser avisado <span>&nearr;</span>' : 'Continuar no WhatsApp <span>&nearr;</span>';
     
-    contactForm.querySelector('[name="message"]').value = topic ? Tenho interesse em \.  : '';
+    contactForm.querySelector('[name="message"]').value = topic ? `Tenho interesse em ${topic}. ` : '';
     contactDialog.showModal();
     body.classList.add('is-locked');
     contactDialog.querySelector('input:not([type="hidden"])')?.focus();
