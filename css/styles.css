@@ -1,4 +1,4 @@
-/* ========================================================================== 
+﻿/* ========================================================================== 
    ONRA — SISTEMA VISUAL V4
    Direção: luxo discreto, precisão editorial, responsividade robusta e zero layout shift.
    ========================================================================== */
@@ -931,10 +931,8 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   font-weight: 700 !important;
 }
 
-/* GR�FICO DE CRESCIMENTO (FILOSOFIA) */
-.principles-grid {
-  position: relative;
-}
+/* GR�FICO DE CRESCIMENTO (FILOSOFIA) */
+.principles-grid { position: relative; z-index: 1; }
 .growth-chart-bg {
   position: absolute;
   top: 0;
@@ -943,7 +941,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.4; 
+  opacity: 1; 
 }
 .growth-line {
   stroke-dasharray: 1500;
@@ -956,6 +954,6 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 }
 @media (max-width: 767px) {
   .growth-chart-bg {
-    opacity: 0.15; /* Mais sutil no mobile para n�o poluir o texto empilhado */
+    opacity: 0.15; /* Mais sutil no mobile para n�o poluir o texto empilhado */
   }
 }
