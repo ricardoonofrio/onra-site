@@ -410,6 +410,20 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 }
 
 /* 2. Manifesto / Diferenciais Editorial Grid */
+.view-consulting .statement .split-heading {
+  display: block;
+  margin-bottom: 4rem;
+}
+.view-consulting .statement .split-heading h2 {
+  max-width: none;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+}
+.view-consulting .statement .split-heading p {
+  max-width: 54rem;
+  margin-top: 1.5rem;
+  font-size: var(--text-lead);
+}
+
 .vision-editorial-grid {
   display: grid;
   grid-template-columns: 1fr;
