@@ -1253,7 +1253,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 }
 .founder-bio p {
   opacity: 0.85;
-  font-size: var(--text-lead);
+  font-size: var(--text-body);
   line-height: 1.8;
 }
 .founder-bio strong {
