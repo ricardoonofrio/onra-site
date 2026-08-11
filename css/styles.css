@@ -471,11 +471,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   font-weight: 300;
   letter-spacing: -0.04em;
 }
-.view-consulting .founder-bio p {
-  color: var(--ink-soft);
-  font-size: 1rem;
-  line-height: 1.75;
-}
+
 
 /* 5. Como Começar (Números Editoriais) */
 .view-consulting .start-steps {
@@ -1251,12 +1247,14 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   color: var(--ink-soft);
 }
 /* Founder Bio */
-.founder-bio { display: flex; flex-direction: column; gap: 1rem; margin-top: 0;
+.founder-bio { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 0;
   color: var(--ink);
   line-height: 1.6;
 }
 .founder-bio p {
   opacity: 0.85;
+  font-size: var(--text-lead);
+  line-height: 1.8;
 }
 .founder-bio strong {
   font-weight: 600;
