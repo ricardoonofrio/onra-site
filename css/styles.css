@@ -491,24 +491,24 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 .view-consulting .solution-nav button[aria-selected="true"]::after {
   color: var(--accent);
 }
-.solution-panel h3 {
+.view-consulting .solution-panel h3 {
   font-size: var(--text-h2);
   font-weight: 300;
-  color: var(--white);
+  color: var(--white) !important;
   margin-bottom: 1.5rem;
 }
-.solution-panel>p {
-  color: rgba(255, 255, 255, 0.8);
+.view-consulting .solution-panel>p {
+  color: rgba(255, 255, 255, 0.8) !important;
   font-size: var(--text-body);
   line-height: 1.75;
   max-width: 40rem;
 }
-.solution-panel ul {
+.view-consulting .solution-panel ul {
   border-top: 1px solid var(--line-subtle-dark);
 }
-.solution-panel li {
+.view-consulting .solution-panel li {
   border-bottom: 1px solid var(--line-subtle-dark);
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8) !important;
   padding: 1rem 0;
   font-size: var(--text-body);
 }
