@@ -481,13 +481,15 @@
         </div>
         <label id="field-interest"><span>Situação de interesse</span>
           <select name="interest" id="contact-interest" required style="width: 100%; padding: 1rem; border-radius: 4px; border: 1px solid rgba(0,0,0,0.1); font-family: inherit; font-size: 1rem;">
-            <option value="Contato geral">Selecione uma opção...</option>
+            <option value="" disabled selected hidden>Selecione um assunto...</option>
             <option value="diagnostic">Diagnóstico Financeiro</option>
             <option value="follow">Acompanhamento Financeiro</option>
             <option value="project">Planejamento de Projetos</option>
             <option value="invest">Consultoria de Investimentos</option>
             <option value="education">Palestras e Educação</option>
             <option value="consulting">Conversa de Avaliação</option>
+            <option value="raiox">Raio-X da Vida Financeira (Espera)</option>
+            <option value="pleno">Método Pleno (Espera)</option>
           </select>
         </label>
         <label id="field-message"><span>Mensagem (opcional)</span><textarea name="message" rows="3"></textarea></label>

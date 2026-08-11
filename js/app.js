@@ -221,14 +221,7 @@
       const select = document.getElementById('contact-interest');
       if (select) {
         select.required = !isWaitlist;
-        // Adiciona option temporária se não existir
-        if (isWaitlist && !select.querySelector(`option[value="${type}"]`)) {
-           const opt = document.createElement('option');
-           opt.value = type;
-           opt.text = copy.interest;
-           select.appendChild(opt);
-        }
-        select.value = isWaitlist ? type : copy.interest;
+        select.value = (type === 'general') ? '' : type;
       }
     }
     
@@ -246,13 +239,12 @@
     body.classList.remove('is-locked');
   }
 
-  function buildMessage(data) {
+  function buildMessage(data, interestText) {
     return [
       'Olá, Onra.',
       '',
-      `Interesse: ${data.get('interest')}`,
+      `Interesse: ${interestText}`,
       `Nome: ${data.get('name')}`,
-      `E-mail: ${data.get('email')}`,
       data.get('phone') ? `Telefone: ${data.get('phone')}` : '',
       '',
       `Mensagem: ${data.get('message')}`
@@ -269,29 +261,55 @@
       return;
     }
 
+    status.textContent = 'Enviando...';
+    const submitBtn = contactForm.querySelector('.submit-button');
+    if (submitBtn) submitBtn.disabled = true;
+
     const data = new FormData(contactForm);
-    const message = buildMessage(data);
+    const interestSelect = document.getElementById('contact-interest');
+    const interestText = interestSelect && interestSelect.selectedIndex >= 0 
+      ? interestSelect.options[interestSelect.selectedIndex].text 
+      : data.get('interest');
+
+    // 1. Send data to Google Sheets via Webhook (if configured)
+    if (config.googleSheetWebhookUrl) {
+      try {
+        await fetch(config.googleSheetWebhookUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: data.get('name'),
+            phone: data.get('phone'),
+            interest: interestText,
+            message: data.get('message')
+          })
+        });
+        console.log('Data queued for Google Sheets.');
+      } catch (err) {
+        console.error('Error sending to Google Sheets:', err);
+      }
+    }
+
+    // 2. Open WhatsApp
+    const message = buildMessage(data, interestText);
     const encoded = encodeURIComponent(message);
 
     if (config.whatsappNumber) {
       window.open(`https://wa.me/${config.whatsappNumber}?text=${encoded}`, '_blank', 'noopener');
-      status.textContent = 'Abrindo o WhatsApp…';
-      return;
-    }
-
-    if (config.contactEmail) {
-      const subject = encodeURIComponent(`Contato Onra — ${data.get('interest')}`);
-      window.location.href = `mailto:${config.contactEmail}?subject=${subject}&body=${encoded}`;
-      status.textContent = 'Abrindo seu aplicativo de e-mail…';
+      status.textContent = 'WhatsApp aberto em nova aba.';
+      if (submitBtn) submitBtn.disabled = false;
+      closeDialog(contactDialog);
       return;
     }
 
     try {
       await navigator.clipboard.writeText(message);
-      status.textContent = 'Protótipo: mensagem copiada. O programador deve configurar WhatsApp ou e-mail em js/config.js.';
+      status.textContent = 'Mensagem copiada. (WhatsApp não configurado)';
     } catch {
-      status.textContent = 'Protótipo: configure WhatsApp ou e-mail em js/config.js antes de publicar.';
+      status.textContent = 'Configure o número de WhatsApp em js/config.js.';
     }
+    if (submitBtn) submitBtn.disabled = false;
   }
 
   function setupTabs(tabListSelector, panelSelector) {
