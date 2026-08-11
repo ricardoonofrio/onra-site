@@ -270,7 +270,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 .solution-nav button[aria-selected="true"]::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent)}
 .solution-nav button[aria-selected="true"]::after{opacity:1}
 .solution-panels{min-height:0;padding:clamp(2rem,3vw,3.5rem);background:var(--white);border:1px solid var(--line-light)}
-.solution-panel{opacity:0;pointer-events:none;transform:translateY(1rem);transition:opacity .4s var(--ease),transform .4s var(--ease);grid-column:1;grid-row:1}
+.solution-panel{opacity:0;pointer-events:none;transform:translateY(1rem);transition:opacity .4s var(--ease),transform .4s var(--ease);grid-column:1;grid-row:1} .solution-panel.is-active{opacity:1;pointer-events:auto;transform:none;z-index:2}
 .solution-panel h3{max-width:20ch;margin:0 0 1.5rem;font-family:var(--font-sans);font-size:var(--text-h2);font-weight:400;line-height:.98;letter-spacing:-.025em}
 .solution-panel>p{max-width:39rem;margin:0 0 2rem;color:var(--ink-soft);line-height:1.85}
 .solution-panel ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-light)}
