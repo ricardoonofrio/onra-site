@@ -438,7 +438,7 @@
   window.addEventListener('popstate', () => navigate(routeFromUrl(), { pushState: false, force: true }));
 
   setupTabs('.tab-list', '.tab-panel');
-  setupTabs('.solution-nav', '.solution-panel');
+  setupTabs('.solution-selector', '.solution-panel');
   commitRoute(currentRoute, false);
   revealVisible(document.querySelector(`[data-view="${currentRoute}"]`));
 })();

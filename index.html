@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css?v=10.7">
+  <link rel="stylesheet" href="css/styles.css?v=10.8">
   <script>document.documentElement.classList.remove('no-js');</script>
 </head>
 <body data-state="home">
@@ -363,32 +363,35 @@
         </div>
 
         <div class="shell solution-selector reveal" data-delay="80">
-          <div class="solution-nav" role="tablist" aria-label="Soluções de consultoria">
-            <button id="solution-tab-diagnostic" role="tab" aria-selected="true" aria-controls="solution-diagnostic">Compreender</button>
-            <button id="solution-tab-project" role="tab" aria-selected="false" aria-controls="solution-project" tabindex="-1">Estruturar</button>
-            <button id="solution-tab-invest" role="tab" aria-selected="false" aria-controls="solution-invest" tabindex="-1">Orientar</button>
-            <button id="solution-tab-follow" role="tab" aria-selected="false" aria-controls="solution-follow" tabindex="-1">Acompanhar</button>
-          </div>
-
-          <div class="solution-panels">
+          <div class="solution-item" role="presentation">
+            <button class="solution-tab" id="solution-tab-diagnostic" role="tab" aria-selected="true" aria-controls="solution-diagnostic">Compreender</button>
             <article class="solution-panel is-active" id="solution-diagnostic" role="tabpanel" aria-labelledby="solution-tab-diagnostic">
               <h3>Diagnóstico Financeiro</h3>
               <p>Uma leitura ampla da realidade atual para identificar desequilíbrios, riscos, prioridades e oportunidades de melhoria.</p>
               <ul><li>Mapeamento financeiro</li><li>Organização de prioridades</li><li>Plano de ação inicial</li></ul>
               <button class="text-link" type="button" data-open-contact="diagnostic">Conversar sobre o Diagnóstico <span>↗</span></button>
             </article>
+          </div>
+          <div class="solution-item" role="presentation">
+            <button class="solution-tab" id="solution-tab-project" role="tab" aria-selected="false" aria-controls="solution-project" tabindex="-1">Estruturar</button>
             <article class="solution-panel" id="solution-project" role="tabpanel" aria-labelledby="solution-tab-project" hidden>
               <h3>Planejamento de Projetos de Vida</h3>
               <p>Estruturação financeira de objetivos como independência, aposentadoria, patrimônio, educação, viagens e transições profissionais.</p>
               <ul><li>Definição de prazos</li><li>Cenários e recursos</li><li>Estratégia de execução</li></ul>
             <button class="text-link" type="button" data-open-contact="project">Planejar meu projeto <span>↗</span></button>
             </article>
+          </div>
+          <div class="solution-item" role="presentation">
+            <button class="solution-tab" id="solution-tab-invest" role="tab" aria-selected="false" aria-controls="solution-invest" tabindex="-1">Orientar</button>
             <article class="solution-panel" id="solution-invest" role="tabpanel" aria-labelledby="solution-tab-invest" hidden>
               <h3>Consultoria de Investimentos</h3>
               <p>Avaliação e recomendação de alternativas compatíveis com o perfil de risco, os objetivos, os prazos e a realidade patrimonial do cliente.</p>
               <ul><li>Diagnóstico da carteira</li><li>Estratégia de alocação</li><li>Acompanhamento independente</li></ul>
               <button class="text-link" type="button" data-open-contact="invest">Revisar minha estratégia <span>↗</span></button>
             </article>
+          </div>
+          <div class="solution-item" role="presentation">
+            <button class="solution-tab" id="solution-tab-follow" role="tab" aria-selected="false" aria-controls="solution-follow" tabindex="-1">Acompanhar</button>
             <article class="solution-panel" id="solution-follow" role="tabpanel" aria-labelledby="solution-tab-follow" hidden>
               <h3>Acompanhamento Financeiro</h3>
               <p>Orientação contínua por 12 meses para transformar o planejamento em decisões práticas, acompanhar a evolução e realizar ajustes.</p>
@@ -527,6 +530,7 @@
   </noscript>
 
   <script src="js/config.js"></script>
-  <script src="js/app.js?v=10.7" defer></script>
+  <script src="js/app.js?v=10.8" defer></script>
 </body>
 </html>
+
