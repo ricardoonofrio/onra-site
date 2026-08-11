@@ -336,21 +336,256 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 #contact-form input:focus,#contact-form textarea:focus{border-color:var(--blue)}
 .consent{grid-template-columns:auto 1fr!important;align-items:start;gap:.8rem!important}
 .consent input{width:auto!important;margin-top:.25rem}
-.consent span{font-size:.75rem!important;line-height:1.5!important;text-transform:none!important;letter-spacing:0!important}
+.consent span{font-size:.75rem!important;line-height:1.5!important;text-transform:none!important;letter-spacing:0!important}
 .submit-button{display:flex;justify-content:space-between;align-items:center;margin-top:.7rem;padding:1rem 0;border:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:none;cursor:pointer;font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
 .form-status{min-height:1.4rem;margin:0;color:var(--ink-soft);font-size:.75rem}
 .legal-copy{line-height:1.75}.legal-copy p{color:var(--ink-soft)}
 
-/* Consulting Overrides ---------------------------------------------------- */
+/* Consulting Overrides & Editorial Refinement (10/10) --------------------- */
 .view-consulting {
-  --section-y: clamp(3.5rem, 4.5vw, 4.5rem) !important;
-  --section-y-sm: clamp(2.5rem, 3.5vw, 3.5rem) !important;
+  /* Cores base refinadas */
+  --bg-deep-blue: #0b1521;
+  --bg-deep-blue-alt: #09121c;
+  --text-muted-dark: rgba(255, 255, 255, 0.7);
+  --text-faint-dark: rgba(255, 255, 255, 0.4);
+  --line-subtle-dark: rgba(255, 255, 255, 0.08);
+  --line-subtle-light: rgba(23, 38, 56, 0.08);
+  
+  /* Ritmo / Espaçamentos (mais controlados) */
+  --section-y: clamp(4.5rem, 6vw, 6.5rem) !important;
+  --section-y-sm: clamp(3.5rem, 4.5vw, 4.5rem) !important;
 }
 
+/* 1. Hero Refinado */
+.consulting-hero {
+  background: var(--bg-deep-blue);
+  min-height: 80svh;
+}
+.consulting-hero .journey-title h1 {
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  max-width: 16ch;
+  line-height: 1.05;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+}
+.consulting-hero .text-highlight {
+  position: relative;
+  display: inline-block;
+  color: var(--white);
+  padding: 0 0.1rem;
+}
+.consulting-hero .text-highlight::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0.1em;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+}
+.consulting-hero .journey-intro p {
+  font-size: clamp(1.1rem, 1.4vw, 1.25rem);
+  color: var(--text-muted-dark);
+  line-height: 1.6;
+  max-width: 28rem;
+}
+.consulting-hero .founder-line {
+  color: var(--text-faint-dark);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  gap: 0.8rem 1.4rem;
+}
+.consulting-hero .founder-line span+span::before {
+  background: var(--text-faint-dark);
+}
 
+/* 2. Manifesto / Diferenciais Editorial Grid */
+.vision-editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 1rem;
+}
+.vision-editorial-grid article {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line-subtle-light);
+}
+.vision-editorial-grid h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.vision-editorial-grid p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  max-width: 22rem;
+}
+@media (min-width: 768px) {
+  .vision-editorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem 5rem;
+  }
+}
+
+/* 3. Soluções (Sem cara de software) */
+.solutions.section-ink {
+  background: var(--bg-deep-blue-alt);
+}
+.solution-panels {
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-top: 1px solid var(--line-subtle-dark);
+  padding-top: 2rem;
+}
+.solution-nav {
+  border-top: 1px solid var(--line-subtle-dark);
+}
+.solution-nav button {
+  border-bottom: 1px solid var(--line-subtle-dark);
+  color: var(--text-muted-dark);
+  font-size: 1.1rem;
+  padding: 1.5rem 2.5rem 1.5rem 0;
+}
+.solution-nav button[aria-selected="true"] {
+  color: var(--white);
+  padding-left: 0;
+}
+.solution-nav button[aria-selected="true"]::before {
+  display: none;
+}
+.view-consulting .solution-nav button[aria-selected="true"]::after {
+  color: var(--accent);
+}
+.solution-panel h3 {
+  font-size: 1.75rem;
+  font-weight: 300;
+}
+.solution-panel>p {
+  color: var(--text-muted-dark);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.solution-panel ul {
+  border-top: 1px solid var(--line-subtle-dark);
+}
+.solution-panel li {
+  border-bottom: 1px solid var(--line-subtle-dark);
+  color: var(--text-muted-dark);
+  padding: 1rem 0;
+}
+
+/* 4. Leo Campos */
+.view-consulting .founder.section-paper {
+  background: var(--mist);
+}
+.view-consulting .founder-copy h2 {
+  font-weight: 300;
+  letter-spacing: -0.04em;
+}
+.view-consulting .founder-bio p {
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* 5. Como Começar (Números Editoriais) */
+.view-consulting .start-steps {
+  counter-reset: steps-counter;
+  border-top: 1px solid var(--line-subtle-light);
+}
+.view-consulting .start-steps li {
+  border-right: 1px solid var(--line-subtle-light);
+  padding-top: 2.5rem;
+}
+.view-consulting .start-steps li:last-child {
+  border-right: none;
+}
+@media (max-width: 900px) {
+  .view-consulting .start-steps li:nth-child(2) {
+    border-right: none;
+  }
+}
+@media (max-width: 620px) {
+  .view-consulting .start-steps li {
+    border-right: none !important;
+  }
+}
+.view-consulting .start-steps li::before {
+  counter-increment: steps-counter;
+  content: "0" counter(steps-counter);
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--ink-faint);
+  margin-bottom: 1.5rem;
+}
+
+/* 6. FAQ Editorial */
+.faq-editorial-shell h2 {
+  font-weight: 300;
+  font-size: var(--text-h2);
+  letter-spacing: -0.035em;
+  margin-bottom: 3rem;
+}
+.faq-editorial-list {
+  border-top: 1px solid var(--line-subtle-light);
+}
+.faq-editorial-list details {
+  border-bottom: 1px solid var(--line-subtle-light);
+  padding: 1.75rem 0;
+  cursor: pointer;
+}
+.faq-editorial-list summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.faq-editorial-list summary::-webkit-details-marker {
+  display: none;
+}
+.faq-editorial-list summary span {
+  font-weight: 300;
+  opacity: 0.4;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.faq-editorial-list details[open] summary span {
+  transform: rotate(45deg);
+}
+.faq-editorial-list p {
+  margin: 1.5rem 0 0;
+  max-width: 42rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* 7. CTA Final */
+.cta-editorial-shell {
+  padding: clamp(4rem, 6vw, 6rem) 0;
+}
+.cta-editorial-shell h2 {
+  font-weight: 300;
+  line-height: 1.1;
+  max-width: 18ch;
+}
+.cta-editorial-shell .regulatory-note {
+  margin-top: 3.5rem;
+  font-size: 0.7rem;
+  color: var(--ink-faint);
+  max-width: 38rem;
+}
 
 /* Responsive -------------------------------------------------------------- */
-
 @media (min-width: 1025px) and (max-width: 1440px){
   :root{--gutter:clamp(1.5rem,3vw,3rem);--section-y:5rem;--section-y-sm:4rem}
 }
