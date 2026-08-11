@@ -290,7 +290,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 .founder-grid{display:grid;grid-template-columns:minmax(20rem,1fr) minmax(0,1.5fr);gap:clamp(4rem,5vw,6rem);align-items:start}
 .founder figure{margin:0;overflow:hidden;background:var(--mist)}
 .founder figure img{width:100%;height:auto;display:block;filter:saturate(.9)}
-.founder-copy h2{max-width:20ch;margin:.8rem 0 1.5rem;font-family:var(--font-sans);font-size:var(--text-h2);font-weight:400;line-height:1.02;letter-spacing:-.03em}
+.founder-copy h2{max-width:32ch;margin:0 0 1rem;font-family:var(--font-sans);font-size:clamp(1.75rem, 2.5vw, 2.25rem);font-weight:400;line-height:1.15;letter-spacing:-.02em}
 .founder-copy>p{max-width:42rem;color:var(--ink-soft);line-height:1.85}
 .credentials{margin:3rem 0 0;border-top:1px solid var(--line-light)}
 .credentials>div{display:grid;grid-template-columns:6rem 1fr;gap:1.5rem;padding:.85rem 0;border-bottom:1px solid var(--line-light)}
@@ -922,7 +922,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   width: 102%;
 }
 /* ==========================================================================
-   NOVA ÁREA DE CONSULTORIA (ESTILO EDITORIAL/MINIMALISTA) - REFINADO
+   NOVA ï¿½REA DE CONSULTORIA (ESTILO EDITORIAL/MINIMALISTA) - REFINADO
    ========================================================================== */
 
 /* Vision List */
@@ -944,7 +944,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   border-bottom: 1px solid var(--line-light);
 }
 .vision-list li::before {
-  content: "—";
+  content: "ï¿½";
   position: absolute;
   left: 0;
   top: 1.5rem;
@@ -1022,11 +1022,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   color: var(--ink-soft);
 }
 /* Founder Bio */
-.founder-bio {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  margin-top: 1.5rem;
+.founder-bio { display: flex; flex-direction: column; gap: 1rem; margin-top: 0;
   color: var(--ink);
   line-height: 1.6;
 }
