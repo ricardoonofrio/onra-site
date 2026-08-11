@@ -277,6 +277,10 @@
       // Fire and forget (sem await) para não cair no bloqueador de popups do navegador ao abrir o WhatsApp
       fetch(config.googleSheetWebhookUrl, {
         method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
         body: JSON.stringify({
           name: data.get('name'),
           phone: data.get('phone'),
