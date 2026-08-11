@@ -240,15 +240,16 @@
   }
 
   function buildMessage(data, interestText) {
-    return [
-      'Olá, Onra.',
-      '',
-      `Interesse: ${interestText}`,
+    const userMessage = data.get('message');
+    const msgArray = [
       `Nome: ${data.get('name')}`,
-      data.get('phone') ? `Telefone: ${data.get('phone')}` : '',
-      '',
-      `Mensagem: ${data.get('message')}`
-    ].filter(Boolean).join('\n');
+      `Assunto: ${interestText}`
+    ];
+    if (userMessage) {
+      msgArray.push('');
+      msgArray.push(userMessage);
+    }
+    return msgArray.join('\n');
   }
 
   async function submitContact(event) {
