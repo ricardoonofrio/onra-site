@@ -1296,7 +1296,8 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 }
 .view-consulting .solution-tab[aria-selected="true"]::before { display: none; }
 .view-consulting .solution-tab::after {
-  content: "?"; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+  content: "↓"; 
+  position: absolute; right: 0; top: 50%; transform: translateY(-50%);
   opacity: 0; transition: opacity .2s ease;
 }
 .view-consulting .solution-tab[aria-selected="true"]::after {
@@ -1306,12 +1307,33 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 /* Base Panel (Mobile Accordion) */
 .view-consulting .solution-panel {
   padding: 1rem 0 2.5rem;
-  /* Overriding old original styles that made it opacity:0 */
   opacity: 1 !important;
   pointer-events: auto !important;
   transform: none !important;
   grid-column: auto;
   grid-row: auto;
+}
+
+.view-consulting .solution-panel h3 {
+  font-size: var(--text-h3);
+  font-weight: 300;
+  color: var(--white) !important;
+  margin-bottom: 1.5rem;
+}
+.view-consulting .solution-panel>p {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: var(--text-body);
+  line-height: 1.75;
+  max-width: 40rem;
+}
+.view-consulting .solution-panel ul {
+  border-top: 1px solid var(--line-subtle-dark);
+}
+.view-consulting .solution-panel li {
+  border-bottom: 1px solid var(--line-subtle-dark);
+  color: rgba(255, 255, 255, 0.8) !important;
+  padding: 1rem 0;
+  font-size: var(--text-body);
 }
 
 .view-consulting .solution-panel.is-active {
@@ -1324,6 +1346,9 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 }
 
 @media (min-width: 1024px) {
+  .view-consulting .solution-tab::after {
+    content: "→";
+  }
   .view-consulting .solution-selector {
     display: grid;
     grid-template-columns: minmax(18rem, 2fr) minmax(0, 3.2fr);
