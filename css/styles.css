@@ -492,7 +492,7 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   color: var(--accent);
 }
 .view-consulting .solution-panel h3 {
-  font-size: var(--text-h2);
+  font-size: var(--text-h3);
   font-weight: 300;
   color: var(--white) !important;
   margin-bottom: 1.5rem;
