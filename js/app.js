@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
   'use strict';
 
   const config = window.ONRA_CONFIG || {};
@@ -349,12 +349,28 @@
 
     const scrollButton = event.target.closest('[data-scroll-target]');
     if (scrollButton) {
-      const id = scrollButton.dataset.scrollTarget;
-      if (currentRoute !== 'consulting') {
-        navigate('consulting');
-        window.setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' }), reducedMotion ? 0 : 1100);
-      } else {
-        document.getElementById(id)?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
+      let id = scrollButton.dataset.scrollTarget;
+
+      if (id === 'leo') {
+        if (currentRoute === 'education') {
+          id = 'leo-education';
+        } else if (currentRoute === 'consulting') {
+          id = 'leo-consulting';
+        } else {
+          navigate('consulting');
+          id = 'leo-consulting';
+        }
+      }
+
+      const targetEl = document.getElementById(id);
+      if (targetEl) {
+        const view = targetEl.closest('.view');
+        if (view && view.dataset.view !== currentRoute) {
+          navigate(view.dataset.view);
+          window.setTimeout(() => targetEl.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' }), reducedMotion ? 0 : 1100);
+        } else {
+          targetEl.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
+        }
       }
       closeMobileMenu();
     }
