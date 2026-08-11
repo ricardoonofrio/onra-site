@@ -273,25 +273,20 @@
 
     // 1. Send data to Google Sheets via Webhook (if configured)
     if (config.googleSheetWebhookUrl) {
-      try {
-        await fetch(config.googleSheetWebhookUrl, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name: data.get('name'),
-            phone: data.get('phone'),
-            interest: interestText,
-            message: data.get('message')
-          })
-        });
-        console.log('Data queued for Google Sheets.');
-      } catch (err) {
-        console.error('Error sending to Google Sheets:', err);
-      }
+      // Usando text/plain (padrão) para não disparar preflight OPTIONS que o Apps Script pode bloquear
+      // Fire and forget (sem await) para não cair no bloqueador de popups do navegador ao abrir o WhatsApp
+      fetch(config.googleSheetWebhookUrl, {
+        method: 'POST',
+        body: JSON.stringify({
+          name: data.get('name'),
+          phone: data.get('phone'),
+          interest: interestText,
+          message: data.get('message')
+        })
+      }).catch(err => console.error('Erro silencioso no Sheets:', err));
     }
 
-    // 2. Open WhatsApp
+    // 2. Open WhatsApp (Deve ser síncrono logo após o click)
     const message = buildMessage(data, interestText);
     const encoded = encodeURIComponent(message);
 
