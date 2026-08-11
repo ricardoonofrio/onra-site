@@ -202,6 +202,30 @@
         title: 'Método Pleno',
         description: 'Entre na lista de interesse para receber as próximas informações sobre a formação.',
         interest: 'Método Pleno'
+      },
+      diagnostic: {
+        kicker: 'CONSULTORIA',
+        title: 'Diagnóstico Financeiro',
+        description: 'Compartilhe brevemente seu cenário atual para avaliarmos suas necessidades iniciais.',
+        interest: 'Diagnóstico Financeiro'
+      },
+      project: {
+        kicker: 'CONSULTORIA',
+        title: 'Planejamento de Projetos',
+        description: 'Compartilhe qual projeto de vida você deseja estruturar.',
+        interest: 'Planejamento de Projetos'
+      },
+      invest: {
+        kicker: 'CONSULTORIA',
+        title: 'Consultoria de Investimentos',
+        description: 'Conte-nos sobre sua carteira e seus objetivos com os investimentos.',
+        interest: 'Consultoria de Investimentos'
+      },
+      follow: {
+        kicker: 'CONSULTORIA',
+        title: 'Acompanhamento',
+        description: 'Compartilhe sua necessidade de acompanhamento financeiro de longo prazo.',
+        interest: 'Acompanhamento Financeiro'
       }
     }[type] || null;
 
