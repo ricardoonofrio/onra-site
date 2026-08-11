@@ -372,7 +372,8 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   position: relative;
   display: inline-block;
   color: var(--white);
-  padding: 0 0.1rem;
+  background: transparent !important;
+  padding: 0;
 }
 .consulting-hero .text-highlight::after {
   content: "";
@@ -409,18 +410,18 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   border-top: 1px solid var(--line-subtle-light);
 }
 .vision-editorial-grid h4 {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
-  font-weight: 500;
+  margin: 0 0 0.8rem;
+  font-size: var(--text-h3);
+  font-weight: 400;
   color: var(--ink);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.025em;
 }
 .vision-editorial-grid p {
   margin: 0;
-  font-size: 0.95rem;
-  color: var(--ink-soft);
-  line-height: 1.6;
-  max-width: 22rem;
+  font-size: var(--text-body);
+  color: #3b4859;
+  line-height: 1.75;
+  max-width: 26rem;
 }
 @media (min-width: 768px) {
   .vision-editorial-grid {
@@ -445,8 +446,8 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
 }
 .solution-nav button {
   border-bottom: 1px solid var(--line-subtle-dark);
-  color: var(--text-muted-dark);
-  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: var(--text-body);
   padding: 1.5rem 2.5rem 1.5rem 0;
 }
 .solution-nav button[aria-selected="true"] {
@@ -460,21 +461,25 @@ body[data-state="education"] .site-header .brand-img-dark{display:block}
   color: var(--accent);
 }
 .solution-panel h3 {
-  font-size: 1.75rem;
+  font-size: var(--text-h2);
   font-weight: 300;
+  color: var(--white);
+  margin-bottom: 1.5rem;
 }
 .solution-panel>p {
-  color: var(--text-muted-dark);
-  font-size: 1rem;
-  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--text-body);
+  line-height: 1.75;
+  max-width: 40rem;
 }
 .solution-panel ul {
   border-top: 1px solid var(--line-subtle-dark);
 }
 .solution-panel li {
   border-bottom: 1px solid var(--line-subtle-dark);
-  color: var(--text-muted-dark);
+  color: rgba(255, 255, 255, 0.8);
   padding: 1rem 0;
+  font-size: var(--text-body);
 }
 
 /* 4. Leo Campos */
