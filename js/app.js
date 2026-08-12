@@ -143,16 +143,22 @@
 
     isNavigating = true;
     transition.className = 'page-transition is-entering';
-
-    window.setTimeout(() => {
+    
+    transition.addEventListener('animationend', function handler(e) {
+      if (e.animationName !== 'cover') return;
+      transition.removeEventListener('animationend', handler);
+      
       commitRoute(route, options.pushState !== false);
       transition.className = 'page-transition is-leaving';
-
-      window.setTimeout(() => {
+      
+      transition.addEventListener('animationend', function handlerOut(eOut) {
+        if (eOut.animationName !== 'uncover') return;
+        transition.removeEventListener('animationend', handlerOut);
+        
         transition.className = 'page-transition';
         isNavigating = false;
-      }, 560);
-    }, 440);
+      });
+    });
   }
 
   function closeMobileMenu() {
@@ -169,7 +175,42 @@
     menuToggle.setAttribute('aria-expanded', String(!open));
     menuToggle.setAttribute('aria-label', open ? 'Abrir menu' : 'Fechar menu');
     body.classList.toggle('is-locked', !open);
+    if (!open) {
+      // Menu opened: trap focus
+      const focusable = mobileMenu.querySelectorAll('a[href], button:not([disabled])');
+      if (focusable.length) focusable[0].focus();
+    } else {
+      // Menu closed: return focus
+      menuToggle.focus();
+    }
   }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      if (mobileMenu && !mobileMenu.hidden) {
+        closeMobileMenu();
+        menuToggle.focus();
+      }
+    }
+    if (event.key === 'Tab' && mobileMenu && !mobileMenu.hidden) {
+      const focusable = mobileMenu.querySelectorAll('a[href], button:not([disabled])');
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      
+      if (event.shiftKey) {
+        if (document.activeElement === first || document.activeElement === menuToggle) {
+          event.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    }
+  });
 
   function openContact(type, topic = '') {
     const copy = {
@@ -286,7 +327,6 @@
       return;
     }
 
-    status.textContent = 'Enviando...';
     const submitBtn = contactForm.querySelector('.submit-button');
     if (submitBtn) submitBtn.disabled = true;
 
@@ -296,44 +336,52 @@
       ? interestSelect.options[interestSelect.selectedIndex].text 
       : data.get('interest');
 
-    // 1. Send data to Google Sheets via Webhook (if configured)
-    if (config.googleSheetWebhookUrl) {
-      // Usando text/plain (padrão) para não disparar preflight OPTIONS que o Apps Script pode bloquear
-      // Fire and forget (sem await) para não cair no bloqueador de popups do navegador ao abrir o WhatsApp
-      fetch(config.googleSheetWebhookUrl, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'text/plain;charset=utf-8'
-        },
-        body: JSON.stringify({
-          name: data.get('name'),
-          phone: data.get('phone'),
-          interest: interestText,
-          message: data.get('message')
-        })
-      }).catch(err => console.error('Erro silencioso no Sheets:', err));
-    }
-
-    // 2. Open WhatsApp (Deve ser síncrono logo após o click)
     const message = buildMessage(data, interestText);
     const encoded = encodeURIComponent(message);
+    let waOpened = false;
 
+    // 1. Abrir WhatsApp imediatamente para não cair no bloqueador de popup
     if (config.whatsappNumber) {
       window.open(`https://wa.me/${config.whatsappNumber}?text=${encoded}`, '_blank', 'noopener');
-      status.textContent = 'WhatsApp aberto em nova aba.';
-      if (submitBtn) submitBtn.disabled = false;
-      closeDialog(contactDialog);
-      return;
+      waOpened = true;
+      status.textContent = 'WhatsApp aberto. Salvando registro...';
+    } else {
+      try {
+        await navigator.clipboard.writeText(message);
+        status.textContent = 'Mensagem copiada. Salvando registro...';
+      } catch {
+        status.textContent = 'Salvando registro...';
+      }
     }
 
-    try {
-      await navigator.clipboard.writeText(message);
-      status.textContent = 'Mensagem copiada. (WhatsApp não configurado)';
-    } catch {
-      status.textContent = 'Configure o número de WhatsApp em js/config.js.';
+    // 2. Enviar dados ao Google Sheets e aguardar confirmação real
+    if (config.googleSheetWebhookUrl) {
+      try {
+        const response = await fetch(config.googleSheetWebhookUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+          },
+          body: JSON.stringify({
+            name: data.get('name'),
+            phone: data.get('phone'),
+            interest: interestText,
+            message: data.get('message')
+          })
+        });
+        
+        status.textContent = waOpened ? 'WhatsApp aberto e contato registrado com sucesso!' : 'Contato registrado com sucesso!';
+      } catch (err) {
+        console.error('Erro ao salvar no Sheets:', err);
+        status.textContent = waOpened ? 'WhatsApp aberto. (Falha ao registrar contato no sistema)' : 'Falha ao registrar contato.';
+      }
+    } else {
+      status.textContent = waOpened ? 'WhatsApp aberto em nova aba.' : 'Concluído.';
     }
+
     if (submitBtn) submitBtn.disabled = false;
+    setTimeout(() => closeDialog(contactDialog), 3000);
   }
 
   function setupTabs(tabListSelector, panelSelector) {
@@ -372,6 +420,7 @@
   document.addEventListener('click', (event) => {
     const routeButton = event.target.closest('[data-route]');
     if (routeButton) {
+      event.preventDefault();
       navigate(routeButton.dataset.route);
       return;
     }

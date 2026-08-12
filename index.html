@@ -36,16 +36,16 @@
 
   <header class="site-header" data-header>
     <div class="shell header-inner">
-      <button class="brand" type="button" data-route="home" aria-label="Voltar para o início da Onra">
+      <a href="?area=home" class="brand" data-route="home" aria-label="Voltar para o início da Onra">
         <img src="assets/images/logos/PNG Logo V01 Onra.png" alt="Onra" class="brand-img-light">
         <img src="assets/images/logos/PNG Logo V02 Onra.png" alt="" aria-hidden="true" class="brand-img-dark">
-      </button>
+      </a>
 
       <nav class="desktop-nav" aria-label="Navegação principal">
-        <button type="button" data-route="education">Educação</button>
-        <button type="button" data-route="consulting">Consultoria</button>
-        <button type="button" data-scroll-target="leo">Leo Campos</button>
-        <button type="button" data-open-contact="general">Contato</button>
+        <a href="?area=educacao" data-route="education">Educação</a>
+        <a href="?area=consultoria" data-route="consulting">Consultoria</a>
+        <a href="#leo" data-scroll-target="leo">Leo Campos</a>
+        <a href="#contato" data-open-contact="general">Contato</a>
       </nav>
 
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
@@ -55,9 +55,9 @@
 
     <div class="mobile-menu" id="mobile-menu" hidden>
       <nav aria-label="Navegação móvel">
-        <button type="button" data-route="home">Início</button>
-        <button type="button" data-route="education">Educação</button>
-        <button type="button" data-route="consulting">Consultoria</button>
+        <a href="?area=home" data-route="home">Início</a>
+        <a href="?area=educacao" data-route="education">Educação Financeira</a>
+        <a href="?area=consultoria" data-route="consulting">Consultoria</a>
         <button type="button" data-scroll-target="leo">Leo Campos</button>
         <button type="button" data-open-contact="general">Contato</button>
       </nav>
@@ -99,23 +99,21 @@
         </div>
       </div>
 
-      <section class="portals" aria-labelledby="portals-title">
-        <h2 id="portals-title" class="sr-only">Escolha entre Educação e Consultoria</h2>
-        <button class="portal portal-education" type="button" data-route="education">
+      <section class="portals">
+        <a href="?area=educacao" class="portal portal-education" data-route="education">
           <span class="portal-index">01</span>
           <span class="portal-kicker">ONRA - EDUCAÇÃO</span>
           <strong>Conhecimento para transformar a relação com o dinheiro.</strong>
           <span class="portal-description">Palestras, workshops, programas e conteúdos para pessoas e instituições.</span>
-          <span class="portal-action"><span class="action-text">Explorar Educação</span> <i aria-hidden="true">→</i></span>
-        </button>
-
-        <button class="portal portal-consulting" type="button" data-route="consulting">
+          <span class="portal-action"><span class="action-text">Jornada da Educação</span> <i>→</i></span>
+        </a>
+        <a href="?area=consultoria" class="portal portal-consulting" data-route="consulting">
           <span class="portal-index">02</span>
           <span class="portal-kicker">ONRA - CONSULTORIA</span>
           <strong>Estrutura para decisões financeiras mais importantes.</strong>
           <span class="portal-description">Diagnóstico, planejamento, acompanhamento e consultoria de investimentos.</span>
-          <span class="portal-action"><span class="action-text">Conhecer Serviços</span> <i aria-hidden="true">→</i></span>
-        </button>
+          <span class="portal-action"><span class="action-text">Jornada da Consultoria</span> <i>→</i></span>
+        </a>
       </section>
 
 
@@ -139,7 +137,7 @@
             <h1 id="education-title"><span class="text-highlight">Entender o dinheiro</span> muda a forma como fazemos escolhas.</h1>
             <p class="lead">Educação financeira para aproximar conhecimento, comportamento e decisões da vida real.</p>
             
-            <div class="founder-line" style="margin: 2.5rem 0;">
+            <div class="founder-line">
               <span>Leo Campos</span>
               <span>+14 anos de experiência no mercado financeiro</span>
               <span>Educador financeiro e palestrante</span>
@@ -223,7 +221,7 @@
       <section class="edu-philosophy section-paper" aria-labelledby="philosophy-title">
         <div class="shell split-heading reveal">
           <div>
-            <h2 id="philosophy-title" style="max-width:32rem;"><span class="text-highlight">Educação financeira</span> não começa nos números. Começa na forma como as pessoas compreendem suas escolhas.</h2>
+            <h2 id="philosophy-title"><span class="text-highlight">Educação financeira</span> não começa nos números. Começa na forma como as pessoas compreendem suas escolhas.</h2>
           </div>
           <p>Por isso, os conteúdos não são construídos apenas em torno de orçamento, investimentos ou planilhas. Eles partem da realidade das pessoas, dos comportamentos, das prioridades e dos projetos que o dinheiro precisa sustentar.</p>
         </div>
@@ -269,8 +267,8 @@
 
       <!-- 5. CTA FINAL -->
       <section class="edu-final-cta section-ink" aria-labelledby="final-cta-title">
-        <div class="shell reveal" style="margin-bottom: 3rem;">
-          <h2 id="final-cta-title" style="max-width: 36rem; font-size: clamp(2rem, 3vw, 2.5rem);">Como a educação financeira pode fazer sentido para você?</h2>
+        <div class="shell reveal">
+          <h2 id="final-cta-title">Como a educação financeira pode fazer sentido para você?</h2>
         </div>
         <div class="shell split-cta-grid reveal" data-delay="80">
           
@@ -293,7 +291,7 @@
 
       <footer class="site-footer footer-light">
         <div class="shell footer-grid">
-          <button class="footer-brand" type="button" data-route="home"><img src="assets/images/logos/PNG Logo V02 Onra.png" alt="Onra" class="footer-brand-img"></button>
+          <a href="?area=home" class="footer-brand" data-route="home"><img src="assets/images/logos/PNG Logo V02 Onra.png" alt="Onra" class="footer-brand-img" loading="lazy"></a>
           <p>Educação financeira com contexto, profundidade e aplicação.</p>
           <div>
             <button type="button" data-route="consulting">Conhecer Consultoria</button>
@@ -312,7 +310,7 @@
           </div>
           <div class="journey-intro reveal" data-delay="100">
             <p>Orientação individualizada para organizar sua vida financeira, seus projetos e seu patrimônio com método, independência e visão de longo prazo.</p>
-            <div class="founder-line" style="margin-bottom: 2rem; margin-top: 1rem;">
+            <div class="founder-line">
               <span>Leo Campos</span>
               <span>Consultor de Valores Mobiliários</span>
               <span>Registro CVM nº 13.564</span>
@@ -362,12 +360,12 @@
           <p>Um processo conduzido com método, proximidade e visão de longo prazo.</p>
         </div>
 
-        <div class="shell solution-selector reveal" data-delay="80">
+        <div class="shell solution-selector reveal" data-delay="80" role="tablist" aria-label="Soluções de consultoria">
           <div class="solution-item" role="presentation">
             <button class="solution-tab" id="solution-tab-diagnostic" role="tab" aria-selected="true" aria-controls="solution-diagnostic">Compreender</button>
             <article class="solution-panel is-active" id="solution-diagnostic" role="tabpanel" aria-labelledby="solution-tab-diagnostic">
               <h3>Diagnóstico Financeiro</h3>
-              <p>Uma leitura ampla da realidade atual para identifycar desequilíbrios, riscos, prioridades e oportunidades de melhoria.</p>
+              <p>Uma leitura ampla da realidade atual para identificar desequilíbrios, riscos, prioridades e oportunidades de melhoria.</p>
               <ul><li>Mapeamento financeiro</li><li>Organização de prioridades</li><li>Plano de ação inicial</li></ul>
               <button class="text-link" type="button" data-open-contact="diagnostic">Conversar sobre o Diagnóstico <span>↗</span></button>
             </article>
@@ -457,7 +455,7 @@
 
       <footer class="site-footer footer-dark">
         <div class="shell footer-grid">
-          <button class="footer-brand" type="button" data-route="home"><img src="assets/images/logos/PNG Logo V01 Onra.png" alt="Onra" class="footer-brand-img"></button>
+          <a href="?area=home" class="footer-brand" data-route="home"><img src="assets/images/logos/PNG Logo V01 Onra.png" alt="Onra" class="footer-brand-img" loading="lazy"></a>
           <p>Consultoria de valores mobiliários autorizada pela CVM.</p>
           <div>
             <button type="button" data-route="education">Conhecer Educação</button>
@@ -468,7 +466,7 @@
     </section>
   </main>
 
-  <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-title">
+  <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-title" aria-describedby="contact-description">
     <div class="dialog-shell">
       <button class="dialog-close" type="button" aria-label="Fechar formulário">×</button>
       <div class="dialog-intro">
@@ -482,7 +480,7 @@
           <label><span>WhatsApp</span><input name="phone" type="tel" autocomplete="tel" required></label>
         </div>
         <label id="field-interest"><span>Situação de interesse</span>
-          <select name="interest" id="contact-interest" required style="width: 100%; padding: 1rem; border-radius: 4px; border: 1px solid rgba(0,0,0,0.1); font-family: inherit; font-size: 1rem;">
+          <select name="interest" id="contact-interest" required class="form-input">
             <option value="" disabled selected hidden>Selecione um assunto...</option>
             <option value="diagnostic">Diagnóstico Financeiro</option>
             <option value="follow">Acompanhamento Financeiro</option>
@@ -507,8 +505,7 @@
       <button class="dialog-close" type="button" aria-label="Fechar aviso">×</button>
       <p class="eyebrow">INFORMAÇÕES LEGAIS</p>
       <h2 id="legal-title">Privacidade e uso de dados</h2>
-      <p>Esta versão demonstrativa não envia dados para servidores. Antes da publicação definitiva, o responsável técnico deverá inserir a política de privacidade, os dados da pessoa jurídica, os canais oficiais e a ferramenta de consentimento aplicável.</p>
-      <p>Os formulários deste protótipo apenas preparam uma mensagem no dispositivo do visitante, conforme configuração em <code>js/config.js</code>.</p>
+      <p>Os dados fornecidos nos formulários deste site (como Nome, WhatsApp, Situação de Interesse e Mensagem) são coletados exclusivamente para viabilizar o nosso contato, compreender o seu momento e direcionar o atendimento mais adequado. Estas informações são transmitidas de forma segura e armazenadas em nosso sistema de gestão interna, não sendo comercializadas ou compartilhadas com terceiros sem sua autorização, exceto quando estritamente exigido por lei.</p>
     </div>
   </dialog>
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ricardoonofrio.github.io/onra-site/sitemap.xml
