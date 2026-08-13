@@ -367,6 +367,7 @@ p { overflow-wrap: break-word; text-wrap: pretty; }
    9. PÁGINA: CONSULTORIA
    -------------------------------------------------------------------------- */
 .consulting-hero { background: var(--bg-deep-blue); min-height: auto; padding: calc(var(--header-h) + 6rem) 0 8rem; color: var(--dark-text); overflow: hidden; position: relative; }
+.consulting-hero::after { content: ""; position: absolute; right: -12vw; bottom: -15vw; width: 40vw; height: 40vw; background-image: url('../assets/images/logos/transition-logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center; opacity: 0.03; pointer-events: none; animation: slow-spin 60s linear infinite; transform-origin: center; }
 .consulting-hero .journey-hero-grid { display: grid; grid-template-columns: 1fr; gap: clamp(3rem, 5vw, 6rem); align-items: center; position: relative; z-index: 1; }
 .consulting-hero .journey-title h1 { font-size: clamp(2.4rem, 4vw, 3.6rem); max-width: 24ch; line-height: 1.05; font-weight: 300; letter-spacing: -0.04em; margin: 0; }
 .consulting-hero .journey-intro p { font-size: clamp(1.1rem, 1.4vw, 1.25rem); color: var(--text-muted-dark); line-height: 1.6; max-width: 28rem; margin: 0 0 2rem; }
