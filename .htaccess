@@ -1,3 +1,13 @@
 RewriteEngine On
+
+# 1. Redireciona o dominio com cedilha (com ou sem www) para o dominio oficial sem cedilha
+RewriteCond %{HTTP_HOST} ^(www\.)?xn--onrafinanas-u9a\.com\.br$ [NC]
+RewriteRule ^(.*)$ https://onrafinancas.com.br/$1 [L,R=301]
+
+# 2. Forca conexao HTTPS (Cadeado Seguro)
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 3. Redireciona de www para sem www (Melhor para SEO)
+RewriteCond %{HTTP_HOST} ^www\.onrafinancas\.com\.br$ [NC]
+RewriteRule ^(.*)$ https://onrafinancas.com.br/$1 [L,R=301]
