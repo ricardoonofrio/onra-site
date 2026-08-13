@@ -395,6 +395,7 @@ body[data-state="education"] .site-header .brand-img-dark { display: block; }
 .method-line p { margin: 0; color: var(--ink-soft); font-size: var(--text-body); line-height: 1.75; }
 
 /* Solutions / Tabs */
+.solutions { padding: clamp(6.5rem, 8vw, 8.5rem) 0; }
 .view-consulting .solution-selector { display: flex; flex-direction: column; }
 .view-consulting .solution-item { border-bottom: 1px solid var(--line-subtle-dark); }
 .view-consulting .solution-item:first-child { border-top: 1px solid var(--line-subtle-dark); }
