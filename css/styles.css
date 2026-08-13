@@ -336,9 +336,9 @@ p { overflow-wrap: break-word; text-wrap: pretty; }
 .edu-philosophy h2 { font-weight: 300; font-size: var(--text-h2); letter-spacing: -0.035em; }
 .edu-philosophy .split-heading { margin-bottom: 2rem; }
 .principles-grid { display: grid; grid-template-columns: 1fr; margin-top: 1.5rem; border-top: 1px solid var(--line-light); }
-.principle-item { padding: 1.5rem 0; border-bottom: 1px solid var(--line-light); }
-.principle-item h4 { font-size: 1rem; margin-bottom: 0.25rem; font-weight: 500; }
-.principle-item p { opacity: 0.65; font-size: 0.875rem; line-height: 1.5; margin: 0; }
+.principle-item { padding: 2.5rem 0; border-bottom: 1px solid var(--line-light); }
+.principle-item h4 { font-size: 1.25rem; margin-bottom: 0.75rem; font-weight: 500; color: var(--ink); letter-spacing: -0.01em; }
+.principle-item p { opacity: 0.85; font-size: 1.05rem; line-height: 1.6; margin: 0; color: var(--ink); max-width: 20rem; }
 
 /* Leo em Ação */
 .edu-action { padding: var(--section-y) 0; }
@@ -548,9 +548,9 @@ p { overflow-wrap: break-word; text-wrap: pretty; }
 
 @media (min-width: 768px) {
   .principles-grid { grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line-light); }
-  .principle-item { border-bottom: none; border-right: 1px solid rgba(23,38,56,0.05); padding: 2rem 1.5rem 2rem 0; }
+  .principle-item { border-bottom: none; border-right: 1px solid rgba(23,38,56,0.05); padding: 3rem 2rem 3rem 0; }
   .principle-item:last-child { border-right: none; padding-right: 0; }
-  .principle-item:not(:first-child) { padding-left: 1.5rem; }
+  .principle-item:not(:first-child) { padding-left: 2rem; }
   
   .split-cta-grid { grid-template-columns: 1fr 1px 1fr; gap: 5rem; }
   .split-cta-divider { width: 1px; height: 100%; align-self: stretch; }
