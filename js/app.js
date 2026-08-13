@@ -427,12 +427,14 @@
 
     const contactButton = event.target.closest('[data-open-contact]');
     if (contactButton) {
+      if (contactButton.tagName === 'A') event.preventDefault();
       openContact(contactButton.dataset.openContact, contactButton.dataset.topic || '');
       return;
     }
 
     const legalButton = event.target.closest('[data-open-legal]');
     if (legalButton && legalDialog) {
+      if (legalButton.tagName === 'A') event.preventDefault();
       legalDialog.showModal();
       body.classList.add('is-locked');
       return;
@@ -440,6 +442,7 @@
 
     const scrollButton = event.target.closest('[data-scroll-target]');
     if (scrollButton) {
+      if (scrollButton.tagName === 'A') event.preventDefault();
       let id = scrollButton.dataset.scrollTarget;
 
       if (id === 'leo') {
