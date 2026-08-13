@@ -118,13 +118,11 @@
       }
     } catch (error) {
       // Ambientes de preview com origem nula podem bloquear a History API.
-      // Em HTTP/HTTPS (incluindo GitHub Pages), a navegação funciona normalmente.
-      console.info('History API indisponível neste preview.', error);
+      console.warn('History API restrita neste ambiente.');
     }
 
-    window.scrollTo({ top: 0, behavior: 'auto' });
     const activeView = document.querySelector(`[data-view="${route}"]`);
-    requestAnimationFrame(() => revealVisible(activeView));
+    if (activeView) requestAnimationFrame(() => revealVisible(activeView));
   }
 
   function navigate(route, options = {}) {
@@ -132,12 +130,23 @@
     closeMobileMenu();
 
     if (route === currentRoute && !options.force) {
-      window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+      if (options.scrollTo) {
+        const target = document.getElementById(options.scrollTo);
+        if (target) target.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+      }
       return;
     }
 
     if (reducedMotion) {
       commitRoute(route, options.pushState !== false);
+      if (options.scrollTo) {
+        const target = document.getElementById(options.scrollTo);
+        if (target) target.scrollIntoView({ behavior: 'auto' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      }
       return;
     }
 
@@ -149,6 +158,14 @@
       transition.removeEventListener('animationend', handler);
       
       commitRoute(route, options.pushState !== false);
+      
+      if (options.scrollTo) {
+        const target = document.getElementById(options.scrollTo);
+        if (target) target.scrollIntoView({ behavior: 'auto' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      }
+
       transition.className = 'page-transition is-leaving';
       
       transition.addEventListener('animationend', function handlerOut(eOut) {
@@ -451,7 +468,6 @@
         } else if (currentRoute === 'consulting') {
           id = 'leo-consulting';
         } else {
-          navigate('consulting');
           id = 'leo-consulting';
         }
       }
@@ -460,11 +476,12 @@
       if (targetEl) {
         const view = targetEl.closest('.view');
         if (view && view.dataset.view !== currentRoute) {
-          navigate(view.dataset.view);
-          window.setTimeout(() => targetEl.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' }), reducedMotion ? 0 : 1100);
+          navigate(view.dataset.view, { scrollTo: id });
         } else {
           targetEl.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
         }
+      } else if (id === 'leo-consulting') {
+        navigate('consulting', { scrollTo: 'leo-consulting' });
       }
       closeMobileMenu();
     }
