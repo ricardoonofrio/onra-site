@@ -318,13 +318,13 @@ p { overflow-wrap: break-word; text-wrap: pretty; }
 .badge-soon { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.6rem; background: rgba(23,38,56,0.06); color: var(--ink-soft); border-radius: 4px; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; width: fit-content; }
 
 /* Highlight Row Specificity Fixes */
-.highlight-row { background: var(--navy-900); margin: 0; border: none; }
-.highlight-row .ed-content h3 { color: var(--dark-text); }
-.highlight-row .ed-content p, .highlight-row .sub-h3, .highlight-row .ed-note { color: var(--text-muted-dark); }
-.highlight-row .text-link { color: var(--white); }
-.highlight-row .ed-meta span:first-child { color: rgba(255,255,255,0.4); }
-.highlight-row .ed-meta span:last-child { color: rgba(255,255,255,0.4); }
-.highlight-row .badge-soon { background: rgba(255,255,255,0.1); color: var(--white); }
+.highlight-row { background: var(--navy-900) !important; margin: 0 !important; border: none !important; }
+.highlight-row .ed-content h3 { color: var(--dark-text) !important; }
+.highlight-row .ed-content p, .highlight-row .sub-h3, .highlight-row .ed-note { color: rgba(255, 255, 255, 0.75) !important; }
+.highlight-row .text-link { color: var(--white) !important; }
+.highlight-row .ed-meta span:first-child { color: rgba(255,255,255,0.5) !important; }
+.highlight-row .ed-meta span:last-child { color: rgba(255,255,255,0.5) !important; }
+.highlight-row .badge-soon { background: rgba(255,255,255,0.15) !important; color: var(--white) !important; }
 
 /* Filosofia */
 .edu-philosophy { padding: var(--section-y) 0; }
