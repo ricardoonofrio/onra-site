@@ -299,15 +299,11 @@ body[data-state="education"] .site-header .brand-img-dark { display: block; }
 .edu-hero { position: relative; display: flex; align-items: center; padding: calc(var(--header-h) + 5rem) 0 7rem; overflow: hidden; background: var(--mist); color: var(--ink); min-height: 60svh; }
 .edu-hero::after { content: ""; position: absolute; right: -12vw; bottom: -15vw; width: 40vw; height: 40vw; background-image: url('../assets/images/logos/transition-logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center; opacity: 0.03; pointer-events: none; animation: slow-spin 60s linear infinite; transform-origin: center; }
 @keyframes slow-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-.edu-hero-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center; z-index: 1; position: relative; }
-.edu-hero-copy { z-index: 2; }
-.edu-hero-copy h1 { font-size: clamp(2.4rem, 4vw, 3.6rem); line-height: 1.05; margin-bottom: 1.25rem; max-width: 22ch; letter-spacing: -0.04em; font-weight: 300; }
-.edu-hero-copy .lead { font-size: clamp(1.1rem, 1.4vw, 1.25rem); opacity: 0.7; max-width: 28rem; margin-bottom: 2.5rem; line-height: 1.65; }
-.edu-hero-copy .founder-line { flex-direction: row; flex-wrap: wrap; gap: 0.8rem 1.4rem; font-size: 0.8rem; font-weight: 400; opacity: 0.55; text-transform: uppercase; letter-spacing: 0.14em; margin-top: 0; }
-.edu-hero-copy .founder-line span+span::before { display: block; content: ""; width: 4px; height: 4px; border-radius: 50%; background: currentColor; opacity: 0.5; }
-.edu-hero-media { position: relative; aspect-ratio: 4/5; margin: 0; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
-.edu-hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: saturate(0.9); transition: transform 0.6s ease; }
-.edu-hero-media:hover img { transform: scale(1.03); }
+.edu-hero-grid { display: grid; grid-template-columns: 1fr; gap: clamp(3rem, 5vw, 6rem); align-items: center; z-index: 1; position: relative; }
+.edu-title h1 { font-size: clamp(2.4rem, 4vw, 3.6rem); line-height: 1.05; margin-bottom: 0; max-width: 24ch; letter-spacing: -0.04em; font-weight: 300; }
+.edu-intro .lead { font-size: clamp(1.1rem, 1.4vw, 1.25rem); color: var(--ink-soft); max-width: 28rem; margin: 0 0 2rem; line-height: 1.6; }
+.edu-intro .founder-line { color: var(--ink-faint); flex-direction: row; flex-wrap: wrap; gap: 0.8rem 1.4rem; font-size: 0.8rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; margin-top: 2rem; margin-bottom: 2rem; }
+.edu-intro .founder-line span+span::before { display: block; content: ""; width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
 
 /* Formatos */
 .edu-formas { padding: var(--section-y) 0; }
@@ -476,7 +472,7 @@ body[data-state="education"] .site-header .brand-img-dark { display: block; }
   .founder-line { margin-top: 1.5rem; }
   .edu-hero { padding: calc(var(--header-h) + 2rem) 0 4rem; }
   .edu-hero-grid { gap: 4rem; }
-  .edu-hero-copy h1 { font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1rem; }
+  .edu-title h1 { font-size: clamp(2.2rem, 3.5vw, 3rem); }
   .edu-formas, .edu-philosophy, .edu-action, .edu-final-cta { padding: 4.5rem 0; }
   .action-photo-grid { margin-top: 2.5rem; }
   .edu-editorial-list { margin-top: 1.5rem; }
@@ -503,7 +499,7 @@ body[data-state="education"] .site-header .brand-img-dark { display: block; }
   .portal-action { margin-top: 1.5rem; }
 }
 @media (min-width: 1024px) {
-  .edu-hero-grid { grid-template-columns: 1.2fr 1fr; gap: 6rem; }
+  .edu-hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 7rem; }
   .edu-action .split-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
   .action-photo-grid { grid-template-columns: 1.7fr 1fr; align-items: end; gap: 2rem; margin-top: 4rem; }
   
