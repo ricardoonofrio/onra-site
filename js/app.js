@@ -41,16 +41,16 @@
     const area = new URLSearchParams(window.location.search).get('area');
     if (area === 'educacao') return 'education';
     if (area === 'consultoria') return 'consulting';
+
+    const path = window.location.pathname.replace(/\/$/, '');
+    if (path.endsWith('/educacao')) return 'education';
+    if (path.endsWith('/consultoria')) return 'consulting';
     return 'home';
   }
 
   function buildUrl(route) {
-    const url = new URL(window.location.href);
     const param = routeData[route].param;
-    if (param) url.searchParams.set('area', param);
-    else url.searchParams.delete('area');
-    url.hash = '';
-    return `${url.pathname}${url.search}`;
+    return param ? `/${param}` : '/';
   }
 
   function updateMetadata(route) {

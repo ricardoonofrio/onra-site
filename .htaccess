@@ -11,3 +11,8 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # 3. Redireciona de www para sem www (Melhor para SEO)
 RewriteCond %{HTTP_HOST} ^www\.onrafinancas\.com\.br$ [NC]
 RewriteRule ^(.*)$ https://onrafinancas.com.br/$1 [L,R=301]
+
+# 4. Fallback de Rotas SPA (Permite URLs amigaveis como /educacao)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [QSA,L]
