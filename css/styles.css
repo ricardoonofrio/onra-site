@@ -429,14 +429,22 @@ body[data-state="education"] .site-header .brand-img-dark { display: block; }
 .view-consulting .start-steps p { font-size: var(--text-body); color: var(--ink-soft); margin: 0; line-height: 1.75; }
 
 /* FAQ */
-.faq-editorial-shell h2 { font-weight: 300; font-size: var(--text-h2); letter-spacing: -0.035em; margin-bottom: 3rem; }
-.faq-editorial-list { border-top: 1px solid var(--line-subtle-light); }
-.faq-editorial-list details { border-bottom: 1px solid var(--line-subtle-light); padding: 1.75rem 0; cursor: pointer; }
-.faq-editorial-list summary { list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 1.15rem; font-weight: 400; color: var(--ink); letter-spacing: -0.01em; outline: none; }
+.faq { padding: clamp(6.5rem, 8vw, 8.5rem) 0; }
+.faq-editorial-shell h2 { font-weight: 300; font-size: var(--text-h2); letter-spacing: -0.035em; margin-bottom: 4rem; }
+.faq-editorial-list { border-top: 1px solid var(--line-light); }
+.faq-editorial-list details { border-bottom: 1px solid var(--line-light); padding: 2.5rem 0; cursor: pointer; }
+.faq-editorial-list summary { list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 1.25rem; font-weight: 400; color: var(--ink); letter-spacing: -0.015em; outline: none; transition: color 0.3s ease; }
 .faq-editorial-list summary::-webkit-details-marker { display: none; }
-.faq-editorial-list summary span { font-weight: 300; opacity: 0.4; font-size: 1.5rem; transition: transform 0.3s ease; }
-.faq-editorial-list details[open] summary span { transform: rotate(45deg); }
-.faq-editorial-list p { margin: 1.5rem 0 0; max-width: 42rem; color: var(--ink-soft); line-height: 1.7; font-size: 0.95rem; }
+.faq-editorial-list details:hover summary { color: var(--accent); }
+.faq-editorial-list summary span { font-weight: 300; opacity: 0.4; font-size: 1.75rem; line-height: 1; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease, color 0.3s ease; }
+.faq-editorial-list details:hover summary span { opacity: 1; color: var(--accent); }
+.faq-editorial-list details[open] summary span { transform: rotate(45deg); opacity: 1; color: var(--accent); }
+.faq-editorial-list p { margin: 1.75rem 0 0; max-width: 48rem; color: var(--ink-soft); line-height: 1.85; font-size: 1rem; animation: faqReveal 0.4s ease forwards; }
+
+@keyframes faqReveal {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 /* CTA Consulting */
 .cta-editorial-shell { padding: clamp(4rem, 6vw, 6rem) 0; text-align: center; }
