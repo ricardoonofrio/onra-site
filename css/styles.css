@@ -326,7 +326,7 @@ p { overflow-wrap: break-word; text-wrap: pretty; }
 .highlight-row .text-link { color: var(--white) !important; }
 .highlight-row .ed-meta span:first-child { color: rgba(255,255,255,0.5) !important; }
 .highlight-row .ed-meta span:last-child { color: rgba(255,255,255,0.5) !important; }
-.highlight-row .badge-soon { background: var(--white) !important; color: var(--navy-900) !important; font-weight: 700 !important; }
+.highlight-row .badge-soon { background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)) !important; color: var(--white) !important; border: 1px solid rgba(255,255,255,0.12) !important; box-shadow: 0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.05) !important; font-weight: 500 !important; letter-spacing: 0.12em !important; padding: 0.35rem 0.85rem !important; border-radius: 6px !important; }
 
 /* Filosofia */
 .edu-philosophy { padding: var(--section-y) 0; }
