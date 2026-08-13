@@ -19,6 +19,6 @@ Write-Host "Iniciando commit e push para o GitHub..." -ForegroundColor Yellow
 
 git add .
 git commit -m "deploy: atualiza site e limpa cache (v=$timestamp)"
-git push origin master
+git push origin HEAD
 
 Write-Host "Publicacao concluida com sucesso! O cache foi renovado." -ForegroundColor Green
