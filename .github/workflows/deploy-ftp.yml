@@ -1,0 +1,32 @@
+name: Deploy via FTP to HostGator
+
+on:
+  push:
+    branches:
+      - master
+      
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: Deploy to FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: /public_html/
+        # Ignora arquivos de sistema e scripts de automação local
+        exclude: |
+          **/.git*
+          **/.git*/**
+          .github/**
+          *.ps1
+          *.py
+          INSTRUCOES_RAPIDAS.txt
+          README.md
