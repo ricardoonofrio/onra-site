@@ -297,8 +297,8 @@ p { overflow-wrap: break-word; text-wrap: pretty; }
 @keyframes slow-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .edu-hero-grid { display: grid; grid-template-columns: 1fr; gap: clamp(3rem, 5vw, 6rem); align-items: center; z-index: 1; position: relative; }
 .edu-title h1 { font-size: clamp(2.4rem, 4vw, 3.6rem); line-height: 1.05; margin-bottom: 0; max-width: 24ch; letter-spacing: -0.04em; font-weight: 300; }
-.edu-intro .lead { font-size: clamp(1.1rem, 1.4vw, 1.25rem); color: var(--ink-soft); max-width: 28rem; margin: 0 0 2rem; line-height: 1.6; }
-.edu-intro .founder-line { color: var(--ink-faint); flex-direction: row; flex-wrap: wrap; gap: 0.8rem 1.4rem; font-size: 0.8rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; margin-top: 2rem; margin-bottom: 2rem; }
+.edu-intro .lead { font-size: clamp(1.1rem, 1.4vw, 1.25rem); color: var(--text-muted-dark); max-width: 28rem; margin: 0 0 2rem; line-height: 1.6; }
+.edu-intro .founder-line { color: var(--text-faint-dark); flex-direction: row; flex-wrap: wrap; gap: 0.8rem 1.4rem; font-size: 0.8rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; margin-top: 2rem; margin-bottom: 2rem; }
 .edu-intro .founder-line span+span::before { display: block; content: ""; width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
 
 /* Formatos */
